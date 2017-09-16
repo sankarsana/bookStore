@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="com.bookStore.Cards.EditorActivity">
+
+	<item
+		android:id="@+id/my_action_search"
+		android:icon="@android:drawable/ic_menu_search"
+		android:title="@string/search"
+		android:titleCondensed="@string/distributors"
+		app:actionViewClass="com.bookStore.App.MySearchView"
+		app:showAsAction="always|collapseActionView" />
+
+</menu>

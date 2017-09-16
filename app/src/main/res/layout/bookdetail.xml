@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+
+		<TextView
+			style="@style/bookDetailTitle"
+			android:text="@string/bookName" />
+
+		<TextView
+			android:id="@+id/bookDetailName"
+			style="@style/bookDetailValue" />
+
+		<View style="@style/horizontalLineSeparator" />
+
+		<TextView
+			style="@style/bookDetailTitle"
+			android:text="@string/shortName" />
+
+		<TextView
+			android:id="@+id/bookDetailShortName"
+			style="@style/bookDetailValue" />
+
+		<View style="@style/horizontalLineSeparator" />
+
+		<TextView
+			style="@style/bookDetailTitle"
+			android:text="@string/writer" />
+
+		<TextView
+			android:id="@+id/bookDetailWriter"
+			style="@style/bookDetailValue" />
+
+		<View style="@style/horizontalLineSeparator" />
+
+		<TextView
+			style="@style/bookDetailTitle"
+			android:text="@string/category" />
+
+		<TextView
+			android:id="@+id/bookDetailCategory"
+			style="@style/bookDetailValue" />
+
+		<View style="@style/horizontalLineSeparator" />
+
+		<TextView
+			style="@style/bookDetailTitle"
+			android:text="@string/cost" />
+
+		<TextView
+			android:id="@+id/bookDetailCost"
+			style="@style/bookDetailValue" />
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="@dimen/headerHeight">
+
+			<ImageButton
+				android:id="@+id/newBookBtnOk"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:background="@drawable/btn_selector_left"
+				android:src="@drawable/ic_action_accept" />
+
+			<ImageButton
+				android:id="@+id/newBookBtnUpdate"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:background="@drawable/btn_selector_inner"
+				android:src="@drawable/ic_action_edit" />
+
+			<ImageButton
+				android:id="@+id/newBookBtnDelete"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:background="@drawable/btn_selector_right"
+				android:src="@drawable/ic_action_discard" />
+
+		</LinearLayout>
+	</LinearLayout>
+
+</ScrollView>

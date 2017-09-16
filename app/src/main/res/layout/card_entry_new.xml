@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<TextView
+		android:id="@+id/cardNewRecord_mode"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="4dp"
+		android:textSize="20sp" />
+
+
+	<Spinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/card_entry_new_spinner"
+		android:entries="@array/actions" />
+
+	<View style="@style/horizontalLineSeparator" />
+
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="6dp"
+		android:paddingBottom="6dp">
+
+
+		<EditText
+			android:id="@+id/cardNewRecord_number"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="10dp"
+			android:hint="@string/no"
+			android:inputType="number">
+
+			<requestFocus />
+		</EditText>
+
+		<Button
+			android:id="@+id/cardNewRecord_allAvailable"
+			android:layout_width="50dp"
+			android:layout_height="@dimen/btnWidthSmall"
+			android:layout_centerVertical="true"
+			android:layout_toRightOf="@+id/cardNewRecord_number"
+			android:layout_marginLeft="10dp"
+			android:text="@string/allAvailable" />
+
+	</RelativeLayout>
+
+	<View style="@style/horizontalLineSeparator" />
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1" />
+
+		<Button
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:text="@android:string/ok"
+			android:src="@android:drawable/ic_menu_more"
+			android:id="@+id/cardNewEntry_Ok"
+			android:layout_gravity="center_horizontal" />
+
+		<Button
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:text="@string/more"
+			android:src="@android:drawable/ic_menu_more"
+			android:id="@+id/cardNewEntry_More"
+			android:layout_gravity="center_horizontal" />
+
+		<Button
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:text="@android:string/cancel"
+			android:id="@+id/cardNewEntry_Cancel"
+			android:layout_gravity="center_horizontal" />
+
+	</LinearLayout>
+
+</LinearLayout>

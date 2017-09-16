@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+
+	<item
+		android:id="@+id/overflowItemMenu"
+		android:icon="@drawable/ic_action_edit"
+		android:title="@string/toEdit"
+		yourapp:showAsAction="always" />
+
+	<!--<item-->
+	<!--android:icon="@drawable/ic_action_discard"-->
+	<!--android:title="@string/toDeleteCurrentDay"-->
+	<!--yourapp:showAsAction="always" >-->
+	<!--<menu>-->
+	<!--<item-->
+	<!--android:id="@+id/card_delete"-->
+	<!--android:icon="@drawable/ic_action_discard"-->
+	<!--yourapp:showAsAction="always"-->
+	<!--android:title="@string/toDeleteCurrentDay" />-->
+	<!--</menu>-->
+	<!--</item>-->
+
+</menu>

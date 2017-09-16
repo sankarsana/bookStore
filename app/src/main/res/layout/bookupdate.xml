@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<ScrollView
+		android:id="@+id/ScrollView01"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+		<LinearLayout
+			android:layout_height="0dip"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:layout_marginBottom="@dimen/btnPadding">
+
+			<TextView
+				style="@style/bookDetailTitle"
+				android:text="@string/bookName" />
+
+			<EditText
+				android:id="@+id/bookNewName"
+				style="@style/bookNewValue" />
+
+			<View style="@style/horizontalLineSeparator" />
+
+			<TextView
+				style="@style/bookDetailTitle"
+				android:text="@string/shortName" />
+
+			<EditText
+				android:id="@+id/bookNewShortName"
+				style="@style/bookNewValue"
+				android:layout_width="120sp" />
+
+			<View style="@style/horizontalLineSeparator" />
+
+			<TextView
+				style="@style/bookDetailTitle"
+				android:text="@string/writer" />
+
+			<Button
+				android:id="@+id/bookNewWriter"
+				style="@style/bookNewValue" />
+
+			<View style="@style/horizontalLineSeparator" />
+
+			<TextView
+				style="@style/bookDetailTitle"
+				android:text="@string/category" />
+
+			<Button
+				android:id="@+id/bookNewCategory"
+				style="@style/bookNewValue"
+				android:layout_width="120sp" />
+
+			<View style="@style/horizontalLineSeparator" />
+
+			<TextView
+				style="@style/bookDetailTitle"
+				android:text="@string/cost" />
+
+			<EditText
+				android:id="@+id/bookNewCost"
+				style="@style/bookNewValue"
+				android:layout_width="120sp"
+				android:hint="0"
+				android:inputType="number" />
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<Button
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="1"
+					android:id="@+id/bookUpdate_Ok"
+					android:layout_marginLeft="@dimen/marginRight"
+					android:background="@drawable/btn_selector_left"
+					android:text="@android:string/ok" />
+
+				<Button
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="1"
+					android:id="@+id/bookUpdate_Cancel"
+					android:layout_marginRight="@dimen/marginRight"
+					android:background="@drawable/btn_selector_right"
+					android:text="@android:string/cancel" />
+
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+
+</LinearLayout>

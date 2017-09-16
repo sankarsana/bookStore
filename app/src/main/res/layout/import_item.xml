@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/lineItemHorizontal">
+
+	<TextView
+		android:id="@+id/addBook_name"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:layout_marginLeft="@dimen/marginLeft"
+		android:textSize="@dimen/lineTextSize" />
+
+	<TextView
+		android:id="@+id/addBook_count"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="@dimen/marginRight"
+		android:textSize="@dimen/lineTextSize"
+		android:textStyle="bold" />
+</LinearLayout>

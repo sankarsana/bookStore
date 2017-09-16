@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/calc_beginAgain"
+		android:title="@string/beginAgain"
+		android:icon="@drawable/ic_action_discard" />
+
+	<item
+		android:id="@+id/calc_returnPrevious"
+		android:title="@string/returnPrevious"
+		android:icon="@drawable/ic_action_undo" />
+
+	<item
+		android:id="@+id/calc_apply"
+		android:title="@string/apply"
+		android:icon="@drawable/ic_action_accept" />
+</menu>

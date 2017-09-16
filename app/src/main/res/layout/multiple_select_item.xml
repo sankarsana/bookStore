@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/lineItemHorizontal">
+
+	<LinearLayout
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/bookName_multiSelect"
+			style="@style/itemTextViewSingleRow" />
+
+		<TextView
+			android:id="@+id/writer_multiSelect"
+			style="@style/itemTextViewSmallSingleRow" />
+
+	</LinearLayout>
+
+	<CheckBox
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:clickable="false"
+		android:focusable="false"
+		android:focusableInTouchMode="false"
+		android:id="@+id/checkBox_multiSelect" />
+
+</LinearLayout>

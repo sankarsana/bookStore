@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/editorMode_get"
+		android:title="@string/toGet" />
+
+	<item
+		android:id="@+id/editorMode_getAndDistrib"
+		android:title="@string/toGetAndDistr" />
+
+	<item
+		android:id="@+id/editorMode_distr"
+		android:title="@string/toDistrib" />
+
+	<item
+		android:id="@+id/editorMode_ret"
+		android:title="@string/toReturn" />
+
+	<item
+		android:id="@+id/editorAddMissing"
+		android:title="@string/addMissing" />
+
+	<item
+		android:icon="@drawable/ic_action_discard"
+		android:title="@string/toClearCurrentDay">
+		<menu>
+			<item
+				android:id="@+id/card_delete"
+				android:icon="@drawable/ic_action_discard"
+				android:title="@string/toClearCurrentDay" />
+		</menu>
+	</item>
+</menu>

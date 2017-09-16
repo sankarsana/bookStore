@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_gravity="center_vertical"
+	android:layout_margin="6dp"
+	android:background="@drawable/input_view_default_clear"
+	android:orientation="horizontal">
+
+	<ImageView
+		android:id="@+id/search_hint"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_gravity="center_vertical"
+		android:contentDescription="@string/searchview_description_clear"
+		android:focusable="false"
+		android:paddingEnd="8dip"
+		android:paddingRight="8dp"
+		android:paddingStart="8dip"
+		android:src="@android:drawable/ic_menu_search" />
+
+	<view
+		android:id="@+id/search_src_text"
+		class="com.bookStore.App.MySearchView$EditText_immStateRemember"
+		android:layout_width="0dp"
+		android:layout_height="30dip"
+		android:layout_weight="1"
+		android:background="@null"
+		android:ellipsize="end"
+		android:focusable="true"
+		android:inputType="text|textNoSuggestions"
+		android:minWidth="@dimen/search_view_text_min_width"
+		android:paddingBottom="5dp"
+		android:paddingEnd="@dimen/dropdown_item_text_padding_right"
+		android:paddingStart="@dimen/dropdown_item_text_padding_left"
+		android:singleLine="true"
+		android:textColor="@color/gradientBottom"
+		android:textSize="@dimen/lineTextSize" />
+
+	<ImageView
+		android:id="@+id/search_close_btn"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_gravity="center_vertical"
+		android:background="@drawable/btn_selector_transparent"
+		android:contentDescription="@string/searchview_description_clear"
+		android:focusable="false"
+		android:paddingEnd="8dip"
+		android:paddingStart="8dip"
+		android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+</LinearLayout>

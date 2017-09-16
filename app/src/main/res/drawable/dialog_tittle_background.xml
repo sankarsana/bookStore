@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="rectangle">
+
+	<corners
+		android:topLeftRadius="@dimen/cornersRadius"
+		android:topRightRadius="@dimen/cornersRadius" />
+
+	<gradient
+		android:angle="90"
+		android:startColor="@color/gradientBottom"
+		android:endColor="@color/gradientTop" />
+
+	<padding
+		android:top="@dimen/dividerHeight"
+		android:right="@dimen/dialogPadding"
+		android:bottom="@dimen/dividerHeight"
+		android:left="@dimen/dialogPadding" />
+</shape>

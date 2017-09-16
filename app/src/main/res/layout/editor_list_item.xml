@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/lineItemHorizontalSmall"
+	android:layout_height="wrap_content">
+
+	<TextView
+		android:id="@+id/editorListItem_availableCount"
+		style="@style/cardTextViewEntry"
+		android:textColor="@color/GreenRemainder" />
+
+	<LinearLayout
+
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/editorListItem_shortName"
+			style="@style/itemTextViewSingleRow"
+			android:layout_width="wrap_content" />
+
+		<TextView
+			android:id="@+id/editorListItem_bookName"
+			style="@style/itemTextViewSmallSingleRow"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/editorListItem_currentCount"
+		android:layout_width="40dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical|center_horizontal"
+		android:gravity="center_horizontal"
+		android:textSize="@dimen/lineTextSize"
+		android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<CheckBoxPreference
+		android:key="advanced_check"
+		android:title="Доступ 1"
+		android:defaultValue="false" />
+
+	<CheckBoxPreference
+		android:key="advanced_check1"
+		android:title="Доступ 2"
+		android:defaultValue="false"
+		android:dependency="advanced_check" />
+
+	<PreferenceScreen
+		android:key="advanced"
+		android:title="Очистка базы данных"
+		android:summary="На крайний случай."
+		android:dependency="advanced_check1">
+
+		<CheckBoxPreference
+			android:key="clear_base_check"
+			android:title="Очистка базы данных"
+			android:defaultValue="false" />
+
+		<Preference
+			android:title="Очистить базу данных."
+			android:summary="Возврат вазы данных в первоначальное состояние."
+			android:dependency="clear_base_check"
+			android:key="clearDB" />
+
+	</PreferenceScreen>
+
+	<PreferenceScreen android:title="@string/reportSettings">
+		<intent android:action="com.bookStore.preferences.ACTION_PREFERENCE_REPORT" />
+	</PreferenceScreen>
+
+	<PreferenceCategory android:title="Резервная копия базы">
+
+		<CheckBoxPreference
+			android:key="autoBackup"
+			android:title="Сохранять автоматически"
+			android:summary="При закытии программы"
+			android:defaultValue="true" />
+
+		<Preference
+			android:key="backupCopies"
+			android:title="Сохранённые копии базы">
+			<intent android:action="com.bookStore.preferences.ACTION_BackupAndRestore" />
+		</Preference>
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

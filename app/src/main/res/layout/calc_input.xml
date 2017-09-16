@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<TextView
+		android:id="@+id/calcInputProgress"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="4dp"
+		android:textSize="20sp" />
+
+	<ListView
+		android:id="@android:id/list"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:choiceMode="singleChoice" />
+
+
+	<View style="@style/horizontalLineSeparator" />
+
+
+	<View style="@style/horizontalLineSeparator" />
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical">
+
+		<com.development.InputView
+			android:id="@+id/calcInputEditText"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:focusable="true" />
+
+		<ImageButton
+			android:id="@+id/calcInputBthOk"
+			android:layout_width="80dp"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_action_accept" />
+
+	</LinearLayout>
+
+	<com.development.NumberKeyboard
+		android:id="@+id/calcInputKeyboard"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="SrilaPrabhupada">Шрила Прабхупада</string>
+	<string name="app_name">BookStore</string>
+	<string name="menu_settings">Settings</string>
+	<string name="ok">OK</string>
+	<string name="cancel">Отмена</string>
+	<string name="addBookBtnBookText">Нажмите, чтобы выбрать</string>
+	<string name="selectBook">Выбирите книгу</string>
+	<string name="saveToExit">Сохранить изменения?</string>
+	<string name="yes">Да</string>
+	<string name="no">Нет</string>
+	<string name="delete">Удалить</string>
+	<string name="update">Изменить</string>
+	<string name="search">Поиск</string>
+	<string name="store">Склад</string>
+	<string name="neww">new</string>
+	<string name="bookName">Название книги</string>
+	<string name="shortName">Краткое</string>
+	<string name="writer">Автор</string>
+	<string name="category">Категория</string>
+	<string name="cost">Цена</string>
+	<string name="conduct_YES">Проведено</string>
+	<string name="conduct_NO">Не проведено</string>
+	<!-- <string name="toConductOn">Подтвердить</string> -->
+	<!-- <string name="toConductOff">Убрать подтверждение</string> -->
+	<string name="rDot"> р.</string>
+	<string name="percent">%</string>
+	<string name="save">Сохранить</string>
+	<string name="SaveAndNew">Сохранить + новая</string>
+	<string name="btnBack">&lt;</string>
+	<string name="bring_books">Привоз книг</string>
+	<!-- <string name="personal_cards">Личные карточки</string> -->
+	<string name="title_activity_book_store_selection">BookStoreSelection</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="selectionBook">Выбирите книгу</string>
+	<string name="searchOrNewName">Поиск или новое имя</string>
+	<string name="name">Имя</string>
+	<string name="aHundredPercent">100%</string>
+	<string name="distributor">Распространитель</string>
+	<string name="distributors">Распространители</string>
+	<string name="plus">+</string>
+	<string name="date">Дата</string>
+	<string name="count0">0</string>
+	<string name="nameOfBook">Название книги</string>
+	<string name="get">Полученно</string>
+	<string name="toGet">Получить</string>
+	<string name="toGetAndDistr">Получить и распространить</string>
+	<string name="distrib">Распостраненно</string>
+	<string name="toDistrib">Распространить</string>
+	<string name="returnn">Возврат</string>
+	<string name="toReturn">Вернуть</string>
+	<string name="my">Мои</string>
+	<string name="distribAll">Распостранить всё</string>
+	<string name="returnAll">Вернуть всё</string>
+	<string name="change">Изменить</string>
+	<string name="allAvailable">Все</string>
+	<string name="addMore">Добавить ещё</string>
+	<string name="title_activity_main">MainActivity</string>
+	<string name="action_settings">Settings</string>
+	<string name="shortenGet">П</string>
+	<string name="shortenDistr">Р</string>
+	<string name="shortenRet">В</string>
+	<string name="shortenRemainder">Ост</string>
+	<string name="reports">Отчёты</string>
+	<string name="recount">Пересчитать склад</string>
+	<string name="inventory">Инвентаризация</string>
+	<string name="beginAgain">Начать заново</string>
+	<string name="returnPrevious">Вернуть предыдущее</string>
+	<string name="settings">Настройки</string>
+	<string name="importCSV">Импортировать из csv</string>
+	<string name="scores">Очки</string>
+	<string name="big">Big</string>
+	<string name="med">Med</string>
+	<string name="small">Small</string>
+	<string name="mag">Mag</string>
+	<string name="savedCopies">Сохранённые копии</string>
+	<string name="apply">Применить</string>
+	<string name="cards">Карточки</string>
+	<string name="send">Отправить</string>
+	<string name="reportSettings">Настройки отчётов</string>
+	<string name="more">Ещё</string>
+	<string name="note">Заметка</string>
+	<string name="myBooks">Мои книги</string>
+	<string name="zero">0</string>
+	<string name="enterNewName">Введите новое имя</string>
+	<string name="toEdit">Редатировать</string>
+	<string name="toClearCurrentDay">Очистить текущий день</string>
+	<string name="addMissing">Добавить недостающие</string>
+	<string name="publisher">Издательство</string>
+	<string name="searchview_description_clear">Очистить</string>
+
+	<string-array name="datesPeriod">
+		<item>Текущий месяц</item>
+		<item>Прошлый месяц</item>
+		<item>Пользовательский</item>
+	</string-array>
+	<string-array name="actions">
+		<item>@string/get</item>
+		<item>@string/toGetAndDistr</item>
+		<item>@string/toDistrib</item>
+		<item>@string/toReturn</item>
+	</string-array>
+
+</resources>

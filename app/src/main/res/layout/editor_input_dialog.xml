@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<LinearLayout style="@style/FragmentDialogActionBarLinearLayout">
+
+		<TextView
+			android:id="@+id/bookName"
+			style="@style/DialogTittle"
+			android:text="@string/bookName" />
+
+	</LinearLayout>
+
+	<LinearLayout
+		style="@style/DialogCenterLinearLayout"
+		android:gravity="center_vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<com.development.InputView
+				android:id="@+id/editor_input_count"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:hint="@string/zero"
+				android:textSize="@dimen/lineTextSize" />
+
+			<Button
+				android:id="@+id/editor_input_btn_all"
+				android:layout_width="80dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:text="@string/allAvailable" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/lineHeight"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/editor_input_btn_ok"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@drawable/btn_selector_left"
+				android:text="@android:string/ok" />
+
+			<Button
+				android:id="@+id/editor_input_btn_cancel"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@drawable/btn_selector_right"
+				android:text="@android:string/cancel" />
+
+		</LinearLayout>
+
+		<com.development.NumberKeyboard
+			android:id="@+id/editorInputKeyboard"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" />
+
+	</LinearLayout>
+
+</LinearLayout>

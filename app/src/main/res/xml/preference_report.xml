@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<EditTextPreference
+		android:key="address"
+		android:title="Электронный адрес"
+		android:defaultValue="sankarsana.nrs@gmail.com" />
+
+	<EditTextPreference
+		android:key="theme"
+		android:title="Тема" />
+
+	<EditTextPreference
+		android:key="subjectStart"
+		android:title="Приветствие" />
+
+	<EditTextPreference
+		android:key="signature"
+		android:title="Подпись" />
+
+</PreferenceScreen>

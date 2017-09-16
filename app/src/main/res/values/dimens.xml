@@ -1,0 +1,52 @@
+<resources>
+
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+	<dimen name="minDialogWidth">300dp</dimen>
+
+
+	<dimen name="cornersRadius">8dp</dimen>
+	<dimen name="btnPadding">6dp</dimen>
+	<dimen name="btnMargin">2dp</dimen>
+	<dimen name="dialogOffset">16dp</dimen>
+	<dimen name="dialogPadding">18dp</dimen>
+	<dimen name="dialogMinWidth">300dp</dimen>
+	<dimen name="dialogMaxWidth">500dp</dimen>
+
+	<dimen name="lineHeight">44dp</dimen>
+	<dimen name="lineHeightSmall">36dp</dimen>
+	<dimen name="lineHeightHalf">22dp</dimen>
+	<dimen name="marginLeft">4dp</dimen>
+	<dimen name="marginRight">14dp</dimen>
+	<dimen name="lineMarginTop">3dp</dimen>
+
+	<dimen name="lineGapTop">8dp</dimen>
+	<dimen name="lineGapBottom">8dp</dimen>
+
+	<dimen name="dividerHeight">2dp</dimen>
+	<dimen name="dividerHalfHeight">1dp</dimen>
+
+
+	<dimen name="doubleLineHeight">60dp</dimen>
+	<dimen name="doubleLineMarginTop">6dp</dimen>
+
+	<dimen name="headerHeight">50dp</dimen>
+	<dimen name="headerHeightSmall">40dp</dimen>
+
+	<dimen name="generalTextSize">20sp</dimen>
+	<dimen name="headerTextSize">19sp</dimen>
+	<dimen name="lineTextSize">18sp</dimen>
+	<dimen name="smallTextSize">12sp</dimen>
+
+	<dimen name="headerBtnMarginTop">1dp</dimen>
+	<dimen name="btnWidthSmall">50dp</dimen>
+	<dimen name="btnWidthMedium">80dp</dimen>
+	<dimen name="btnBack">48sp</dimen>
+
+	<dimen name="numKeyBtnHeight">48dp</dimen>
+	<dimen name="dropdown_item_text_padding_left">8dip</dimen>
+	<dimen name="search_view_text_min_width">160dip</dimen>
+	<dimen name="dropdown_item_text_padding_right">8dip</dimen>
+
+</resources>

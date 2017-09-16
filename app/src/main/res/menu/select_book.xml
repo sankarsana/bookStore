@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+
+	<item
+		android:id="@+id/my_action_search"
+		android:icon="@android:drawable/ic_menu_search"
+		android:title="@string/search"
+		android:titleCondensed="@string/selectBook"
+		yourapp:actionViewClass="com.bookStore.App.MySearchView"
+		yourapp:showAsAction="always|collapseActionView" />
+
+	<item
+		android:id="@+id/selectBook_add"
+		android:icon="@android:drawable/ic_input_add"
+		yourapp:showAsAction="always" />
+
+</menu>

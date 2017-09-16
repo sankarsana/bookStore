@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:id="@+id/cardBookCount"
+			style="@style/cardTextViewEntry"
+			android:paddingLeft="4dp"
+			android:textColor="@color/GreenRemainder"
+			android:textSize="19sp"
+			android:textStyle="bold" />
+
+		<TextView
+			android:id="@+id/shortName"
+			android:layout_width="0dip"
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="@dimen/marginLeft"
+			android:layout_weight="1"
+			android:gravity="center_vertical"
+			android:lines="1"
+			android:textSize="19sp" />
+
+		<TextView
+			android:id="@+id/cardGet"
+			style="@style/cardTextViewEntry"
+			android:textColor="@color/get_color" />
+
+		<TextView
+			android:id="@+id/cardDistr"
+			style="@style/cardTextViewEntry"
+			android:textColor="@color/distr_color" />
+
+		<TextView
+			android:id="@+id/cardRet"
+			style="@style/cardTextViewEntry"
+			android:textColor="@color/ret_color" />
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/bookName"
+		style="@style/itemTextViewSmallSingleRow"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="@dimen/marginLeft"
+		android:layout_marginRight="@dimen/marginRight" />
+
+</LinearLayout>

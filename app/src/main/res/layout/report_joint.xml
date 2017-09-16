@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:isScrollContainer="true"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<Spinner
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/report_period"
+			android:entries="@array/datesPeriod" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@drawable/btn_selector_left"
+				android:id="@+id/report_person" />
+
+			<Button
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@drawable/btn_selector_right"
+				android:id="@+id/report_writer" />
+
+		</LinearLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_margin="6dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="Всего книг:"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="8dp"
+				android:id="@+id/report_countTitle"
+				android:layout_alignParentTop="true"
+				android:layout_alignParentLeft="true" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="@string/count0"
+				android:id="@+id/report_countValue"
+				android:layout_gravity="right"
+				android:layout_alignBottom="@+id/report_countTitle"
+				android:layout_toRightOf="@+id/report_countTitle"
+				android:layout_marginLeft="20dp" />
+
+			<!-- Scores -->
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_scoreTitle"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_below="@+id/report_line"
+				android:layout_alignLeft="@id/report_countTitle"
+				android:text="@string/scores" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_scoreValue"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_alignBottom="@+id/report_scoreTitle"
+				android:layout_marginLeft="100dp"
+				android:text="@string/count0" />
+
+			<View
+				style="@style/horizontalLineSeparator"
+				android:id="@+id/report_line"
+				android:layout_below="@+id/report_countTitle"
+				android:layout_alignParentLeft="true"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp" />
+
+			<!-- MB -->
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_mbTitle"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_marginTop="10dp"
+				android:text="MB"
+				android:layout_below="@+id/report_scoreTitle"
+				android:layout_alignParentLeft="true"
+				android:layout_marginLeft="60dp" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_mbValue"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_alignBottom="@+id/report_mbTitle"
+				android:layout_marginLeft="150dp"
+				android:text="@string/count0" />
+
+			<!-- Big -->
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_bigTitle"
+				android:layout_marginTop="10dp"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="@string/big"
+				android:layout_below="@+id/report_mbTitle"
+				android:layout_alignLeft="@+id/report_mbTitle" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_bigValue"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_alignBottom="@+id/report_bigTitle"
+				android:layout_marginLeft="150dp"
+				android:text="@string/count0" />
+
+			<!-- Med -->
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_medTitle"
+				android:layout_marginTop="10dp"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="@string/med"
+				android:layout_below="@+id/report_bigTitle"
+				android:layout_alignLeft="@+id/report_mbTitle" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_medValue"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_alignBottom="@+id/report_medTitle"
+				android:layout_marginLeft="150dp"
+				android:text="@string/count0" />
+
+			<!-- Small -->
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_smallTitle"
+				android:layout_marginTop="10dp"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="@string/small"
+				android:layout_below="@+id/report_medTitle"
+				android:layout_alignLeft="@+id/report_mbTitle" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_smallValue"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_alignBottom="@+id/report_smallTitle"
+				android:layout_marginLeft="150dp"
+				android:text="@string/count0" />
+
+			<!-- Mag -->
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_magTitle"
+				android:layout_marginTop="10dp"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="@string/mag"
+				android:layout_below="@+id/report_smallTitle"
+				android:layout_alignLeft="@+id/report_mbTitle" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/report_magValue"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_alignBottom="@+id/report_magTitle"
+				android:layout_marginLeft="150dp"
+				android:text="@string/count0" />
+
+			<View
+				style="@style/horizontalLineSeparator"
+				android:id="@+id/report_line2"
+				android:layout_below="@+id/report_magTitle"
+				android:layout_alignParentLeft="true"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp" />
+
+		</RelativeLayout>
+	</LinearLayout>
+</ScrollView>

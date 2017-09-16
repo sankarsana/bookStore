@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="1dp">
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+
+		<Button
+			android:id="@+id/ik1"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_left_top"
+			android:tag="8"
+			android:text="1" />
+
+		<Button
+			android:id="@+id/ik2"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_inner_top"
+			android:tag="9"
+			android:text="2" />
+
+		<Button
+			android:id="@+id/ik3"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_inner_top"
+			android:tag="10"
+			android:text="3" />
+
+
+		<Button
+			android:id="@+id/ikb"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_right_top"
+			android:textColor="#FF0000"
+			android:tag="67"
+			android:text="C" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/ik4"
+			style="@style/numKeyBtn"
+			android:layout_marginLeft="0dp"
+			android:background="@drawable/kb_selector_left_inner"
+			android:tag="11"
+			android:text="4" />
+
+		<Button
+			android:id="@+id/ik5"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_inner_inner"
+			android:tag="12"
+			android:text="5" />
+
+		<Button
+			android:id="@+id/ik6"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_inner_inner"
+			android:tag="13"
+			android:text="6" />
+
+		<Button
+			android:id="@+id/ikd"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_right_inner"
+			android:tag="123"
+			android:text="d" />
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<Button
+			android:id="@+id/ik7"
+			style="@style/numKeyBtn"
+			android:layout_marginLeft="0dp"
+			android:background="@drawable/kb_selector_left_bottom"
+			android:tag="14"
+			android:text="7" />
+
+		<Button
+			android:id="@+id/ik8"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_inner_bottom"
+			android:tag="15"
+			android:text="8" />
+
+		<Button
+			android:id="@+id/ik9"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_inner_bottom"
+			android:tag="16"
+			android:text="9" />
+
+		<Button
+			android:id="@+id/ik0"
+			style="@style/numKeyBtn"
+			android:background="@drawable/kb_selector_right_bottom"
+			android:tag="7"
+			android:text="0" />
+
+	</LinearLayout>
+</LinearLayout>

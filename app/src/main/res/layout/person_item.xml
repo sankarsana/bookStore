@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/lineItemHorizontalSmall">
+
+	<TextView
+		android:id="@+id/personName"
+		android:layout_width="0dip"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/marginLeft"
+		android:layout_weight="1"
+		android:lines="1"
+		android:textSize="@dimen/lineTextSize" />
+
+	<TextView
+		android:id="@+id/personPercent"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="@dimen/marginRight"
+		android:textColor="#900000"
+		android:textSize="@dimen/lineTextSize"
+		android:textStyle="bold" />
+
+</LinearLayout>

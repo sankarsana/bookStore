@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<color name="gradientTop">#ff5a5a5a</color>
+	<color name="gradientBottom">#ff3c3c3c</color>
+	<color name="textLight">#fff0f0f0</color>
+	<color name="pressedTop">#ffeb8800</color>
+	<color name="pressedBottom">#ffcd6700</color>
+	<color name="panelNormal">#AEAEAE</color>
+	<color name="panelSingleOut">#FFAD3B</color>
+
+	<color name="backgroundLight">#ffffffff</color>
+	<color name="background">#fff1f1f1</color>
+	<color name="backgroundDark">#ffe1e1e1</color>
+
+	<!--<color name="White">#ffffffff</color>-->
+	<color name="Red">#ffff0000</color>
+	<color name="Grey">#ffcccccc</color>
+	<color name="GreyLight">#fff0f0f0</color>
+	<color name="GreyLightTransparent">#88f0f0f0</color>
+	<color name="Blue">#ff0000ff</color>
+	<color name="Green">#ff00ff00</color>
+	<color name="DarkGreen">#004500</color>
+	<color name="Dark">#1F330B</color>
+	<!--<color name="textLight">#87FF6C</color>-->
+
+	<color name="GreenRemainder">#006000</color>
+	<color name="get_color">#0000a0</color>
+	<color name="distr_color">#090909</color>
+	<color name="ret_color">#D80000</color>
+
+</resources>
