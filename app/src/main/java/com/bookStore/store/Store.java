@@ -1,4 +1,4 @@
-package com.bookStore.Store;
+package com.bookStore.store;
 
 import com.bookStore.App.DataBase;
 

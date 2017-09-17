@@ -4,8 +4,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.bookStore.App.DataBase;
-import com.bookStore.Store.Categories;
-import com.bookStore.Store.Writer;
+import com.bookStore.store.Categories;
+import com.bookStore.store.Writer;
 
 import java.io.*;
 

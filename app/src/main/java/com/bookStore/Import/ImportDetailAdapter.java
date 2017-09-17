@@ -8,8 +8,8 @@ import android.widget.SimpleCursorAdapter;
 
 import com.bookStore.App.DataBase;
 import com.bookStore.R;
-import com.bookStore.Store.Book;
-import com.bookStore.Store.Store;
+import com.bookStore.store.Book;
+import com.bookStore.store.Store;
 
 public class ImportDetailAdapter extends SimpleCursorAdapter {
 

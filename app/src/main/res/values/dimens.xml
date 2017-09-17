@@ -24,7 +24,7 @@
 	<dimen name="lineGapTop">8dp</dimen>
 	<dimen name="lineGapBottom">8dp</dimen>
 
-	<dimen name="dividerHeight">2dp</dimen>
+	<dimen name="dividerHeight">1dp</dimen>
 	<dimen name="dividerHalfHeight">1dp</dimen>
 
 
@@ -34,10 +34,10 @@
 	<dimen name="headerHeight">50dp</dimen>
 	<dimen name="headerHeightSmall">40dp</dimen>
 
-	<dimen name="generalTextSize">20sp</dimen>
-	<dimen name="headerTextSize">19sp</dimen>
-	<dimen name="lineTextSize">18sp</dimen>
-	<dimen name="smallTextSize">12sp</dimen>
+	<dimen name="textSizeGeneral">18sp</dimen>
+	<dimen name="textSizeHeader">19sp</dimen>
+	<dimen name="textSizeLine">18sp</dimen>
+	<dimen name="textSizeSmall">12sp</dimen>
 
 	<dimen name="headerBtnMarginTop">1dp</dimen>
 	<dimen name="btnWidthSmall">50dp</dimen>

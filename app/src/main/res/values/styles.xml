@@ -3,7 +3,7 @@
 	<style name="listViewLight" parent="android:Widget.ListView">
 		<!--<item name="android:background">@color/White</item>-->
 		<item name="android:dividerHeight">@dimen/dividerHeight</item>
-		<item name="android:divider">@drawable/divider_2_line</item>
+		<item name="android:divider">@drawable/divider_1_line</item>
 		<item name="android:textColor">@color/Dark</item>
 		<item name="android:listSelector">@drawable/list_selector</item>
 		<item name="android:cacheColorHint">@android:color/transparent</item>
@@ -86,11 +86,11 @@
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:singleLine">true</item>
 		<item name="android:ellipsize">end</item>
-		<item name="android:textSize">@dimen/lineTextSize</item>
+		<item name="android:textSize">@dimen/textSizeLine</item>
 	</style>
 
 	<style name="itemTextViewSmallSingleRow" parent="itemTextViewSingleRow">
-		<item name="android:textSize">@dimen/smallTextSize</item>
+		<item name="android:textSize">@dimen/textSizeSmall</item>
 	</style>
 
 	<style name="lineItemHorizontal">
@@ -134,7 +134,7 @@
 		<item name="android:layout_height">@dimen/numKeyBtnHeight</item>
 		<item name="android:layout_weight">1</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:textSize">@dimen/generalTextSize</item>
+		<item name="android:textSize">@dimen/textSizeGeneral</item>
 	</style>
 
 	<style name="bookDetailTitle">
@@ -174,7 +174,7 @@
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:layout_marginLeft">@dimen/marginLeft</item>
 		<item name="android:gravity">center_vertical</item>
-		<item name="android:textSize">@dimen/lineTextSize</item>
+		<item name="android:textSize">@dimen/textSizeLine</item>
 	</style>
 
 </resources>

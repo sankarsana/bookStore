@@ -4,6 +4,4 @@
 
 	<item android:state_pressed="true" android:drawable="@drawable/select_vertical" />
 
-	<!--<item android:drawable="@color/background"/>-->
-
 </selector>

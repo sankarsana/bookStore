@@ -15,7 +15,7 @@ import android.widget.EditText;
 import com.bookStore.App.ActionBarListActivity;
 import com.bookStore.App.DataBase;
 import com.bookStore.R;
-import com.bookStore.Store.SelectBookActivity;
+import com.bookStore.store.SelectBookActivity;
 import com.development.NumberKeyboard;
 
 public class ImportActivity extends ActionBarListActivity implements OnClickListener {

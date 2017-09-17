@@ -9,7 +9,7 @@
 		android:layout_marginLeft="@dimen/marginLeft"
 		android:layout_weight="1"
 		android:lines="1"
-		android:textSize="@dimen/lineTextSize" />
+		android:textSize="@dimen/textSizeLine" />
 
 	<TextView
 		android:id="@+id/personPercent"
@@ -17,7 +17,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginRight="@dimen/marginRight"
 		android:textColor="#900000"
-		android:textSize="@dimen/lineTextSize"
+		android:textSize="@dimen/textSizeLine"
 		android:textStyle="bold" />
 
 </LinearLayout>

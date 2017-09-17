@@ -8,13 +8,13 @@
 		android:layout_height="wrap_content"
 		android:layout_weight="1"
 		android:layout_marginLeft="@dimen/marginLeft"
-		android:textSize="@dimen/lineTextSize" />
+		android:textSize="@dimen/textSizeLine" />
 
 	<TextView
 		android:id="@+id/addBook_count"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginRight="@dimen/marginRight"
-		android:textSize="@dimen/lineTextSize"
+		android:textSize="@dimen/textSizeLine"
 		android:textStyle="bold" />
 </LinearLayout>

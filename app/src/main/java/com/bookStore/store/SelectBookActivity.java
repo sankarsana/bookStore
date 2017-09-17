@@ -1,4 +1,4 @@
-package com.bookStore.Store;
+package com.bookStore.store;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -59,9 +59,6 @@ public class SelectBookActivity extends ActionBarListActivity {
 			finish();
 		}
 	}
-
-
-	// ---------------- Adapter -------------------
 
 	private class SelectBookAdapter extends CursorSearchAdapter {
 

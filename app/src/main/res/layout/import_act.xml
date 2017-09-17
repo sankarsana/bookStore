@@ -31,7 +31,7 @@
 			android:layout_height="match_parent"
 			android:minWidth="@dimen/btnWidthMedium"
 			android:id="@+id/addBookCount"
-			android:textSize="@dimen/generalTextSize"
+			android:textSize="@dimen/textSizeGeneral"
 			android:lines="1"
 			android:background="@drawable/input_view_2lines" />
 

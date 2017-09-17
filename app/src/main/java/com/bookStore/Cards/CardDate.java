@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.bookStore.App.DataBase;
 import com.bookStore.App.Utilities;
 import com.bookStore.Persons.Person;
-import com.bookStore.Store.Store;
+import com.bookStore.store.Store;
 
 public class CardDate {
 

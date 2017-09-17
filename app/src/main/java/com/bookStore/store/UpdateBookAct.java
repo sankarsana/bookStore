@@ -1,4 +1,4 @@
-package com.bookStore.Store;
+package com.bookStore.store;
 
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;

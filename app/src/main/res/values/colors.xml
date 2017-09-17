@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+	<color name="textPrimary">#de000000</color>
+	<color name="textSecondary">#8a000000</color>
+	<color name="textDisabled">#61000000</color>
+
 	<color name="gradientTop">#ff5a5a5a</color>
 	<color name="gradientBottom">#ff3c3c3c</color>
 	<color name="textLight">#fff0f0f0</color>
@@ -10,10 +14,9 @@
 	<color name="panelSingleOut">#FFAD3B</color>
 
 	<color name="backgroundLight">#ffffffff</color>
-	<color name="background">#fff1f1f1</color>
-	<color name="backgroundDark">#ffe1e1e1</color>
+	<color name="background">#f8f8f8</color>
+	<color name="backgroundDark">#f1f1f1</color>
 
-	<!--<color name="White">#ffffffff</color>-->
 	<color name="Red">#ffff0000</color>
 	<color name="Grey">#ffcccccc</color>
 	<color name="GreyLight">#fff0f0f0</color>

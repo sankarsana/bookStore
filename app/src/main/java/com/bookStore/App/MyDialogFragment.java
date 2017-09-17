@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 import com.bookStore.R;
-import com.bookStore.Store.Writer;
+import com.bookStore.store.Writer;
 
 import java.util.HashMap;
 

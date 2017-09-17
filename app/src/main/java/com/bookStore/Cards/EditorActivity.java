@@ -14,9 +14,9 @@ import com.bookStore.App.DataBase;
 import com.bookStore.Persons.Person;
 import com.bookStore.Persons.PersonsActivity;
 import com.bookStore.R;
-import com.bookStore.Store.Book;
-import com.bookStore.Store.Store;
-import com.bookStore.Store.StoreActivity;
+import com.bookStore.store.Book;
+import com.bookStore.store.Store;
+import com.bookStore.store.StoreActivity;
 
 public class EditorActivity extends ActionBarListActivity
 		implements EditorInputDialog.IEditorInputDialog {

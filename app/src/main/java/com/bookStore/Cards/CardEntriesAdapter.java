@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.bookStore.App.CursorAdapter;
 import com.bookStore.R;
-import com.bookStore.Store.StoreActivity;
+import com.bookStore.store.StoreActivity;
 
 public class CardEntriesAdapter extends CursorAdapter {
 

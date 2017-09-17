@@ -8,13 +8,13 @@
 	<style name="AppThemeDarkActionBar" parent="AppBaseTheme">
 		<item name="actionBarStyle">@style/MyActionBar</item>
 		<item name="actionBarItemBackground">@drawable/list_selector</item>
-
-		<!--<item name="android:checkboxStyle">@style/checkboxStyle</item>-->
 	</style>
 
 
 	<!-- Application light theme. -->
 	<style name="AppThemeLight" parent="AppThemeDarkActionBar">
+		<item name="android:textColorPrimary">@color/textPrimary</item>
+		<item name="android:textColorSecondary">@color/textSecondary</item>
 
 		<item name="android:listViewStyle">@style/listViewLight</item>
 		<item name="android:panelFullBackground">@color/gradientBottom</item>

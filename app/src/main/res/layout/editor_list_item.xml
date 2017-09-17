@@ -35,7 +35,7 @@
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_vertical|center_horizontal"
 		android:gravity="center_horizontal"
-		android:textSize="@dimen/lineTextSize"
+		android:textSize="@dimen/textSizeLine"
 		android:textStyle="bold" />
 
 </LinearLayout>

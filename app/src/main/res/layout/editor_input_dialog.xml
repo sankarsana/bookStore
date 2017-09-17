@@ -29,7 +29,7 @@
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"
 				android:hint="@string/zero"
-				android:textSize="@dimen/lineTextSize" />
+				android:textSize="@dimen/textSizeLine" />
 
 			<Button
 				android:id="@+id/editor_input_btn_all"

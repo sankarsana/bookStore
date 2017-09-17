@@ -1,4 +1,4 @@
-package com.bookStore.Store;
+package com.bookStore.store;
 
 import android.content.Context;
 import android.content.Intent;
@@ -92,15 +92,12 @@ public class StoreActivity extends ActionBarListActivity {
 			case R.id.menu_store_persons:
 				startActivity(new Intent(this, PersonsActivity.class));
 				break;
-
 			case R.id.store_menu_calculate:
 				startActivity(new Intent(this, CalcActivity.class));
 				break;
-
 			case R.id.store_menu_reports:
 				startActivity(new Intent(this, JointActivity.class));
 				break;
-
 			case R.id.store_menu_preference:
 				startActivity(new Intent(this, PrefActivity.class));
 				break;
@@ -133,11 +130,6 @@ public class StoreActivity extends ActionBarListActivity {
 		super.onDestroy();
 	}
 
-
-	/**
-	 * ******************* Adapter ********************
-	 */
-
 	private static class ViewHolder {
 		public TextView name;
 		public TextView shortName;
@@ -157,7 +149,7 @@ public class StoreActivity extends ActionBarListActivity {
 		public String getQuery(String search) {
 			return "SELECT _id, bookName, shortName, cost, count" +
 					" FROM books" +
-					" WHERE search LIKE '% " + search + "%'" +
+					" WHERE search LIKE '% " + search.toLowerCase() + "%'" +
 					" ORDER BY  bookName";
 		}
 
@@ -167,7 +159,7 @@ public class StoreActivity extends ActionBarListActivity {
 			cursor.moveToPosition(position);
 			ViewHolder holder;
 			if (convertView == null) {
-				convertView = StoreActivity.getLInflater().inflate(R.layout.store_item, parent, false);
+				convertView = StoreActivity.getLInflater().inflate(R.layout.item_store, parent, false);
 				holder = new ViewHolder();
 				holder.name = (TextView) convertView.findViewById(R.id.bookName);
 				holder.shortName = (TextView) convertView.findViewById(R.id.shortName);
@@ -178,9 +170,10 @@ public class StoreActivity extends ActionBarListActivity {
 				holder = (ViewHolder) convertView.getTag();
 
 			holder.name.setText(cursor.getString(1));
-			holder.shortName.setText(cursor.getString(2));
+			String secondLine = cursor.getString(2);
+			if (!secondLine.isEmpty()) secondLine = secondLine + "   ";
+			holder.shortName.setText(secondLine + cursor.getString(4) + " шт.");
 			holder.cost.setText(cursor.getString(3) + "р.");
-			holder.count.setText(cursor.getString(4));
 			return convertView;
 		}
 	}

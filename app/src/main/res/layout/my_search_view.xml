@@ -36,7 +36,7 @@
 		android:paddingStart="@dimen/dropdown_item_text_padding_left"
 		android:singleLine="true"
 		android:textColor="@color/gradientBottom"
-		android:textSize="@dimen/lineTextSize" />
+		android:textSize="@dimen/textSizeLine" />
 
 	<ImageView
 		android:id="@+id/search_close_btn"

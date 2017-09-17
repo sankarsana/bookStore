@@ -7,7 +7,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginLeft="@dimen/marginLeft"
-		android:textSize="@dimen/lineTextSize"
+		android:textSize="@dimen/textSizeLine"
 		android:background="@android:drawable/list_selector_background" />
 
 </LinearLayout>

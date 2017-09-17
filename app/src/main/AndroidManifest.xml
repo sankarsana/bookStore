@@ -11,7 +11,7 @@
 		android:name=".App.App">
 
 		<activity
-			android:name="com.bookStore.Store.StoreActivity"
+			android:name="com.bookStore.store.StoreActivity"
 			android:label="@string/store">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.bookStore.Store.UpdateBookAct"
+			android:name="com.bookStore.store.UpdateBookAct"
 			android:label="BookUpdate" />
 		<activity
 			android:name="com.bookStore.Import.ImportActivity"
@@ -33,7 +33,7 @@
 			android:screenOrientation="portrait"
 			android:label="CardPersonActivityViewPager" />
 		<activity
-			android:name="com.bookStore.Store.SelectBookActivity"
+			android:name="com.bookStore.store.SelectBookActivity"
 			android:label="@string/selectBook" />
 		<activity
 			android:name="com.bookStore.Calculation.CalcActivity"

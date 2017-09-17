@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.bookStore.Persons.Person;
 import com.bookStore.R;
-import com.bookStore.Store.StoreActivity;
+import com.bookStore.store.StoreActivity;
 
 public class CardEntriesAdapter_store extends CardEntriesAdapter {
 

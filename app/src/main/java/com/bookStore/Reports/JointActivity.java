@@ -16,7 +16,7 @@ import com.bookStore.App.MyActionBarActivity;
 import com.bookStore.App.Utilities;
 import com.bookStore.Persons.Persons;
 import com.bookStore.R;
-import com.bookStore.Store.Writers;
+import com.bookStore.store.Writers;
 
 import java.util.Calendar;
 

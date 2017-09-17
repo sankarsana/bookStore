@@ -13,7 +13,7 @@ import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.App.DataBase;
 import com.bookStore.Cards.CardDate;
 import com.bookStore.R;
-import com.bookStore.Store.StoreActivity;
+import com.bookStore.store.StoreActivity;
 
 public class Persons extends CursorSearchAdapter {
 

@@ -4,9 +4,9 @@ import android.os.Environment;
 
 import com.bookStore.App.DataBase;
 import com.bookStore.App.Utilities;
-import com.bookStore.Store.Book;
-import com.bookStore.Store.Categories;
-import com.bookStore.Store.Store;
+import com.bookStore.store.Book;
+import com.bookStore.store.Categories;
+import com.bookStore.store.Store;
 
 import java.io.*;
 
