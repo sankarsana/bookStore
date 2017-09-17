@@ -62,6 +62,8 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 	private static void initializeDefault(SQLiteDatabase db) {
 		rewriteTable(db, "books", R.raw.books);
 		rewriteTable(db, "writers", R.raw.writers);
+		db.execSQL("INSERT INTO Persons VALUES(1, 'Склад (продажа)', '100')");
+		db.execSQL("INSERT INTO Persons VALUES(2, 'Магазин', '100')");
 	}
 
 	private static void rewriteTable(SQLiteDatabase db, String tableName, int rawResource) {
