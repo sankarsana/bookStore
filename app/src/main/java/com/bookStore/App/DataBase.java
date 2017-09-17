@@ -97,7 +97,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"categoryId INTEGER default '0', " +
 				"cost INTEGER DEFAULT '0', " +
 				"count INTEGER DEFAULT '0', " +
-				"search TEXT)");
+				"sort TEXT)");
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS writers " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +

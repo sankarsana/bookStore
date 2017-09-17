@@ -141,16 +141,16 @@ public class StoreActivity extends ActionBarListActivity {
 
 		@Override
 		public String getQuery() {
-			return "SELECT _id, bookName, shortName, cost, count" +
-					" FROM books ORDER BY  bookName";
+			return "SELECT _id, bookName, shortName, cost, count FROM books ORDER BY sort";
 		}
 
 		@Override
 		public String getQuery(String search) {
 			return "SELECT _id, bookName, shortName, cost, count" +
 					" FROM books" +
-					" WHERE search LIKE '% " + search.toLowerCase() + "%'" +
-					" ORDER BY  bookName";
+					" WHERE sort LIKE '" + search.toLowerCase() + "%'" +
+					" or sort LIKE '% " + search.toLowerCase() + "%'" +
+					" ORDER BY  sort";
 		}
 
 		@Override
