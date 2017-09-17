@@ -141,13 +141,13 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery(String search) {
-			return " SELECT Books._id AS _id," +
-					" Books.count," +
-					" Books.bookName," +
-					" Books.shortName," +
+			return " SELECT books._id AS _id," +
+					" books.count," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.get," +
-					" Books.search AS search" +
-					" FROM Books LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" books.search AS search" +
+					" FROM books LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" WHERE search LIKE '% " + search + "%'" +
 					" ORDER BY bookName";
@@ -155,12 +155,12 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery() {
-			return " SELECT Books._id AS _id," +
-					" Books.count," +
-					" Books.bookName," +
-					" Books.shortName," +
+			return " SELECT books._id AS _id," +
+					" books.count," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.get" +
-					" FROM Books LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" FROM books LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" ORDER BY bookName";
 		}
@@ -170,15 +170,15 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery(String search) {
-			return " SELECT Books._id AS _id," +
+			return " SELECT books._id AS _id," +
 					" InStock.count AS amount," +
-					" Books.bookName," +
-					" Books.shortName," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.distr," +
-					" Books.search AS search" +
-					" FROM Books " +
-					" INNER JOIN InStock ON Books._id = InStock.bookId" +
-					" LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" books.search AS search" +
+					" FROM books " +
+					" INNER JOIN InStock ON books._id = InStock.bookId" +
+					" LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" WHERE InStock.personId = " + getPersonId() + " AND amount <> '' AND amount <> '0'" +
 					" AND search LIKE '% " + search + "%'" +
@@ -187,14 +187,14 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery() {
-			return " SELECT Books._id AS _id," +
+			return " SELECT books._id AS _id," +
 					" InStock.count AS amount," +
-					" Books.bookName," +
-					" Books.shortName," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.distr" +
-					" FROM Books " +
-					" INNER JOIN InStock ON Books._id = InStock.bookId" +
-					" LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" FROM books " +
+					" INNER JOIN InStock ON books._id = InStock.bookId" +
+					" LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" WHERE InStock.personId = " + getPersonId() + " AND amount <> '' AND amount <> '0'" +
 					" ORDER BY bookName";
@@ -205,15 +205,15 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery(String search) {
-			return " SELECT Books._id AS _id," +
+			return " SELECT books._id AS _id," +
 					" InStock.count AS amount," +
-					" Books.bookName," +
-					" Books.shortName," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.ret," +
-					" Books.search AS search" +
-					" FROM Books " +
-					" INNER JOIN InStock ON Books._id = InStock.bookId" +
-					" LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" books.search AS search" +
+					" FROM books " +
+					" INNER JOIN InStock ON books._id = InStock.bookId" +
+					" LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" WHERE InStock.personId = " + getPersonId() + " AND amount <> '' AND amount <> '0'" +
 					" AND search LIKE '% " + search + "%'" +
@@ -222,14 +222,14 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery() {
-			return " SELECT Books._id AS _id," +
+			return " SELECT books._id AS _id," +
 					" InStock.count AS amount," +
-					" Books.bookName," +
-					" Books.shortName," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.ret" +
-					" FROM Books " +
-					" INNER JOIN InStock ON Books._id = InStock.bookId" +
-					" LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" FROM books " +
+					" INNER JOIN InStock ON books._id = InStock.bookId" +
+					" LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" WHERE InStock.personId = " + getPersonId() + " AND amount <> '' AND amount <> '0'" +
 					" ORDER BY bookName";
@@ -240,13 +240,13 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery(String search) {
-			return " SELECT Books._id AS _id," +
-					" Books.count," +
-					" Books.bookName," +
-					" Books.shortName," +
+			return " SELECT books._id AS _id," +
+					" books.count," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.distr," +
-					" Books.search AS search" +
-					" FROM Books LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" books.search AS search" +
+					" FROM books LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" WHERE search LIKE '% " + search + "%'" +
 					" ORDER BY bookName";
@@ -254,12 +254,12 @@ public class EditorActivity extends ActionBarListActivity
 
 		@Override
 		public String getQuery() {
-			return " SELECT Books._id AS _id," +
-					" Books.count," +
-					" Books.bookName," +
-					" Books.shortName," +
+			return " SELECT books._id AS _id," +
+					" books.count," +
+					" books.bookName," +
+					" books.shortName," +
 					" CardEntries.distr" +
-					" FROM Books LEFT OUTER JOIN CardEntries ON Books._id = CardEntries.bookId" +
+					" FROM books LEFT OUTER JOIN CardEntries ON books._id = CardEntries.bookId" +
 					" AND CardEntries.dateId = " + getDateId() +
 					" ORDER BY bookName";
 		}

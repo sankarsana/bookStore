@@ -48,14 +48,14 @@ public class BookItemsAdapter extends BaseAdapter {
 		cursor = database.rawQuery("SELECT" +
 				" Calc._id AS _id," +
 				" Calc.bookId AS bookId," +
-				" Books.bookName AS bookName," +
-				" Books.shortName AS shortName," +
+				" books.bookName AS bookName," +
+				" books.shortName AS shortName," +
 				" Calc.progress AS progress," +
 				" Calc.previousProgress AS previousProgress," +
 				" CalC.count AS count," +
 				" Calc.previousCount AS previousCount" +
-				" FROM Calc, Books" +
-				" WHERE Calc.bookId = Books. _id", null);
+				" FROM Calc, books" +
+				" WHERE Calc.bookId = books. _id", null);
 		notifyDataSetChanged();
 	}
 
@@ -118,7 +118,7 @@ public class BookItemsAdapter extends BaseAdapter {
 	}
 
 	public void addAllBooks() {
-		Cursor bookIds = database.rawQuery("SELECT _id FROM Books", null);
+		Cursor bookIds = database.rawQuery("SELECT _id FROM books", null);
 //        ContentValues values = new ContentValues(1);
 		if (bookIds.getCount() == 0) {
 			Toast.makeText(App.getContext(), "No books!", LENGTH_SHORT).show();
@@ -172,8 +172,8 @@ public class BookItemsAdapter extends BaseAdapter {
 	}
 
 	public void updateCountBooks() {
-		database.execSQL("UPDATE Books SET count =" +
-				" (SELECT Calc.count FROM Calc WHERE Calc.bookId = Books._id)");
+		database.execSQL("UPDATE books SET count =" +
+				" (SELECT Calc.count FROM Calc WHERE Calc.bookId = books._id)");
 
 	}
 

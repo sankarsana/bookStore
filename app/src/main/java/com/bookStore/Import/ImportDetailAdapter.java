@@ -91,11 +91,11 @@ public class ImportDetailAdapter extends SimpleCursorAdapter {
 	private void refreshCursor() {
 		cursor = db.rawQuery("SELECT ImportDetail._id AS _id, "
 				+ "ImportDetail.dateId AS dateId, "
-				+ "Books._id AS bookId, "
-				+ "Books.bookName AS bookName, "
+				+ "books._id AS bookId, "
+				+ "books.bookName AS bookName, "
 				+ "ImportDetail.count AS count "
-				+ "FROM ImportDetail, Books "
-				+ "WHERE ImportDetail.bookId = Books._id AND ImportDetail.dateId = "
+				+ "FROM ImportDetail, books "
+				+ "WHERE ImportDetail.bookId = books._id AND ImportDetail.dateId = "
 				+ importDates.getId(), null);
 		changeCursor(cursor);
 	}

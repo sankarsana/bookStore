@@ -30,13 +30,13 @@ public class Writers extends BaseAdapter {
 
 	private void refresh() {
 		cursor = DataBase.get().query(
-				"Writers", null, null, null, null, null, null);
+				"writers", null, null, null, null, null, null);
 	}
 
 	public void insert(Writer writer) {
 		ContentValues values = new ContentValues();
 		values.put("writer", writer.getName());
-		writer.setId(DataBase.get().insert("Writers", "writer", values));
+		writer.setId(DataBase.get().insert("writers", "writer", values));
 		refresh();
 	}
 

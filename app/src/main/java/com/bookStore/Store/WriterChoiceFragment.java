@@ -66,7 +66,7 @@ public class WriterChoiceFragment extends MyDialogFragment {
 		private Cursor cursor;
 
 		private Adapter() {
-			cursor = DataBase.get().rawQuery("SELECT * FROM Writers ORDER BY writer", null);
+			cursor = DataBase.get().rawQuery("SELECT * FROM writers ORDER BY writer", null);
 		}
 
 		@Override

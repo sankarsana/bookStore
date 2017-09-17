@@ -23,7 +23,7 @@ public class Writer {
 	public static String getWriterName(long id) {
 		String writerName = null;
 		Cursor cursor = DataBase.get().rawQuery(
-				"SELECT writer FROM Writers WHERE _id = " + id, null);
+				"SELECT writer FROM writers WHERE _id = " + id, null);
 		if (cursor.moveToFirst())
 			writerName = cursor.getString(0);
 		cursor.close();

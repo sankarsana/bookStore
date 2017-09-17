@@ -80,8 +80,8 @@ public class CardDate {
 
 	public void updateSum() {
 		Cursor cur = db.rawQuery(
-				"SELECT SUM(CardEntries.distr * Books.cost) FROM CardEntries" +
-						" INNER JOIN Books ON CardEntries.bookId = Books._id" +
+				"SELECT SUM(CardEntries.distr * books.cost) FROM CardEntries" +
+						" INNER JOIN books ON CardEntries.bookId = books._id" +
 						" WHERE CardEntries.dateId = '" + id + "'", null
 		);
 		int _sum = cur.moveToFirst() ? cur.getInt(0) : 0;

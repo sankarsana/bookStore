@@ -22,29 +22,29 @@ public class CardEntriesAdapter extends CursorAdapter {
 	@Override
 	public String getQuery() {
 		return "SELECT" +
-				" Books._id AS _id," +
-				" Books.bookName AS bookName," +
-				" Books.shortName AS shortName," +
+				" books._id AS _id," +
+				" books.bookName AS bookName," +
+				" books.shortName AS shortName," +
 				" InStock.count AS count," +
 
 				" (SELECT CardEntries.get FROM CardEntries" +
 				" WHERE CardEntries.dateId = '" + dateId + "'" +
-				" AND CardEntries.bookId = Books._id) AS get," +
+				" AND CardEntries.bookId = books._id) AS get," +
 
 				" (SELECT CardEntries.distr FROM CardEntries" +
 				" WHERE CardEntries.dateId = '" + dateId + "'" +
-				" AND CardEntries.bookId = Books._id) AS distr," +
+				" AND CardEntries.bookId = books._id) AS distr," +
 
 				" (SELECT CardEntries.ret FROM CardEntries" +
 				" WHERE CardEntries.dateId = '" + dateId + "'" +
-				" AND CardEntries.bookId = Books. _id) AS ret," +
+				" AND CardEntries.bookId = books. _id) AS ret," +
 
 				" (SELECT CardEntries._id FROM CardEntries" +
 				" WHERE CardEntries.dateId = '" + dateId + "'" +
-				" AND CardEntries.bookId = Books._id) AS cardEntryId" +
+				" AND CardEntries.bookId = books._id) AS cardEntryId" +
 
-				" FROM Books, InStock" +
-				" WHERE InStock.bookId = Books._id" +
+				" FROM books, InStock" +
+				" WHERE InStock.bookId = books._id" +
 				" AND InStock.personId = '" + personId + "'" +
 				" ORDER BY bookName";
 	}

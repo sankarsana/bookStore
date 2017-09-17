@@ -97,11 +97,11 @@ public class GetMissingBookActivity extends ActionBarListActivity implements Vie
 
 		private void refreshCursor() {
 			cursor = DataBase.get().rawQuery(
-					"SELECT Books._id, Books.bookName, Writers.writer" +
-							" FROM Books" +
-							" LEFT OUTER JOIN InStock ON Books._id = InStock.bookId" +
+					"SELECT books._id, books.bookName, writers.writer" +
+							" FROM books" +
+							" LEFT OUTER JOIN InStock ON books._id = InStock.bookId" +
 							" AND InStock.personId = " + PersonsActivity.getPerson().id +
-							" INNER JOIN Writers ON Books.writerId = Writers._id" +
+							" INNER JOIN writers ON books.writerId = writers._id" +
 							" WHERE InStock.count IS NULL OR InStock.count = '' OR InStock.count = '0'", null
 			);
 			notifyDataSetChanged();

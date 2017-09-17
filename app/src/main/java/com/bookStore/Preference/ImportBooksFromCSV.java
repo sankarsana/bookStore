@@ -19,7 +19,7 @@ public class ImportBooksFromCSV extends FileHelper {
 
 		File fileCsv = new File(Environment.getExternalStorageDirectory(), BOOKS_CSV);
 		if (clearData)
-			DataBase.get().delete("Books", null, null);
+			DataBase.get().delete("books", null, null);
 		DataBase.get().beginTransaction();
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(fileCsv));

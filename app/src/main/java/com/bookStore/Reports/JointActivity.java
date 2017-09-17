@@ -162,20 +162,20 @@ public class JointActivity extends MyActionBarActivity implements
 		String query = "SELECT " +
 				"SUM(CardEntries.distr) AS distr, " +
 				"SUM(Categories.value * CardEntries.distr) AS scores, " +
-				"SUM (CASE WHEN Books.categoryId = 5 THEN CardEntries.distr END) AS mb, " +
-				"SUM (CASE WHEN Books.categoryId = 4 THEN CardEntries.distr END) AS big, " +
-				"SUM (CASE WHEN Books.categoryId = 3 THEN CardEntries.distr END) AS med, " +
-				"SUM (CASE WHEN Books.categoryId = 2 THEN CardEntries.distr END) AS small, " +
-				"SUM (CASE WHEN Books.categoryId = 1 THEN CardEntries.distr END) AS mag " +
+				"SUM (CASE WHEN books.categoryId = 5 THEN CardEntries.distr END) AS mb, " +
+				"SUM (CASE WHEN books.categoryId = 4 THEN CardEntries.distr END) AS big, " +
+				"SUM (CASE WHEN books.categoryId = 3 THEN CardEntries.distr END) AS med, " +
+				"SUM (CASE WHEN books.categoryId = 2 THEN CardEntries.distr END) AS small, " +
+				"SUM (CASE WHEN books.categoryId = 1 THEN CardEntries.distr END) AS mag " +
 				"FROM CardEntries " +
-				"INNER JOIN Books ON CardEntries.bookId = Books._id " +
-				"INNER JOIN Categories ON Books.categoryId = Categories._id " +
+				"INNER JOIN books ON CardEntries.bookId = books._id " +
+				"INNER JOIN Categories ON books.categoryId = Categories._id " +
 				"INNER JOIN CardDate ON CardEntries.dateId = CardDate._id " +
 				"WHERE CardDate.dateFld >= ? AND CardDate.dateFld <= ?";
 		if (personId != -1)
 			query = query.concat(" AND CardDate.personId = '" + personId + "'");
 		if (writerId != -1)
-			query = query.concat(" AND Books.writerId = '" + writerId + "'");
+			query = query.concat(" AND books.writerId = '" + writerId + "'");
 
 		Cursor c = DataBase.get().rawQuery(query, dates);
 		c.moveToFirst();

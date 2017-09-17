@@ -40,20 +40,20 @@ public class Book {
 
 	public Book(long bookId) {
 		Cursor c = DataBase.get().rawQuery("SELECT " +
-				"Books._id AS _id, " +
-				"Books.bookName AS bookName, " +
-				"Books.shortName AS shortName, " +
-				"Writers.writer AS writer, " +
+				"books._id AS _id, " +
+				"books.bookName AS bookName, " +
+				"books.shortName AS shortName, " +
+				"writers.writer AS writer, " +
 				"Categories.category AS category, " +
-				"Books.cost AS cost, " +
-				"Books.count AS count, " +
-				"Books.writerId AS writerId, " +
-				"Books.categoryId AS categoryId " +
+				"books.cost AS cost, " +
+				"books.count AS count, " +
+				"books.writerId AS writerId, " +
+				"books.categoryId AS categoryId " +
 
-				" FROM Books, Writers, Categories" +
-				" WHERE Books.writerId = Writers._id" +
-				" AND Books.categoryId = Categories. _id" +
-				" AND Books._id = '" + bookId + "';", null);
+				" FROM books, writers, Categories" +
+				" WHERE books.writerId = writers._id" +
+				" AND books.categoryId = Categories. _id" +
+				" AND books._id = '" + bookId + "';", null);
 		c.moveToFirst();
 		id = c.getLong(0);
 		name = c.getString(1);
@@ -89,11 +89,11 @@ public class Book {
 	}
 
 	public long insertToBase() {
-		return DataBase.get().insert("Books", "bookName", getContentValues());
+		return DataBase.get().insert("books", "bookName", getContentValues());
 	}
 
 	public void updateInBase() {
-		DataBase.get().update("Books", getContentValues(), "_id = " + id, null);
+		DataBase.get().update("books", getContentValues(), "_id = " + id, null);
 	}
 
 	private ContentValues getContentValues() {

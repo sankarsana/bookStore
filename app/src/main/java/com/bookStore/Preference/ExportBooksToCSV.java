@@ -29,7 +29,7 @@ public class ExportBooksToCSV extends FileHelper {
 			fileCSV.delete();
 
 		SQLiteDatabase db = DataBase.get();
-		Cursor cursorBooks = db.query("Books", null, null, null, null, null, "bookName");
+		Cursor cursorBooks = db.query("books", null, null, null, null, null, "bookName");
 		if (!cursorBooks.moveToFirst())
 			return;
 		try {

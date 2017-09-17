@@ -1,12 +1,15 @@
 package com.bookStore.App;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.bookStore.R;
+
+import java.io.*;
 
 public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 
@@ -17,7 +20,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 	private static Context context;
 
 	private DataBase(Context context) {
-		super(context, DB_NAME, null, 96);
+		super(context, DB_NAME, null, 1);
 	}
 
 	public static void initialize(App context) {
@@ -43,11 +46,11 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 
 	public static void clearDataBase() {
 		SQLiteDatabase db = get();
-		db.delete("Books", null, null);
+		db.delete("books", null, null);
 		db.delete("ImportBooks", null, null);
 		db.delete("ImportDate", null, null);
 		db.delete("ImportDetail", null, null);
-		db.delete("Writers", null, null);
+		db.delete("writers", null, null);
 		db.delete("Persons", null, null);
 		db.delete("InStock", null, null);
 		db.delete("CardDate", null, null);
@@ -57,10 +60,27 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 	}
 
 	private static void initializeDefault(SQLiteDatabase db) {
-//        db.execSQL("INSERT INTO Writers VALUES(0, 'None')");
-		db.execSQL("INSERT INTO Writers VALUES(1, 'Шрила Прабхупада')");
-		db.execSQL("INSERT INTO Persons VALUES(1, 'Склад (продажа)', '100')");
-		db.execSQL("INSERT INTO Persons VALUES(2, 'Магазин', '100')");
+		rewriteTable(db, "books", R.raw.books);
+		rewriteTable(db, "writers", R.raw.writers);
+	}
+
+	private static void rewriteTable(SQLiteDatabase db, String tableName, int rawResource) {
+		db.beginTransaction();
+		db.delete(tableName, null, null);
+		InputStream inputStream = App.getContext().getResources().openRawResource(rawResource);
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+		String line;
+		try {
+			while ((line = bufferedReader.readLine()) != null) {
+				if (!line.isEmpty() && !line.startsWith("//"))
+					db.execSQL("INSERT INTO " + tableName + " VALUES (" + line + ")");
+			}
+			bufferedReader.close();
+			db.setTransactionSuccessful();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		db.endTransaction();
 	}
 
 	public static void log_d(String text) {
@@ -69,7 +89,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("CREATE TABLE IF NOT EXISTS Books " +
+		db.execSQL("CREATE TABLE IF NOT EXISTS books " +
 				"(_id integer PRIMARY KEY AUTOINCREMENT , " +
 				"bookName TEXT not null, " +
 				"shortName TEXT, " +
@@ -77,15 +97,12 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"categoryId INTEGER default '0', " +
 				"cost INTEGER DEFAULT '0', " +
 				"count INTEGER DEFAULT '0', " +
-				"search TEXT)"/* +
-				"FOREIGN KEY (writerId) " +
-                "REFERENCES Writers( _id), " +
-                "FOREIGN KEY (categoryId) " +
-                "REFERENCES Categories(_id));"*/);
+				"search TEXT)");
 
-		db.execSQL("CREATE TABLE IF NOT EXISTS Writers " +
-				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
-				"writer TEXT);");
+		db.execSQL("CREATE TABLE IF NOT EXISTS writers " +
+				"(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+				"writer TEXT," +
+				"sort integer);");
 
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS Categories " +
@@ -103,9 +120,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 		db.execSQL("CREATE TABLE IF NOT EXISTS ImportBooks " +
 				"(imDate INTEGER NOT NULL, " +
 				"bookId INTEGER NOT NULL, " +
-				"count INTEGER NOT NULL);" /*+
-					"FOREIGN KEY (bookId) " +
-				    "REFERENCES Books( _id))"*/);
+				"count INTEGER NOT NULL);");
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS ImportDate " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -115,11 +130,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
 				"dateId INTEGER NOT NULL, " +
 				"bookId INTEGER NOT NULL, " +
-				"count INTEGER NOT NULL);" /*+
-                    "FOREIGN KEY (" + dateId + ") " +
-				    "REFERENCES " + ImportDate + "( _id), " +
-					"FOREIGN KEY (" + bookId + ") " +
-				    "REFERENCES " + Books + "( _id));"*/);
+				"count INTEGER NOT NULL);");
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS Persons " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -129,11 +140,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 		db.execSQL("CREATE TABLE IF NOT EXISTS InStock (" +
 				"personId INTEGER NOT NULL, " +
 				"bookId INTEGER NOT NULL, " +
-				"count INTEGER NOT NULL);" /*+
-                    "FOREIGN KEY (" + personId + ") " +
-				    "REFERENCES " + Persons + "( _id), " +
-					"FOREIGN KEY (" + bookId + ") " +
-				    "REFERENCES " + Books + "( _id));"*/);
+				"count INTEGER NOT NULL);");
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS CardDate " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -141,9 +148,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"personId INTEGER NOT NULL, " +
 				"sum INTEGER DEFAULT '0' , " +
 				"percent INTEGER DEFAULT '100' , " +
-				"mark TEXT);" /*+
-                    "FOREIGN KEY (" + personId + ") " +
-				    "REFERENCES " + Persons + "( _id));"*/);
+				"mark TEXT);");
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS CardEntries " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -151,11 +156,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"bookId INTEGER NOT NULL, " +
 				"get INTEGER, " +
 				"distr INTEGER, " +
-				"ret INTEGER);" /*+
-                    "FOREIGN KEY (" + dateId + ") " +
-				    "REFERENCES " + CardDate + "( _id), " +
-					"FOREIGN KEY (" + bookId + ") " +
-				    "REFERENCES " + Books + "( _id));"*/);
+				"ret INTEGER);");
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS Calc " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
@@ -163,42 +164,11 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"progress TEXT, " +
 				"previousProgress TEXT, " +
 				"count INTEGER DEFAULT '0', " +
-				"previousCount INTEGER); " /*+
-                         "FOREIGN KEY (" + bookId + ") " +
-                         "REFERENCES " + Books + "( _id));"*/);
+				"previousCount INTEGER);");
 		initializeDefault(db);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        db.execSQL("DROP TABLE IF EXISTS Books");
-//        db.execSQL("DROP TABLE IF EXISTS ImportBooks");
-//        db.execSQL("DROP TABLE IF EXISTS ImportDate");
-//        db.execSQL("DROP TABLE IF EXISTS ImportDetail");
-//        db.execSQL("DROP TABLE IF EXISTS Writers");
-//        db.execSQL("DROP TABLE IF EXISTS Categories");
-//        db.execSQL("DROP TABLE IF EXISTS Persons");
-//        db.execSQL("DROP TABLE IF EXISTS InStock");
-//        db.execSQL("DROP TABLE IF EXISTS CardDate");
-//        db.execSQL("DROP TABLE IF EXISTS _CardEntriesPerson");
-//        db.execSQL("DROP TABLE IF EXISTS Calc");
-//        onCreate(db);
-
-		db.execSQL("ALTER TABLE Books ADD COLUMN search TEXT");
-		Cursor cursor = db.rawQuery("SELECT * FROM Books", null);
-		if (cursor.moveToFirst()) {
-			String string;
-			db.beginTransaction();
-			do {
-				string = " " + cursor.getString(1).toLowerCase() + " " +
-						cursor.getString(2).toLowerCase();
-				db.execSQL(
-						"UPDATE Books SET search = '" + string +
-								"' WHERE _id = " + cursor.getLong(0));
-			} while (cursor.moveToNext());
-			db.setTransactionSuccessful();
-			db.endTransaction();
-			cursor.close();
-		}
 	}
 }

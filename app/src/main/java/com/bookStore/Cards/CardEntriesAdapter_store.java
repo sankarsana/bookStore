@@ -17,9 +17,9 @@ public class CardEntriesAdapter_store extends CardEntriesAdapter {
 	@Override
 	public String getQuery() {
 		return "SELECT" +
-				" Books._id AS _id," +
-				" Books.bookName AS bookName," +
-				" Books.shortName AS shortName," +
+				" books._id AS _id," +
+				" books.bookName AS bookName," +
+				" books.shortName AS shortName," +
 				"'0' AS count, " +
 
 				"'0' as get, " +
@@ -27,9 +27,9 @@ public class CardEntriesAdapter_store extends CardEntriesAdapter {
 				"'0' AS ret, " +
 				"CardEntries._id AS cardEntryId " +
 
-				" FROM Books, CardEntries" +
+				" FROM books, CardEntries" +
 				" WHERE  CardEntries.dateId = '" + dateId + "'" +
-				" AND Books._id = CardEntries.bookId" +
+				" AND books._id = CardEntries.bookId" +
 				" ORDER BY bookName";
 	}
 
