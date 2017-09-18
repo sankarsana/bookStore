@@ -11,13 +11,14 @@ import com.bookStore.R;
 
 import java.io.*;
 
+import static android.widget.Toast.LENGTH_LONG;
+
 public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 
 	public final static String DB_NAME = "bookStoreDB";
 	public final static String DB_PATH = "//data//data//com.bookStore//databases//" + DB_NAME;
 	private static SQLiteDatabase db;
 	private static DataBase dataBase;
-	private static Context context;
 
 	private DataBase(Context context) {
 		super(context, DB_NAME, null, 1);
@@ -25,10 +26,9 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 
 	public static void initialize(App context) {
 		if (db != null) {
-			Toast.makeText(context, "Повторная инициализация!", Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Повторная инициализация!", LENGTH_LONG).show();
 			throw new ExceptionInInitializerError("Повторная инициализация!");
 		}
-		DataBase.context = context;
 		dataBase = new DataBase(context);
 		db = dataBase.getWritableDatabase();
 	}

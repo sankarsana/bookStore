@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+	<!-- StoreActivity -->
+	<string name="action_calculate">Посчитать</string>
+
 	<string name="SrilaPrabhupada">Шрила Прабхупада</string>
 	<string name="app_name">BookStore</string>
 	<string name="menu_settings">Settings</string>

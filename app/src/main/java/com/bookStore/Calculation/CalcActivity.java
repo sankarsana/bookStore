@@ -47,11 +47,6 @@ public class CalcActivity extends ActionBarListActivity {
 	}
 
 	@Override
-	public void onCreateOverflowOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.calc_over, menu);
-	}
-
-	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.calc_beginAgain:

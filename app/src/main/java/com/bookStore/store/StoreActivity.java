@@ -13,7 +13,6 @@ import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.App.DataBase;
 import com.bookStore.Calculation.CalcActivity;
 import com.bookStore.Import.ImportActivity;
-import com.bookStore.Import.ImportDates;
 import com.bookStore.Persons.PersonsActivity;
 import com.bookStore.Preference.BackupAndRestore;
 import com.bookStore.Preference.ExportBooksToCSV;
@@ -26,7 +25,6 @@ public class StoreActivity extends ActionBarListActivity {
 	private static final int MENU_HISTORY_GROUP = 123;
 	private static LayoutInflater lInflater;
 	private BookDetailDialog bookDetail;
-	private SubMenu subMenu;
 
 	public static LayoutInflater getLInflater() {
 		return lInflater;
@@ -35,7 +33,7 @@ public class StoreActivity extends ActionBarListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.store_act);
+		setContentView(R.layout.activity_store);
 		setListAdapter(new ListAdapter());
 		lInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -46,61 +44,39 @@ public class StoreActivity extends ActionBarListActivity {
 	}
 
 	@Override
-	protected void onStart() {
-		super.onStart();
-		if (subMenu != null)
-			createOptionsMenu();
-	}
-
-	@Override
-	public void onCreateOverflowOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.store_over, menu);
-		subMenu = menu.findItem(R.id.menu_bring_books).getSubMenu();
-		createOptionsMenu();
-	}
-
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.store_act_menu, menu);
+		getMenuInflater().inflate(R.menu.activity_store, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
-
-	public void createOptionsMenu() {
-		subMenu.clear();
-		ImportDates imDates = new ImportDates();
-		if (imDates.getCount() != 0) {
-			do {
-				subMenu.add(MENU_HISTORY_GROUP, (int) imDates.getId(),
-						Menu.NONE, imDates.getDateStringSimple());
-			} while (imDates.moveToNext());
-		}
-		subMenu.add(MENU_HISTORY_GROUP, -1, Menu.NONE, "Новый привоз");
-	}
+// TODO: 18.09.17 Релизовать привоз книг
+//	public void createOptionsMenu() {
+//		subMenu.clear();
+//		ImportDates imDates = new ImportDates();
+//		if (imDates.getCount() != 0) {
+//			do {
+//				subMenu.add(MENU_HISTORY_GROUP, (int) imDates.getId(), NONE, imDates.getDateStringSimple());
+//			} while (imDates.moveToNext());
+//		}
+//		subMenu.add(MENU_HISTORY_GROUP, -1, NONE, "Новый привоз");
+//	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
-
 		if (item.getGroupId() == MENU_HISTORY_GROUP) {
 			Intent intent = new Intent(this, ImportActivity.class);
 			intent.putExtra("dateId", (long) item.getItemId());
 			startActivity(intent);
 			return super.onOptionsItemSelected(item);
 		}
-		switch (item.getItemId()) {
-
-			case R.id.menu_store_persons:
-				startActivity(new Intent(this, PersonsActivity.class));
-				break;
-			case R.id.store_menu_calculate:
-				startActivity(new Intent(this, CalcActivity.class));
-				break;
-			case R.id.store_menu_reports:
-				startActivity(new Intent(this, JointActivity.class));
-				break;
-			case R.id.store_menu_preference:
-				startActivity(new Intent(this, PrefActivity.class));
-				break;
+		int id = item.getItemId();
+		if (id == R.id.menu_store_persons) {
+			startActivity(new Intent(this, PersonsActivity.class));
+		} else if (id == R.id.store_menu_calculate) {
+			startActivity(new Intent(this, CalcActivity.class));
+		} else if (id == R.id.store_menu_reports) {
+			startActivity(new Intent(this, JointActivity.class));
+		} else if (id == R.id.store_menu_preference) {
+			startActivity(new Intent(this, PrefActivity.class));
 		}
 		return super.onOptionsItemSelected(item);
 	}
