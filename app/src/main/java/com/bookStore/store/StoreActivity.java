@@ -12,7 +12,6 @@ import com.bookStore.App.ActionBarListActivity;
 import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.App.DataBase;
 import com.bookStore.Calculation.CalcActivity;
-import com.bookStore.Import.ImportActivity;
 import com.bookStore.Persons.PersonsActivity;
 import com.bookStore.Preference.BackupAndRestore;
 import com.bookStore.Preference.ExportBooksToCSV;
@@ -22,7 +21,6 @@ import com.bookStore.Reports.JointActivity;
 
 public class StoreActivity extends ActionBarListActivity {
 
-	private static final int MENU_HISTORY_GROUP = 123;
 	private static LayoutInflater lInflater;
 	private BookDetailDialog bookDetail;
 
@@ -62,12 +60,13 @@ public class StoreActivity extends ActionBarListActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getGroupId() == MENU_HISTORY_GROUP) {
-			Intent intent = new Intent(this, ImportActivity.class);
-			intent.putExtra("dateId", (long) item.getItemId());
-			startActivity(intent);
-			return super.onOptionsItemSelected(item);
-		}
+		// TODO: 18.09.17 Need to fix.
+//		if (item.getGroupId() == MENU_HISTORY_GROUP) {
+//			Intent intent = new Intent(this, ImportActivity.class);
+//			intent.putExtra("dateId", (long) item.getItemId());
+//			startActivity(intent);
+//			return super.onOptionsItemSelected(item);
+//		}
 		int id = item.getItemId();
 		if (id == R.id.menu_store_persons) {
 			startActivity(new Intent(this, PersonsActivity.class));
