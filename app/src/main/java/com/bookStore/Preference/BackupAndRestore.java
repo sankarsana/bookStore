@@ -43,8 +43,8 @@ public class BackupAndRestore extends ActionBarListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.backap_restore_act);
 
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setIcon(R.drawable.ic_action_save);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
+//		toolbar.setIcon(R.drawable.ic_action_save);
 		updateBackupList();
 		setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, backupList));
 		refreshList();

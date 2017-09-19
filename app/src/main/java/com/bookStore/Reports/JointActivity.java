@@ -41,7 +41,7 @@ public class JointActivity extends MyActionBarActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.report_joint);
 
-		actionBar.setDisplayHomeAsUpEnabled(true);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
 
 		datesSpinner = (Spinner) findViewById(R.id.report_period);
 		personView = (Button) findViewById(R.id.report_person);

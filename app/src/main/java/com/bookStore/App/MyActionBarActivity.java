@@ -1,16 +1,19 @@
 package com.bookStore.App;
 
-import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
+import com.bookStore.R;
 
 public abstract class MyActionBarActivity extends AppCompatActivity {
 
-	protected ActionBar actionBar;
+	protected Toolbar toolbar;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		actionBar = getSupportActionBar();
+	public void setContentView(@LayoutRes int layoutResID) {
+		super.setContentView(layoutResID);
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
 	}
 }

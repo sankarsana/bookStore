@@ -1,6 +1,5 @@
 package com.bookStore.App;
 
-import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,11 +11,6 @@ import com.bookStore.R;
 public abstract class ActionBarListActivity extends MyActionBarActivity {
 
 	private ListView mListView;
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
 
 	@Override
 	protected void onStart() {

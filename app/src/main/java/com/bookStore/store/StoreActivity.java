@@ -35,9 +35,6 @@ public class StoreActivity extends ActionBarListActivity {
 		setListAdapter(new ListAdapter());
 		lInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		actionBar.setIcon(R.drawable.ic_launcher);
-		actionBar.setDisplayShowCustomEnabled(true);
-
 		getListView().requestFocusFromTouch();
 	}
 

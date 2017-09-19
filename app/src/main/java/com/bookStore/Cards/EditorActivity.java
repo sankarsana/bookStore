@@ -28,10 +28,10 @@ public class EditorActivity extends ActionBarListActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.bookstore_selection);
 
-		actionBar.setTitle(CardDateFragment.getCardDate().getDateSimple_String());
-		actionBar.setSubtitle(getIntent().getStringExtra("modeTitle"));
-		actionBar.setIcon(R.drawable.ic_action_edit);
-		actionBar.setDisplayHomeAsUpEnabled(true);
+		toolbar.setTitle(CardDateFragment.getCardDate().getDateSimple_String());
+		toolbar.setSubtitle(getIntent().getStringExtra("modeTitle"));
+//		toolbar.setIcon(R.drawable.ic_action_edit);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
 
 		inputDialog = new EditorInputDialog();
 

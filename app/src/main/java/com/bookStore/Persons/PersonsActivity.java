@@ -33,9 +33,9 @@ public class PersonsActivity extends ActionBarListActivity implements MyDialogFr
 		persons = new Persons(this);
 		setListAdapter(persons);
 		registerForContextMenu(getListView());
-		actionBar.setIcon(R.drawable.ic_action_persons);
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setTitle(getResources().getString(R.string.distributors));
+//		toolbar.setIcon(R.drawable.ic_action_persons);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
+		toolbar.setTitle(getResources().getString(R.string.distributors));
 
 		updateDialog = new UpdateDialog();
 	}

@@ -18,7 +18,7 @@ public class SelectBookActivity extends ActionBarListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.select_book_act);
-		actionBar.setDisplayHomeAsUpEnabled(true);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
 		adapter = new SelectBookAdapter();
 		setListAdapter(adapter);
 	}

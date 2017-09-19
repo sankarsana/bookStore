@@ -1,5 +1,42 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+	<style name="ToolbarTextAppearance">
+		<item name="android:fontFamily">sans-serif-condensed</item>
+		<item name="android:textColor">@color/toolbarText</item>
+	</style>
+
+	<style name="ToolbarTextAppearance.Title">
+		<item name="android:textSize">20sp</item>
+	</style>
+
+	<style name="ToolbarTextAppearance.Subtitle">
+		<item name="android:textSize">14sp</item>
+	</style>
+
+	<style name="MyToolbar">
+		<item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
+		<item name="android:background">?colorPrimary</item>
+		<item name="android:elevation">4dp</item>
+	</style>
+
+	<style name="MyToolbarTheme">
+		<!-- color of the menu overflow icon -->
+		<item name="android:textColorSecondary">@color/ic_toolbar</item>
+	</style>
+
+	<style name="ToolbarOverflowButton">
+		<item name="android:src">@drawable/ic_menu_calculate</item>
+	</style>
+
+	<style name="MyPopupTheme" parent="ThemeOverlay.AppCompat.Dark">
+		<item name="android:colorControlActivated">@color/accent</item>
+		<item name="android:colorControlHighlight">@color/accent</item>
+		<item name="android:colorControlNormal">@color/toolbarText</item>
+		<item name="android:textColor">@color/toolbarText</item>
+		<item name="android:colorBackground">?colorPrimary</item>
+	</style>
+
+
 	<style name="listViewLight" parent="android:Widget.ListView">
 		<!--<item name="android:background">@color/White</item>-->
 		<item name="android:dividerHeight">@dimen/dividerHeight</item>
@@ -31,9 +68,6 @@
 		<item name="android:popupBackground">@drawable/gradient_vertical</item>
 	</style>
 
-	<!--<style name="DropDownList" parent="@style/Widget.AppCompat.ListView.DropDown">-->
-	<!--<item name="android:listSelector">@drawable/list_selector</item>-->
-	<!--</style>-->
 
 	<style name="EditTextStyle" parent="android:Widget.EditText">
 		<item name="android:background">@drawable/input_view_selector</item>

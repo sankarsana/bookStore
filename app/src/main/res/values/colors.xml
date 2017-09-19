@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+	<color name="primary">#546E7A</color>
+	<color name="accent">#ffeb8800</color>
 	<color name="textPrimary">#de000000</color>
 	<color name="textSecondary">#8a000000</color>
 	<color name="textDisabled">#61000000</color>
 
-	<color name="ic_tool_bar">#FFFFFFFF</color>
+	<color name="ic_toolbar">#FFFFFFFF</color>
+	<color name="toolbarText">@color/ic_toolbar</color>
+
 
 	<color name="gradientTop">#ff5a5a5a</color>
 	<color name="gradientBottom">#ff3c3c3c</color>

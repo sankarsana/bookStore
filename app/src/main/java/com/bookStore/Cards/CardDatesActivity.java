@@ -51,9 +51,9 @@ public class CardDatesActivity extends MyActionBarActivity {
 		}
 		setContentView(R.layout.card_act_view_pager);
 
-		actionBar.setIcon(R.drawable.ic_action_person);
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setTitle(PersonsActivity.getPerson().name);
+//		toolbar.setIcon(R.drawable.ic_action_person);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
+		toolbar.setTitle(PersonsActivity.getPerson().name);
 
 		viewPager = (ViewPager) findViewById(R.id.card_viewPager);
 		cardDates = new CardDates(getSupportFragmentManager());

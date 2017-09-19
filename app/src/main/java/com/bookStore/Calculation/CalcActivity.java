@@ -22,8 +22,8 @@ public class CalcActivity extends ActionBarListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calc_act);
 
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setIcon(R.drawable.ic_calculate);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
+//		toolbar.setIcon(R.drawable.ic_calculate);
 
 		bookItemsAdapter = BookItemsAdapter.initialize(this);
 		SharedPreferences sp = getSharedPreferences(SETTINGS, Context.MODE_PRIVATE);

@@ -19,7 +19,7 @@ public class GetMissingBookActivity extends ActionBarListActivity implements Vie
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.multiple_select_act);
 
-		actionBar.setDisplayHomeAsUpEnabled(true);
+//		toolbar.setDisplayHomeAsUpEnabled(true);
 		getListView().setAdapter(new ItemsAdapter());
 		findViewById(R.id.btnOk).setOnClickListener(this);
 		findViewById(R.id.btnCancel).setOnClickListener(this);

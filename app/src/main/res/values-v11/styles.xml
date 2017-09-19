@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-	<style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
-		<item name="android:background">@drawable/gradient_vertical</item>
-		<item name="android:titleTextStyle">@style/TitleTextStyle</item>
-	</style>
-</resources>

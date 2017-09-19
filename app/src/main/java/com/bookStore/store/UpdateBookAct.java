@@ -53,7 +53,7 @@ public class UpdateBookAct extends MyActionBarActivity implements OnClickListene
 			}
 		});
 
-		actionBar.setIcon(R.drawable.ic_action_edit);
+//		toolbar.setIcon(R.drawable.ic_action_edit);
 
 		bookName.addTextChangedListener(new TextWatcher() {
 			@Override
@@ -90,10 +90,10 @@ public class UpdateBookAct extends MyActionBarActivity implements OnClickListene
 			btnWriter.setText(book.writer.getName());
 			btnCategory.setText(book.category.getName());
 			cost.setText(book.cost == 0 ? "" : book.getCostSting());
-			actionBar.setTitle(book.name);
+			toolbar.setTitle(book.name);
 		} else {
 			book = new Book();
-			actionBar.setTitle("Новая книга");
+			toolbar.setTitle("Новая книга");
 		}
 	}
 
