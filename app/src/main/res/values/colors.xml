@@ -3,12 +3,18 @@
 
 	<color name="primary">#546E7A</color>
 	<color name="accent">#ffeb8800</color>
-	<color name="textPrimary">#de000000</color>
-	<color name="textSecondary">#8a000000</color>
-	<color name="textDisabled">#61000000</color>
 
-	<color name="ic_toolbar">#FFFFFFFF</color>
-	<color name="toolbarText">@color/ic_toolbar</color>
+	<!-- Black -->
+	<!--<color name="textPrimary">#de000000</color>-->
+	<!--<color name="textSecondary">#8a000000</color>-->
+	<!--<color name="textDisabled">#61000000</color>-->
+
+	<color name="textPrimary">#de12181b</color>
+	<color name="textSecondary">#8a12181b</color>
+	<color name="textDisabled">#6112181b</color>
+
+	<color name="toolbar_icons">#FFFFFFFF</color>
+	<color name="toolbarText">@color/toolbar_icons</color>
 
 
 	<color name="gradientTop">#ff5a5a5a</color>

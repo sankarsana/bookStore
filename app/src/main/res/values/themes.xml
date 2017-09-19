@@ -13,28 +13,18 @@
 		<item name="colorPrimaryDark">?colorPrimary</item>
 		<item name="colorAccent">@color/accent</item>
 
-		<!--<item name="android:textColorPrimary">@color/textPrimary</item>-->
-		<!--<item name="android:textColorSecondary">@color/textSecondary</item>-->
 		<item name="android:textColor">@color/textPrimary</item>
-		<!--<item name="android:actionMenuTextColor">@color/Red</item>-->
-		<!--<item name="actionMenuTextColor">@color/Red</item>-->
+		<item name="android:textViewStyle">@style/TextViewStyle</item>
 
 		<item name="android:listViewStyle">@style/listViewLight</item>
-		<!--<item name="android:panelFullBackground">@color/gradientBottom</item>-->
-		<!--<item name="android:panelColorForeground">@color/background</item>-->
-		<!--<item name="android:windowBackground">@color/background</item>-->
-		<!--<item name="android:imageButtonStyle">@style/imageButtonStyle</item>-->
-		<!--<item name="android:buttonStyle">@style/imageButtonStyle</item>-->
-		<!--<item name="android:button">@style/imageButtonStyle</item>-->
+		<item name="android:windowBackground">@color/background</item>
+		<item name="android:imageButtonStyle">@style/imageButtonStyle</item>
+		<item name="android:buttonStyle">@style/imageButtonStyle</item>
+		<item name="android:button">@style/imageButtonStyle</item>
 		<!--<item name="android:alertDialogStyle">@style/DialogLight</item>-->
 
 		<item name="android:spinnerStyle">@style/spinnerStyle</item>
 		<item name="android:editTextStyle">@style/EditTextStyle</item>
-		<!--<item name="popupMenuStyle">@style/MyPopupMenuStyle</item>-->
-
-		<!--<item name="android:itemTextAppearance">@android:style/TextAppearance.Medium.Inverse</item>-->
-		<!--<item name="actionMenuTextColor">@color/background</item>-->
-
 	</style>
 
 
