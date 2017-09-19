@@ -28,7 +28,7 @@ public class PersonsActivity extends ActionBarListActivity implements MyDialogFr
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.persons_act);
+		setContentView(R.layout.activity_persons);
 
 		persons = new Persons(this);
 		setListAdapter(persons);
