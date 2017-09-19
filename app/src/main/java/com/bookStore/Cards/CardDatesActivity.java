@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.bookStore.App.MyActionBarActivity;
 import com.bookStore.App.Utilities;
-import com.bookStore.Persons.PersonsActivity;
 import com.bookStore.R;
 
 import java.util.Calendar;
@@ -25,8 +24,7 @@ public class CardDatesActivity extends MyActionBarActivity {
 
 	private ViewPager viewPager;
 	private CardDates cardDates;
-	private DatePickerDialog.OnDateSetListener mDateSetListener =
-			new DatePickerDialog.OnDateSetListener() {
+	private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
 				@Override
 				public void onDateSet(DatePicker datePicker, int i, int i2, int i3) {
 					long newDate = Utilities.getDate_DB_long(i, i2 + 1, i3);
@@ -44,16 +42,9 @@ public class CardDatesActivity extends MyActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		try {
-			super.onCreate(savedInstanceState);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		setContentView(R.layout.card_act_view_pager);
-
-//		toolbar.setIcon(R.drawable.ic_action_person);
-//		toolbar.setDisplayHomeAsUpEnabled(true);
-		toolbar.setTitle(PersonsActivity.getPerson().name);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_cards);
+		setToolbarTitle(getIntent().getStringExtra("personName"));
 
 		viewPager = (ViewPager) findViewById(R.id.card_viewPager);
 		cardDates = new CardDates(getSupportFragmentManager());

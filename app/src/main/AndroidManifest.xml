@@ -20,7 +20,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.bookStore.store.UpdateBookAct"
+			android:name=".store.UpdateBookAct"
 			android:label="BookUpdate" />
 		<activity
 			android:name="com.bookStore.Import.ImportActivity"
@@ -30,8 +30,7 @@
 			android:label="@string/distributors" />
 		<activity
 			android:name=".Cards.CardDatesActivity"
-			android:screenOrientation="portrait"
-			android:label="CardPersonActivityViewPager" />
+			android:screenOrientation="portrait" />
 		<activity
 			android:name="com.bookStore.store.SelectBookActivity"
 			android:label="@string/selectBook" />

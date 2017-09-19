@@ -5,7 +5,7 @@
 
 	<item
 		android:id="@+id/my_action_search"
-		android:icon="@android:drawable/ic_menu_search"
+		android:icon="@drawable/ic_menu_search_white"
 		android:title="@string/search"
 		android:titleCondensed="@string/distributors"
 		yourapp:actionViewClass="com.bookStore.App.MySearchView"
@@ -13,8 +13,8 @@
 
 	<item
 		android:id="@+id/menu_persons_add"
-		android:icon="@drawable/ic_action_add_person"
+		android:icon="@drawable/ic_menu_person_add_light"
 		android:title="@string/neww"
-		yourapp:showAsAction="always" />
+		yourapp:showAsAction="ifRoom" />
 
 </menu>

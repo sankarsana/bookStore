@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	style="@style/lineItemHorizontalSmall">
+	style="@style/lineItemHorizontal"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin">
 
 	<TextView
 		android:id="@+id/personName"
 		android:layout_width="0dip"
 		android:layout_height="wrap_content"
-		android:layout_marginLeft="@dimen/marginLeft"
 		android:layout_weight="1"
 		android:lines="1"
 		android:textSize="@dimen/textSizeLine" />
@@ -15,9 +16,7 @@
 		android:id="@+id/personPercent"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginRight="@dimen/marginRight"
-		android:textColor="#900000"
-		android:textSize="@dimen/textSizeLine"
-		android:textStyle="bold" />
+		android:textColor="@color/textSecondary"
+		android:textSize="@dimen/textSizeLine" />
 
 </LinearLayout>

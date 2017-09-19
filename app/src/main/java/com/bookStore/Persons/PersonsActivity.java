@@ -29,20 +29,15 @@ public class PersonsActivity extends ActionBarListActivity implements MyDialogFr
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_persons);
-
-		persons = new Persons(this);
+		persons = new Persons();
 		setListAdapter(persons);
 		registerForContextMenu(getListView());
-//		toolbar.setIcon(R.drawable.ic_action_persons);
-//		toolbar.setDisplayHomeAsUpEnabled(true);
-		toolbar.setTitle(getResources().getString(R.string.distributors));
-
 		updateDialog = new UpdateDialog();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.persons_act, menu);
+		getMenuInflater().inflate(R.menu.activity_persons, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -72,6 +67,7 @@ public class PersonsActivity extends ActionBarListActivity implements MyDialogFr
 		super.onListItemClick(l, v, position, id);
 		Intent intent = new Intent(this, CardDatesActivity.class);
 		person = Person.getPerson(id);
+		intent.putExtra("personName", person.name);
 		startActivity(intent);
 	}
 

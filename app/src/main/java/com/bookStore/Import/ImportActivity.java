@@ -39,9 +39,7 @@ public class ImportActivity extends ActionBarListActivity implements OnClickList
 		((NumberKeyboard) findViewById(R.id.addKeyboard)).setEditText(count);
 
 		importDetail.setDate(getIntent().getLongExtra("dateId", -1));
-		toolbar.setTitle(importDetail.getDateStringExtend());
-//		toolbar.setIcon(R.drawable.ic_import);
-//		toolbar.setDisplayHomeAsUpEnabled(true);
+		setToolbarTitle(importDetail.getDateStringExtend());
 
 		btnBook.setOnClickListener(this);
 		btnEnter.setOnClickListener(this);

@@ -54,7 +54,7 @@ public class JointActivity extends MyActionBarActivity implements
 		small = (TextView) findViewById(R.id.report_smallValue);
 		mag = (TextView) findViewById(R.id.report_magValue);
 
-		Persons persons = new Persons(this);
+		Persons persons = new Persons();
 
 		personView.setText("Все распространители");
 		personMenu = new PopupMenu(this, personView);

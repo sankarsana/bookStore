@@ -9,12 +9,10 @@ import com.bookStore.R;
 
 public abstract class MyActionBarActivity extends AppCompatActivity {
 
-	protected Toolbar toolbar;
-
 	@Override
 	public void setContentView(@LayoutRes int layoutResID) {
 		super.setContentView(layoutResID);
-		toolbar = (Toolbar) findViewById(R.id.toolbar);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 		if (getSupportActionBar() != null && layoutResID != R.layout.activity_store) {
 			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -26,5 +24,15 @@ public abstract class MyActionBarActivity extends AppCompatActivity {
 				}
 			});
 		}
+	}
+
+	protected void setToolbarTitle(String title) {
+		if (getSupportActionBar() != null)
+			getSupportActionBar().setTitle(title);
+	}
+
+	protected void setToolbarSubtitle(String title) {
+		if (getSupportActionBar() != null)
+			getSupportActionBar().setSubtitle(title);
 	}
 }

@@ -1,7 +1,6 @@
 package com.bookStore.Persons;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
@@ -19,7 +18,7 @@ public class Persons extends CursorSearchAdapter {
 
 	private SQLiteDatabase db = DataBase.get();
 
-	public Persons(Context context) {
+	public Persons() {
 		refresh();
 	}
 
@@ -93,10 +92,9 @@ public class Persons extends CursorSearchAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = convertView;
 		if (convertView == null)
-			view = StoreActivity.getLInflater().inflate(R.layout.person_item, parent, false);
+			view = StoreActivity.getLInflater().inflate(R.layout.item_person, parent, false);
 		Person person = getPerson(position);
-		String percent = person.percent == 100 ? "" : Integer
-				.toString(person.percent);
+		String percent = person.percent == 100 ? "" : Integer.toString(person.percent) + "%";
 		((TextView) view.findViewById(R.id.personName)).setText(person.name);
 		((TextView) view.findViewById(R.id.personPercent)).setText(percent);
 		return view;
