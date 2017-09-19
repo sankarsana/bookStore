@@ -18,7 +18,7 @@
 		android:paddingEnd="8dip"
 		android:paddingRight="8dp"
 		android:paddingStart="8dip"
-		android:src="@android:drawable/ic_menu_search" />
+		android:src="@drawable/ic_menu_search_gray" />
 
 	<view
 		android:id="@+id/search_src_text"
@@ -35,7 +35,7 @@
 		android:paddingEnd="@dimen/dropdown_item_text_padding_right"
 		android:paddingStart="@dimen/dropdown_item_text_padding_left"
 		android:singleLine="true"
-		android:textColor="@color/gradientBottom"
+		android:textColor="@color/textPrimary"
 		android:textSize="@dimen/textSizeLine" />
 
 	<ImageView
@@ -48,6 +48,6 @@
 		android:focusable="false"
 		android:paddingEnd="8dip"
 		android:paddingStart="8dip"
-		android:src="@android:drawable/ic_menu_close_clear_cancel" />
+		android:src="@drawable/ic_clear_gray" />
 
 </LinearLayout>

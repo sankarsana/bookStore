@@ -2,6 +2,7 @@ package com.bookStore.App;
 
 import android.content.Context;
 import android.support.v7.view.CollapsibleActionView;
+import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -9,7 +10,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -93,7 +93,7 @@ public class MySearchView extends LinearLayout implements CollapsibleActionView 
 		mSearchHint.setVisibility(hasText ? GONE : VISIBLE);
 	}
 
-	public static class EditText_immStateRemember extends EditText {
+	public static class EditText_immStateRemember extends AppCompatEditText {
 
 		public EditText_immStateRemember(Context context) {
 			super(context);
