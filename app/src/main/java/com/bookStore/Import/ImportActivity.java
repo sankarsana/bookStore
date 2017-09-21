@@ -12,13 +12,13 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.bookStore.App.ActionBarListActivity;
+import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.DataBase;
 import com.bookStore.R;
 import com.bookStore.store.SelectBookActivity;
 import com.development.NumberKeyboard;
 
-public class ImportActivity extends ActionBarListActivity implements OnClickListener {
+public class ImportActivity extends BaseListActivity implements OnClickListener {
 
 	private Button btnBook;
 	private Button btnEnter;

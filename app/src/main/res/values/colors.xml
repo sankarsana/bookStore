@@ -2,7 +2,8 @@
 <resources>
 
 	<color name="primary">#546E7A</color>
-	<color name="accent">#ffeb8800</color>
+	<!--<color name="accent">#ffeb8800</color>-->
+	<color name="accent">#ffE39435</color>
 
 	<!-- Black -->
 	<!--<color name="textPrimary">#de000000</color>-->
@@ -13,8 +14,12 @@
 	<color name="textSecondary">#8a12181b</color>
 	<color name="textDisabled">#6112181b</color>
 
-	<color name="toolbar_icons">#FFFFFFFF</color>
-	<color name="toolbarText">@color/toolbar_icons</color>
+	<color name="textPrimaryLight">#ffffff</color>
+	<color name="textSecondaryLight">#9affffff</color>
+	<color name="textDisabledLight">#78ffffff</color>
+
+	<color name="toolbarText">@color/textPrimaryLight</color>
+	<color name="toolbar_icons">@color/toolbarText</color>
 
 
 	<color name="gradientTop">#ff5a5a5a</color>

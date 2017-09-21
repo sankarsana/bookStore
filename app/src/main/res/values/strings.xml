@@ -2,7 +2,10 @@
 <resources>
 
 	<!-- StoreActivity -->
-	<string name="action_calculate">Посчитать</string>
+	<string name="action_sale">Продать</string>
+
+	<!-- SaleActivity -->
+	<string name="title_activity_card_date">Продажа</string>
 
 	<string name="SrilaPrabhupada">Шрила Прабхупада</string>
 	<string name="app_name">BookStore</string>

@@ -8,7 +8,7 @@ import android.view.*;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bookStore.App.ActionBarListActivity;
+import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.App.DataBase;
 import com.bookStore.Calculation.CalcActivity;
@@ -18,8 +18,9 @@ import com.bookStore.Preference.ExportBooksToCSV;
 import com.bookStore.Preference.PrefActivity;
 import com.bookStore.R;
 import com.bookStore.Reports.JointActivity;
+import com.bookStore.ui.SaleActivity;
 
-public class StoreActivity extends ActionBarListActivity {
+public class StoreActivity extends BaseListActivity {
 
 	private static LayoutInflater lInflater;
 	private BookDetailDialog bookDetail;
@@ -36,6 +37,7 @@ public class StoreActivity extends ActionBarListActivity {
 		lInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		getListView().requestFocusFromTouch();
+		startActivity(new Intent(this, SaleActivity.class));
 	}
 
 	@Override
@@ -43,29 +45,13 @@ public class StoreActivity extends ActionBarListActivity {
 		getMenuInflater().inflate(R.menu.activity_store, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
-// TODO: 18.09.17 Релизовать привоз книг
-//	public void createOptionsMenu() {
-//		subMenu.clear();
-//		ImportDates imDates = new ImportDates();
-//		if (imDates.getCount() != 0) {
-//			do {
-//				subMenu.add(MENU_HISTORY_GROUP, (int) imDates.getId(), NONE, imDates.getDateStringSimple());
-//			} while (imDates.moveToNext());
-//		}
-//		subMenu.add(MENU_HISTORY_GROUP, -1, NONE, "Новый привоз");
-//	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// TODO: 18.09.17 Need to fix.
-//		if (item.getGroupId() == MENU_HISTORY_GROUP) {
-//			Intent intent = new Intent(this, ImportActivity.class);
-//			intent.putExtra("dateId", (long) item.getItemId());
-//			startActivity(intent);
-//			return super.onOptionsItemSelected(item);
-//		}
 		int id = item.getItemId();
-		if (id == R.id.menu_store_persons) {
+		if (id == R.id.menu_sale) {
+			startActivity(new Intent(this, SaleActivity.class));
+		} else if (id == R.id.menu_store_persons) {
 			startActivity(new Intent(this, PersonsActivity.class));
 		} else if (id == R.id.store_menu_calculate) {
 			startActivity(new Intent(this, CalcActivity.class));

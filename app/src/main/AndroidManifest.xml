@@ -1,17 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
 	package="com.bookStore">
 
 	<application
+		android:name=".App.App"
 		android:allowBackup="true"
-		android:label="@string/app_name"
 		android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name"
 		android:supportsRtl="true"
-		android:theme="@style/AppThemeLight"
-		android:name=".App.App">
-
+		android:theme="@style/AppThemeLight">
 		<activity
-			android:name="com.bookStore.store.StoreActivity"
+			android:name=".store.StoreActivity"
 			android:label="@string/store">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -23,39 +22,40 @@
 			android:name=".store.UpdateBookAct"
 			android:label="BookUpdate" />
 		<activity
-			android:name="com.bookStore.Import.ImportActivity"
+			android:name=".Import.ImportActivity"
 			android:label="AddBooks" />
 		<activity
-			android:name="com.bookStore.Persons.PersonsActivity"
+			android:name=".Persons.PersonsActivity"
 			android:label="@string/distributors" />
 		<activity
 			android:name=".Cards.CardDatesActivity"
 			android:screenOrientation="portrait" />
 		<activity
-			android:name="com.bookStore.store.SelectBookActivity"
+			android:name=".store.SelectBookActivity"
 			android:label="@string/selectBook" />
 		<activity
-			android:name="com.bookStore.Calculation.CalcActivity"
+			android:name=".Calculation.CalcActivity"
 			android:label="@string/inventory" />
 		<activity
-			android:name="com.bookStore.Calculation.CalcInputAct"
+			android:name=".Calculation.CalcInputAct"
 			android:theme="@style/DialogLight" />
 		<activity
-			android:name="com.bookStore.Reports.JointActivity"
+			android:name=".Reports.JointActivity"
 			android:label="@string/reports" />
 		<activity
-			android:name="com.bookStore.Preference.PrefActivity"
+			android:name=".Preference.PrefActivity"
 			android:label="PrefActivity" />
 		<activity
-			android:name="com.bookStore.Preference.PrefReportActivity"
+			android:name=".Preference.PrefReportActivity"
 			android:label="@string/reportSettings">
 			<intent-filter>
 				<action android:name="com.bookStore.preferences.ACTION_PREFERENCE_REPORT" />
+
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.bookStore.Preference.BackupAndRestore"
+			android:name=".Preference.BackupAndRestore"
 			android:label="@string/savedCopies">
 			<intent-filter>
 				<action android:name="com.bookStore.preferences.ACTION_BackupAndRestore" />
@@ -64,11 +64,15 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.bookStore.Cards.EditorActivity"
+			android:name=".Cards.EditorActivity"
 			android:label="Cards.EditorActivity" />
 		<activity
 			android:name=".Cards.GetMissingBookActivity"
 			android:label="@string/selectBook" />
+		<activity
+			android:name=".ui.SaleActivity"
+			android:label="@string/title_activity_card_date"
+			android:theme="@style/AppThemeLight"></activity>
 	</application>
 
 </manifest>

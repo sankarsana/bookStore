@@ -42,7 +42,7 @@ public class CardDateFragment extends MyFragment implements View.OnClickListener
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		ViewGroup rootView = (ViewGroup) inflater.inflate(
-				R.layout.card_fragment, container, false);
+				R.layout.fragment_card, container, false);
 
 		tvPercent = (TextView) rootView.findViewById(R.id.personCard_percent);
 		tvDate = (TextView) rootView.findViewById(R.id.personCard_cardDate);

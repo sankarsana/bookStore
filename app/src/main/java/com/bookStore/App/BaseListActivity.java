@@ -8,9 +8,9 @@ import android.widget.*;
 
 import com.bookStore.R;
 
-public abstract class ActionBarListActivity extends MyActionBarActivity {
+public abstract class BaseListActivity extends BaseActivity {
 
-	private ListView mListView;
+	private ListView listView;
 
 	@Override
 	protected void onStart() {
@@ -21,16 +21,16 @@ public abstract class ActionBarListActivity extends MyActionBarActivity {
 	}
 
 	protected ListView getListView() {
-		if (mListView == null) {
-			mListView = (ListView) findViewById(android.R.id.list);
-			mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		if (listView == null) {
+			listView = (ListView) findViewById(android.R.id.list);
+			listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				@Override
 				public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 					onListItemClick(getListView(), view, i, l);
 				}
 			});
 		}
-		return mListView;
+		return listView;
 	}
 
 	protected ListAdapter getListAdapter() {
@@ -57,8 +57,7 @@ public abstract class ActionBarListActivity extends MyActionBarActivity {
 
 	protected boolean initializeMySearchView(Menu menu) {
 		MenuItem searchItem = menu.findItem(R.id.my_action_search);
-		if (searchItem == null)
-			return false;
+		if (searchItem == null) return false;
 		MySearchView searchView = (MySearchView) MenuItemCompat.getActionView(searchItem);
 		searchView.setHint(searchItem.getTitleCondensed());
 		searchView.setDataOfSearch((IDataOfSearch) getListView().getAdapter());

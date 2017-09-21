@@ -6,11 +6,11 @@ import android.view.*;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bookStore.App.ActionBarListActivity;
+import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.R;
 
-public class SelectBookActivity extends ActionBarListActivity {
+public class SelectBookActivity extends BaseListActivity {
 
 	public static final String NEW_BOOK = "newBook";
 	private SelectBookAdapter adapter;

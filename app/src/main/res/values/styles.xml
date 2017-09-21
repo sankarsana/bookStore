@@ -8,19 +8,22 @@
 	<style name="ToolbarTextAppearance.Title">
 		<item name="android:textSize">20sp</item>
 	</style>
+
 	<style name="ToolbarTextAppearance.Subtitle">
 		<item name="android:textSize">14sp</item>
 	</style>
+
 	<style name="MyToolbar">
 		<item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
 		<item name="android:background">?colorPrimary</item>
-		<item name="android:elevation">4dp</item>
 		<item name="android:navigationIcon">@drawable/ic_menu_calculate</item>
 	</style>
+
 	<style name="MyToolbarTheme">
 		<!-- color of the menu overflow icon -->
 		<item name="android:textColorSecondary">@color/toolbar_icons</item>
 	</style>
+
 	<style name="MyPopupTheme" parent="ThemeOverlay.AppCompat.Dark">
 		<item name="android:colorControlActivated">@color/accent</item>
 		<item name="android:colorControlHighlight">@color/accent</item>
@@ -202,5 +205,9 @@
 		<item name="android:gravity">center_vertical</item>
 		<item name="android:textSize">@dimen/textSizeLine</item>
 	</style>
+
+	<style name="AppThemeLight.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+	<style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

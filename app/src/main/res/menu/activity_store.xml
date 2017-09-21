@@ -11,9 +11,9 @@
 		app:showAsAction="ifRoom|collapseActionView" />
 
 	<item
-		android:id="@+id/menu_calculate"
+		android:id="@+id/menu_sale"
 		android:icon="@drawable/ic_menu_calculate"
-		android:title="@string/action_calculate"
+		android:title="@string/action_sale"
 		app:showAsAction="never" />
 
 	<item

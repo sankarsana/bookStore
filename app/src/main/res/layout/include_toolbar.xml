@@ -5,7 +5,6 @@
 	android:layout_width="fill_parent"
 	android:layout_height="?attr/actionBarSize"
 	android:background="?colorPrimary"
-	android:elevation="4dp"
 	app:popupTheme="@style/MyPopupTheme"
 	app:titleTextAppearance="@style/ToolbarTextAppearance.Title"
 	app:subtitleTextAppearance="@style/ToolbarTextAppearance.Subtitle"

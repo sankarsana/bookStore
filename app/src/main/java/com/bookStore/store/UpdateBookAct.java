@@ -10,14 +10,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.bookStore.App.MyActionBarActivity;
+import com.bookStore.App.BaseActivity;
 import com.bookStore.App.MyDialogFragment;
 import com.bookStore.R;
 
 import java.util.HashMap;
 
 @SuppressWarnings("ConstantConditions")
-public class UpdateBookAct extends MyActionBarActivity implements OnClickListener,
+public class UpdateBookAct extends BaseActivity implements OnClickListener,
 		MyDialogFragment.IDialogItemClick, MyDialogFragment.IMyDialogFragment {
 
 	public static boolean isChanged = false;

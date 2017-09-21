@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-import com.bookStore.App.ActionBarListActivity;
+import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.DataBase;
 import com.bookStore.R;
 
@@ -18,7 +18,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 
-public class BackupAndRestore extends ActionBarListActivity {
+public class BackupAndRestore extends BaseListActivity {
 
 	private String[] backupList = new String[0];
 

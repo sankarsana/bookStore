@@ -7,13 +7,13 @@ import android.support.v4.view.ViewPager;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
-import com.bookStore.App.MyActionBarActivity;
+import com.bookStore.App.BaseActivity;
 import com.bookStore.App.Utilities;
 import com.bookStore.R;
 
 import java.util.Calendar;
 
-public class CardDatesActivity extends MyActionBarActivity {
+public class CardDatesActivity extends BaseActivity {
 
 	public static final int DATE_DIALOG_ID = 100;
 	public static final int MODE_GET = R.id.editorMode_get;

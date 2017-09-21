@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingBottom="16dp"
+	android:background="?colorPrimary">
+
+	<TextView
+		android:id="@+id/sum"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:layout_marginRight="8dp"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintRight_toLeftOf="@+id/expander"
+		android:textColor="@color/textPrimaryLight"
+		android:text="340 p."
+		android:textSize="@dimen/textSizeGeneral"
+		tools:ignore="RtlHardcoded" />
+
+	<ImageButton
+		android:id="@+id/expander"
+		style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:layout_marginRight="16dp"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		android:src="@drawable/ic_expand_more_light"
+		tools:ignore="RtlHardcoded" />
+
+</android.support.constraint.ConstraintLayout>

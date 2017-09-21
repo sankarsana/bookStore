@@ -8,11 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
-import com.bookStore.App.ActionBarListActivity;
+import com.bookStore.App.BaseListActivity;
 import com.bookStore.R;
 
 
-public class CalcActivity extends ActionBarListActivity {
+public class CalcActivity extends BaseListActivity {
 
 	private static final String SETTINGS = "settings";
 	private static final String isDuring = "isDuring";

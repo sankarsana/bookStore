@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.bookStore.R;
 
-public abstract class MyActionBarActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
 	@Override
 	public void setContentView(@LayoutRes int layoutResID) {
