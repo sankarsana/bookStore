@@ -1,3 +1,6 @@
 package com.bookStore.model
 
-interface Book
+interface Book {
+
+	val bookName: String
+}

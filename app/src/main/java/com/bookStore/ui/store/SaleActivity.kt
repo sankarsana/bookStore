@@ -43,8 +43,8 @@ class SaleActivity : BaseListActivity<SaleAdapter>(), SaleView {
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 		super.onActivityResult(requestCode, resultCode, data)
 		if (data != null) {
-			val bookId = data.getIntExtra("bookId", -1)
-			presenter.onSelectBookActivityResult(bookId)
+			val bookName = data.getStringExtra("bookName")
+			presenter.onSelectBookActivityResult(bookName)
 		}
 	}
 }

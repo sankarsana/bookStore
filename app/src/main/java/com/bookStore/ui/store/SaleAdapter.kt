@@ -24,7 +24,7 @@ class SaleAdapter(private val context: Context) : BaseAdapter() {
 		if (convertView == null)
 			view = LayoutInflater.from(context).inflate(R.layout.item_card_store, parent, false)
 		val book = books[position]
-		(view?.findViewById(R.id.shortName) as TextView).text = book.toString()
+		(view?.findViewById(R.id.shortName) as TextView).text = book.bookName
 		(view.findViewById(R.id.cardDistr) as TextView).text =
 				if (book.quantity == 0) "" else book.quantity.toString()
 		return view
