@@ -6,6 +6,7 @@
 
 	<!-- SaleActivity -->
 	<string name="title_activity_card_date">Продажа</string>
+	<string name="sum">"%1$d .р"</string>
 
 	<string name="SrilaPrabhupada">Шрила Прабхупада</string>
 	<string name="app_name">BookStore</string>

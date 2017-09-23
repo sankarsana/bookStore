@@ -7,4 +7,6 @@ interface SaleView {
 	fun startSelectBookActivity()
 
 	fun updateBooks(books: List<BookForeSale>)
+
+	fun updateSum(sum: Int)
 }

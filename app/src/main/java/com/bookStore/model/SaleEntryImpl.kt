@@ -3,6 +3,7 @@ package com.bookStore.model
 import java.util.*
 
 class SaleEntryImpl : SaleEntry {
+
 	override val customer = CustomerFake()
 
 	override val books: MutableList<BookForeSale> = mutableListOf()
@@ -15,4 +16,6 @@ class SaleEntryImpl : SaleEntry {
 		books.add(BookForSaleFake(2))
 	}
 
+	override val sum: Int
+		get() = books.size * 50
 }
