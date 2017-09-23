@@ -37,7 +37,7 @@ public class CardEntriesAdapter_store extends CardEntriesAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = convertView;
 		if (convertView == null)
-			view = StoreActivity.getLInflater().inflate(R.layout.card_item_store, parent, false);
+			view = StoreActivity.getLInflater().inflate(R.layout.item_card_store, parent, false);
 		cursor.moveToPosition(position);
 		CardEntry entry = new CardEntry(cursor);
 		((TextView) view.findViewById(R.id.shortName))

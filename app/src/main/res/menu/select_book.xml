@@ -5,15 +5,16 @@
 
 	<item
 		android:id="@+id/my_action_search"
-		android:icon="@android:drawable/ic_menu_search"
+		android:icon="@drawable/ic_menu_search_white"
 		android:title="@string/search"
 		android:titleCondensed="@string/selectBook"
 		yourapp:actionViewClass="com.bookStore.App.MySearchView"
-		yourapp:showAsAction="always|collapseActionView" />
+		yourapp:showAsAction="ifRoom|collapseActionView" />
 
 	<item
 		android:id="@+id/selectBook_add"
-		android:icon="@android:drawable/ic_input_add"
-		yourapp:showAsAction="always" />
+		android:icon="@drawable/ic_action_add_light"
+		android:title="@string/neww"
+		yourapp:showAsAction="ifRoom" />
 
 </menu>

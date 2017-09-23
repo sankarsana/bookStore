@@ -18,7 +18,7 @@ import com.bookStore.Preference.ExportBooksToCSV;
 import com.bookStore.Preference.PrefActivity;
 import com.bookStore.R;
 import com.bookStore.Reports.JointActivity;
-import com.bookStore.ui.SaleActivity;
+import com.bookStore.ui.store.SaleActivity;
 
 public class StoreActivity extends BaseListActivity {
 

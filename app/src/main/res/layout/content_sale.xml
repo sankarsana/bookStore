@@ -5,8 +5,8 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior"
-	tools:showIn="@layout/activity_sale"
-	tools:context="com.bookStore.ui.SaleActivity">
+	tools:showIn="@layout/activity_store_sale"
+	tools:context="com.bookStore.ui.store.SaleActivity">
 
 	<ListView
 		android:id="@android:id/list"

@@ -4,7 +4,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context="com.bookStore.ui.SaleActivity">
+	tools:context="com.bookStore.ui.store.SaleActivity">
 
 	<android.support.design.widget.AppBarLayout
 		android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
 	<include layout="@layout/content_sale" />
 
 	<android.support.design.widget.FloatingActionButton
-		android:id="@+id/fab"
+		android:id="@+id/add"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="bottom|end"

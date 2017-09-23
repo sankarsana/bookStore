@@ -12,7 +12,7 @@
 		yourapp:showAsAction="always|collapseActionView" />
 
 	<item
-		android:id="@+id/menu_persons_add"
+		android:id="@+id/menu_add_person"
 		android:icon="@drawable/ic_menu_person_add_light"
 		android:title="@string/neww"
 		yourapp:showAsAction="ifRoom" />

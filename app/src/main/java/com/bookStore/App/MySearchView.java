@@ -71,13 +71,13 @@ public class MySearchView extends LinearLayout implements CollapsibleActionView 
 	public void onActionViewExpanded() {
 		updateView();
 		queryEditText.requestFocus();
-		App.setImeVisibility(getContext(), true, queryEditText);
+		App.Companion.setImeVisibility(getContext(), true, queryEditText);
 	}
 
 	@Override
 	public void onActionViewCollapsed() {
 		updateView();
-		App.setImeVisibility(getContext(), false, queryEditText);
+		App.Companion.setImeVisibility(getContext(), false, queryEditText);
 		clearFocus();
 		queryEditText.clearFocus();
 		queryEditText.setText("");

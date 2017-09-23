@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.MyDialogFragment;
-import com.bookStore.Cards.CardDatesActivity;
+import com.bookStore.Cards.DistributorCardActivity;
 import com.bookStore.R;
 
 import java.util.HashMap;
@@ -49,7 +49,7 @@ public class PersonsActivity extends BaseListActivity implements MyDialogFragmen
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == R.id.menu_persons_add) {
+		if (item.getItemId() == R.id.menu_add_person) {
 			person = new Person();
 			showDialog();
 		}
@@ -65,7 +65,7 @@ public class PersonsActivity extends BaseListActivity implements MyDialogFragmen
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		Intent intent = new Intent(this, CardDatesActivity.class);
+		Intent intent = new Intent(this, DistributorCardActivity.class);
 		person = Person.getPerson(id);
 		intent.putExtra("personName", person.name);
 		startActivity(intent);
@@ -104,7 +104,7 @@ public class PersonsActivity extends BaseListActivity implements MyDialogFragmen
 			person.percent = Integer.parseInt(percent);
 		if (person.id == -1) {
 			persons.insert(person);
-			Intent intent = new Intent(this, CardDatesActivity.class);
+			Intent intent = new Intent(this, DistributorCardActivity.class);
 			startActivity(intent);
 		} else {
 			persons.update(person);

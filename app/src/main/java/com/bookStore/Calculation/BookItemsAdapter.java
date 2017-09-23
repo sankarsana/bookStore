@@ -121,7 +121,7 @@ public class BookItemsAdapter extends BaseAdapter {
 		Cursor bookIds = database.rawQuery("SELECT _id FROM books", null);
 //        ContentValues values = new ContentValues(1);
 		if (bookIds.getCount() == 0) {
-			Toast.makeText(App.getContext(), "No books!", LENGTH_SHORT).show();
+			Toast.makeText(App.Companion.getContext(), "No books!", LENGTH_SHORT).show();
 			return;
 		}
 		database.beginTransaction();

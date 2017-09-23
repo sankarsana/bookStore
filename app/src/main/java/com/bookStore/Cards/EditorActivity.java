@@ -37,14 +37,14 @@ public class EditorActivity extends BaseListActivity
 			getListView().setAdapter(new PersonAdapterStore());
 		} else {
 			switch (getIntent().getIntExtra("mode", -1)) {
-				case CardDatesActivity.MODE_GET:
-				case CardDatesActivity.MODE_GET_AND_DISTR:
+				case DistributorCardActivity.MODE_GET:
+				case DistributorCardActivity.MODE_GET_AND_DISTR:
 					getListView().setAdapter(new PersonAdapterGet());
 					break;
-				case CardDatesActivity.MODE_DISTR:
+				case DistributorCardActivity.MODE_DISTR:
 					getListView().setAdapter(new PersonAdapterDistr());
 					break;
-				case CardDatesActivity.MODE_RET:
+				case DistributorCardActivity.MODE_RET:
 					getListView().setAdapter(new PersonAdapterRet());
 			}
 		}
@@ -87,7 +87,7 @@ public class EditorActivity extends BaseListActivity
 		} else {
 
 			switch (getIntent().getIntExtra("mode", -1)) {
-				case CardDatesActivity.MODE_GET:
+				case DistributorCardActivity.MODE_GET:
 					if (new Book(selectedBookId).count >= additionalCount)
 						cardDate.getBooksInTransaction(selectedBookId, additionalCount);
 					else {
@@ -96,7 +96,7 @@ public class EditorActivity extends BaseListActivity
 						return false;
 					}
 					break;
-				case CardDatesActivity.MODE_GET_AND_DISTR:
+				case DistributorCardActivity.MODE_GET_AND_DISTR:
 					if (new Book(selectedBookId).count >= additionalCount) {
 						cardDate.getBooksInTransaction(selectedBookId, additionalCount);
 						cardDate.distribBooksInTransaction(selectedBookId, additionalCount);
@@ -106,7 +106,7 @@ public class EditorActivity extends BaseListActivity
 						return false;
 					}
 					break;
-				case CardDatesActivity.MODE_DISTR:
+				case DistributorCardActivity.MODE_DISTR:
 					if (additionalCount <= availableCount)
 						cardDate.distribBooksInTransaction(selectedBookId, additionalCount);
 					else {
@@ -115,7 +115,7 @@ public class EditorActivity extends BaseListActivity
 						return false;
 					}
 					break;
-				case CardDatesActivity.MODE_RET:
+				case DistributorCardActivity.MODE_RET:
 					if (additionalCount <= availableCount)
 						cardDate.returnBooksInTransaction(selectedBookId, additionalCount);
 					else {

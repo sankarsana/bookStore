@@ -13,7 +13,7 @@ import com.bookStore.R;
 
 import java.util.Calendar;
 
-public class CardDatesActivity extends BaseActivity {
+public class DistributorCardActivity extends BaseActivity {
 
 	public static final int DATE_DIALOG_ID = 100;
 	public static final int MODE_GET = R.id.editorMode_get;
@@ -33,7 +33,7 @@ public class CardDatesActivity extends BaseActivity {
 						viewPager.setAdapter(cardDates);
 						viewPager.setCurrentItem(pos);
 					} else {
-						Toast.makeText(CardDatesActivity.this,
+						Toast.makeText(DistributorCardActivity.this,
 								"Дата должна показывать только прошлое или настояще!", Toast.LENGTH_SHORT)
 								.show();
 					}
@@ -43,7 +43,7 @@ public class CardDatesActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_cards);
+		setContentView(R.layout.activity_distributor_card);
 		setToolbarTitle(getIntent().getStringExtra("personName"));
 
 		viewPager = (ViewPager) findViewById(R.id.card_viewPager);

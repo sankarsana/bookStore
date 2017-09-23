@@ -8,9 +8,10 @@ import android.widget.*;
 
 import com.bookStore.R;
 
-public abstract class BaseListActivity extends BaseActivity {
+public abstract class BaseListActivity<T extends ListAdapter> extends BaseActivity {
 
 	private ListView listView;
+//	private T type;
 
 	@Override
 	protected void onStart() {
@@ -33,21 +34,20 @@ public abstract class BaseListActivity extends BaseActivity {
 		return listView;
 	}
 
-	protected ListAdapter getListAdapter() {
-		ListAdapter adapter = getListView().getAdapter();
+	protected T getListAdapter() {
+		T adapter = (T) getListView().getAdapter();
 		if (adapter instanceof HeaderViewListAdapter) {
-			return ((HeaderViewListAdapter) adapter).getWrappedAdapter();
+			return (T) ((HeaderViewListAdapter) adapter).getWrappedAdapter();
 		} else {
 			return adapter;
 		}
 	}
 
-	protected void setListAdapter(ListAdapter adapter) {
+	protected void setListAdapter(T adapter) {
 		getListView().setAdapter(adapter);
 	}
 
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-
 	}
 
 	@Override

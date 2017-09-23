@@ -89,7 +89,7 @@ public class CardDateFragment extends MyFragment implements View.OnClickListener
 	public void update() {
 		cardEntriesAdapter.refresh();
 		cardDate.refresh();
-		Resources res = App.getRes();
+		Resources res = App.Companion.getContext().getResources();
 		tvDate.setText(cardDate.getDateSimple_String());
 		tvSum.setText(cardDate.sum + res.getString(R.string.rDot));
 		tvPercent.setText(cardDate.getPercent() + res.getString(R.string.percent));
@@ -125,16 +125,16 @@ public class CardDateFragment extends MyFragment implements View.OnClickListener
 			case R.id.overflowItemMenu:
 				if (PersonsActivity.getPerson().id == Person.STORE_ID) {
 					intent.setClass(getActivity(), EditorActivity.class);
-					intent.putExtra("mode", CardDatesActivity.MODE_DISTR);
+					intent.putExtra("mode", DistributorCardActivity.MODE_DISTR);
 					intent.putExtra("modeTitle", getResources().getString(R.string.toDistrib));
 					startActivityForResult(intent, 0);
 					return true;
 				}
 				break;
-			case CardDatesActivity.MODE_GET:
-			case CardDatesActivity.MODE_GET_AND_DISTR:
-			case CardDatesActivity.MODE_DISTR:
-			case CardDatesActivity.MODE_RET:
+			case DistributorCardActivity.MODE_GET:
+			case DistributorCardActivity.MODE_GET_AND_DISTR:
+			case DistributorCardActivity.MODE_DISTR:
+			case DistributorCardActivity.MODE_RET:
 				intent.setClass(getActivity(), EditorActivity.class);
 				intent.putExtra("mode", item.getItemId());
 				intent.putExtra("modeTitle", item.getTitle());
@@ -156,8 +156,8 @@ public class CardDateFragment extends MyFragment implements View.OnClickListener
 		switch (v.getId()) {
 			case R.id.personCard_cardDate:
 				getActivity().getIntent().putExtra(
-						CardDatesActivity.CURRENT_DATE, cardDate.dateString);
-				getActivity().showDialog(CardDatesActivity.DATE_DIALOG_ID);
+						DistributorCardActivity.CURRENT_DATE, cardDate.dateString);
+				getActivity().showDialog(DistributorCardActivity.DATE_DIALOG_ID);
 				break;
 			case R.id.personCard_percent:
 				final EditText et = new EditText(getActivity());

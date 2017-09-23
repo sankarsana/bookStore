@@ -1,8 +1,6 @@
-package com.bookStore.ui
+package com.bookStore.model
 
 interface BookForeSale : Book {
 
 	val quantity: Int
-
-	val saleId: Int
 }

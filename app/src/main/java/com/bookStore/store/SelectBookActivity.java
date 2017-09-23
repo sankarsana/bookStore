@@ -17,8 +17,7 @@ public class SelectBookActivity extends BaseListActivity {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.select_book_act);
-//		toolbar.setDisplayHomeAsUpEnabled(true);
+		setContentView(R.layout.activity_select_book);
 		adapter = new SelectBookAdapter();
 		setListAdapter(adapter);
 	}
@@ -72,7 +71,7 @@ public class SelectBookActivity extends BaseListActivity {
 		public String getQuery(String search) {
 			return "SELECT _id, bookName, shortName, count" +
 					" FROM books" +
-					" WHERE search LIKE '% " + search + "%'" +
+					" WHERE sort LIKE '% " + search + "%'" +
 					" ORDER BY  bookName";
 		}
 

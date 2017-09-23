@@ -24,7 +24,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 		super(context, DB_NAME, null, 1);
 	}
 
-	public static void initialize(App context) {
+	public static void initialize(Context context) {
 		if (db != null) {
 			Toast.makeText(context, "Повторная инициализация!", LENGTH_LONG).show();
 			throw new ExceptionInInitializerError("Повторная инициализация!");
@@ -68,7 +68,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 	private static void rewriteTable(SQLiteDatabase db, String tableName, int rawResource) {
 		db.beginTransaction();
 		db.delete(tableName, null, null);
-		InputStream inputStream = App.getContext().getResources().openRawResource(rawResource);
+		InputStream inputStream = App.Companion.getContext().getResources().openRawResource(rawResource);
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 		String line;
 		try {
@@ -118,6 +118,19 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 		db.execSQL("INSERT INTO Categories VALUES(5, 'MB', '2')");
 		db.execSQL("INSERT INTO Categories VALUES(6, 'Deluxe', '6')");
 
+		db.execSQL("CREATE TABLE IF NOT EXISTS StoreSaleEntry " +
+				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
+				"dateF INTEGER, " +
+				"personId INTEGER DEFAULT '-1', " +
+				"sum INTEGER DEFAULT '0' , " +
+				"note TEXT);");
+
+		db.execSQL("CREATE TABLE IF NOT EXISTS StoreSaleBook " +
+				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
+				"storeSaleEntryId INTEGER NOT NULL, " +
+				"bookId INTEGER NOT NULL, " +
+				"count INTEGER);");
+
 		db.execSQL("CREATE TABLE IF NOT EXISTS ImportBooks " +
 				"(imDate INTEGER NOT NULL, " +
 				"bookId INTEGER NOT NULL, " +
@@ -143,6 +156,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"bookId INTEGER NOT NULL, " +
 				"count INTEGER NOT NULL);");
 
+		// TODO: 23.09.17 Need to delete
 		db.execSQL("CREATE TABLE IF NOT EXISTS CardDate " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
 				"dateFld INTEGER, " +
@@ -151,6 +165,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 				"percent INTEGER DEFAULT '100' , " +
 				"mark TEXT);");
 
+		// TODO: 23.09.17 Need to delete
 		db.execSQL("CREATE TABLE IF NOT EXISTS CardEntries " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
 				"dateId INTEGER NOT NULL, " +
