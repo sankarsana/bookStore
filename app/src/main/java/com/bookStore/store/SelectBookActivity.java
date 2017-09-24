@@ -6,11 +6,13 @@ import android.view.*;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bookStore.App.App;
 import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.R;
+import com.bookStore.model.BookImpl;
 
-public class SelectBookActivity extends BaseListActivity {
+public class SelectBookActivity extends BaseListActivity<SelectBookActivity.SelectBookAdapter> {
 
 	public static final String NEW_BOOK = "newBook";
 	private SelectBookAdapter adapter;
@@ -34,7 +36,7 @@ public class SelectBookActivity extends BaseListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (item.getItemId() == R.id.selectBook_add) {
-			Intent intent = new Intent(SelectBookActivity.this, UpdateBookAct.class);
+			Intent intent = new Intent(this, UpdateBookAct.class);
 			startActivityForResult(intent, 1);
 		}
 		return super.onOptionsItemSelected(item);
@@ -45,6 +47,7 @@ public class SelectBookActivity extends BaseListActivity {
 		super.onListItemClick(l, v, position, id);
 		getIntent().putExtra("bookId", id);
 		getIntent().putExtra("bookName", adapter.getName(position));
+		App.Companion.getRepository().setSelectedBook(adapter.getItem(position));
 		setResult(RESULT_OK, getIntent());
 		finish();
 	}
@@ -52,24 +55,23 @@ public class SelectBookActivity extends BaseListActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-
 		if (resultCode == RESULT_OK) {
 			setResult(RESULT_OK, data);
 			finish();
 		}
 	}
 
-	private class SelectBookAdapter extends CursorSearchAdapter {
+	class SelectBookAdapter extends CursorSearchAdapter {
 
 		@Override
 		public String getQuery() {
-			return "SELECT _id, bookName, shortName, count" +
+			return "SELECT _id, bookName, shortName, count, cost" +
 					" FROM books ORDER BY bookName";
 		}
 
 		@Override
 		public String getQuery(String search) {
-			return "SELECT _id, bookName, shortName, count" +
+			return "SELECT _id, bookName, shortName, count, cost" +
 					" FROM books" +
 					" WHERE sort LIKE '% " + search + "%'" +
 					" ORDER BY  bookName";
@@ -78,6 +80,15 @@ public class SelectBookActivity extends BaseListActivity {
 		private String getName(int position) {
 			cursor.moveToPosition(position);
 			return cursor.getString(1);
+		}
+
+		@Override
+		public com.bookStore.model.Book getItem(int position) {
+			cursor.moveToPosition(position);
+			BookImpl book = new BookImpl();
+			book.setBookName(cursor.getString(1));
+			book.setCost(cursor.getInt(4));
+			return book;
 		}
 
 		@Override

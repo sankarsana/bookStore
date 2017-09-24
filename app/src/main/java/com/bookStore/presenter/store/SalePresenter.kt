@@ -19,8 +19,8 @@ object SalePresenter {
 		view.startSelectBookActivity()
 	}
 
-	fun onSelectBookActivityResult(bookName: String) {
-		saleEntry.addBook(bookName)
+	fun onSelectBookActivityResult() {
+		saleEntry.addBook(repository.selectedBook)
 		view.updateBooks(saleEntry.books)
 		view.updateSum(saleEntry.sum)
 	}

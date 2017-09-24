@@ -12,7 +12,7 @@ interface SaleEntry {
 
 	val note: String
 
-	fun addBook(bookName: String)
+	fun addBook(book: Book)
 
 	val sum: Int
 }

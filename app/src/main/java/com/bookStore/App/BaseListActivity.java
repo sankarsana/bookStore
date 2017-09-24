@@ -11,7 +11,6 @@ import com.bookStore.R;
 public abstract class BaseListActivity<T extends ListAdapter> extends BaseActivity {
 
 	private ListView listView;
-//	private T type;
 
 	@Override
 	protected void onStart() {

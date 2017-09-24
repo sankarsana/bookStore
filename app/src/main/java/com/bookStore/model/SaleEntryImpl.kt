@@ -12,8 +12,8 @@ class SaleEntryImpl : SaleEntry {
 
 	override val note = ""
 
-	override fun addBook(bookName: String) {
-		books.add(BookFake(2, bookName))
+	override fun addBook(book: Book) {
+		books.add(book)
 	}
 
 	override val sum: Int
