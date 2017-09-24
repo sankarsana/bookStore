@@ -6,7 +6,7 @@ interface SaleEntry {
 
 	val customer: Customer
 
-	val books: List<BookForeSale>
+	val books: List<Book>
 
 	val date: Calendar
 

@@ -18,7 +18,6 @@
 	<TextView
 		android:id="@+id/cardDistr"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:textColor="@color/distr_color" />
+		android:layout_height="wrap_content" />
 
 </LinearLayout>

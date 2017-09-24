@@ -7,15 +7,15 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.bookStore.R
-import com.bookStore.model.BookForeSale
+import com.bookStore.model.Book
 
 class SaleAdapter(private val context: Context) : BaseAdapter() {
 
-	private var books: List<BookForeSale> = listOf()
+	private var books: List<Book> = listOf()
 
 	override fun getCount(): Int = books.size
 
-	override fun getItem(position: Int): BookForeSale = books[position]
+	override fun getItem(position: Int): Book = books[position]
 
 	override fun getItemId(position: Int): Long = position.toLong()
 
@@ -30,7 +30,7 @@ class SaleAdapter(private val context: Context) : BaseAdapter() {
 		return view
 	}
 
-	fun update(books: List<BookForeSale>) {
+	fun update(books: List<Book>) {
 		this.books = books
 		notifyDataSetChanged()
 	}

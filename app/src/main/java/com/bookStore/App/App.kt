@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import com.bookStore.presenter.Repository
+import com.bookStore.repository.Repository
 import com.bookStore.repository.RepositoryImpl
 
 class App : Application() {

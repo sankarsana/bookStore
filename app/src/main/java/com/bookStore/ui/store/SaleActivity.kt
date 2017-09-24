@@ -6,7 +6,7 @@ import android.support.design.widget.FloatingActionButton
 import android.widget.TextView
 import com.bookStore.App.BaseListActivity
 import com.bookStore.R
-import com.bookStore.model.BookForeSale
+import com.bookStore.model.Book
 import com.bookStore.presenter.store.SalePresenter
 import com.bookStore.presenter.store.SaleView
 import com.bookStore.store.SelectBookActivity
@@ -27,7 +27,7 @@ class SaleActivity : BaseListActivity<SaleAdapter>(), SaleView {
 		presenter.bind(this)
 	}
 
-	override fun updateBooks(books: List<BookForeSale>) {
+	override fun updateBooks(books: List<Book>) {
 		listAdapter.update(books)
 	}
 
