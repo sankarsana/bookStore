@@ -15,6 +15,7 @@
 		android:id="@+id/selectBook_add"
 		android:icon="@drawable/ic_action_add_light"
 		android:title="@string/neww"
+		android:visible="false"
 		yourapp:showAsAction="ifRoom" />
 
 </menu>

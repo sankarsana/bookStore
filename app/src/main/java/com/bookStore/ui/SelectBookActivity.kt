@@ -27,7 +27,7 @@ class SelectBookActivity : BaseActivity(), AdapterView.OnItemClickListener {
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
 		menuInflater.inflate(R.menu.select_book, menu)
 		if (intent.getBooleanExtra(NEW_BOOK, false)) {
-			menu.getItem(1).isVisible = false
+			menu.getItem(1).isVisible = true
 		}
 		return super.onCreateOptionsMenu(menu)
 	}
