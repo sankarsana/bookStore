@@ -31,7 +31,7 @@
 			android:name=".Cards.DistributorCardActivity"
 			android:screenOrientation="portrait" />
 		<activity
-			android:name=".store.SelectBookActivity"
+			android:name=".ui.SelectBookActivity"
 			android:label="@string/selectBook" />
 		<activity
 			android:name=".Calculation.CalcActivity"
@@ -70,7 +70,7 @@
 			android:name=".Cards.GetMissingBookActivity"
 			android:label="@string/selectBook" />
 		<activity
-			android:name=".ui.store.SaleActivity"
+			android:name=".ui.SaleActivity"
 			android:label="@string/title_activity_card_date"
 			android:theme="@style/AppThemeLight"></activity>
 	</application>

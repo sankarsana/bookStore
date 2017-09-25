@@ -12,13 +12,13 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.DataBase;
 import com.bookStore.R;
-import com.bookStore.store.SelectBookActivity;
+import com.bookStore.ui.BaseListActivityOld;
+import com.bookStore.ui.SelectBookActivity;
 import com.development.NumberKeyboard;
 
-public class ImportActivity extends BaseListActivity implements OnClickListener {
+public class ImportActivity extends BaseListActivityOld implements OnClickListener {
 
 	private Button btnBook;
 	private Button btnEnter;
@@ -70,7 +70,7 @@ public class ImportActivity extends BaseListActivity implements OnClickListener 
 
 			case R.id.addBookBtnBook:
 				Intent intent = new Intent(this, SelectBookActivity.class);
-				intent.putExtra(SelectBookActivity.NEW_BOOK, true);
+				intent.putExtra(SelectBookActivity.Companion.getNEW_BOOK(), true);
 				startActivityForResult(intent, 1);
 				break;
 

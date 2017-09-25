@@ -10,8 +10,9 @@
 		<item name="colorPrimaryDark">?colorPrimary</item>
 		<item name="colorAccent">@color/accent</item>
 
-		<item name="android:textColor">@color/textPrimary</item>
+		<!--<item name="android:textColor">@color/textPrimary</item>-->
 		<item name="android:textViewStyle">@style/TextViewStyle</item>
+		<item name="autoCompleteTextViewStyle">@style/SearchAutoCompleteTextView</item>
 
 		<item name="android:listViewStyle">@style/listViewLight</item>
 		<item name="android:windowBackground">@color/background</item>
@@ -22,6 +23,11 @@
 
 		<item name="android:spinnerStyle">@style/spinnerStyle</item>
 		<item name="android:editTextStyle">@style/EditTextStyle</item>
+	</style>
+
+	<style name="SearchAutoCompleteTextView" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+		<item name="android:textColor">@color/textPrimaryLight</item>
+		<item name="android:textColorHint">@color/textDisabledLight</item>
 	</style>
 
 

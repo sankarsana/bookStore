@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.view.*;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.App.DataBase;
 import com.bookStore.Calculation.CalcActivity;
@@ -18,9 +18,10 @@ import com.bookStore.Preference.ExportBooksToCSV;
 import com.bookStore.Preference.PrefActivity;
 import com.bookStore.R;
 import com.bookStore.Reports.JointActivity;
-import com.bookStore.ui.store.SaleActivity;
+import com.bookStore.ui.BaseListActivityOld;
+import com.bookStore.ui.SaleActivity;
 
-public class StoreActivity extends BaseListActivity {
+public class StoreActivity extends BaseListActivityOld<StoreActivity.ListAdapter> {
 
 	private static LayoutInflater lInflater;
 	private BookDetailDialog bookDetail;
@@ -41,7 +42,7 @@ public class StoreActivity extends BaseListActivity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(@NonNull Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_store, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -95,7 +96,7 @@ public class StoreActivity extends BaseListActivity {
 		public TextView cost;
 	}
 
-	private class ListAdapter extends CursorSearchAdapter {
+	class ListAdapter extends CursorSearchAdapter {
 
 		@Override
 		public String getQuery() {

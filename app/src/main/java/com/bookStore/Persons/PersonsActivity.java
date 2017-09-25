@@ -8,14 +8,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.MyDialogFragment;
 import com.bookStore.Cards.DistributorCardActivity;
 import com.bookStore.R;
+import com.bookStore.ui.BaseListActivityOld;
 
 import java.util.HashMap;
 
-public class PersonsActivity extends BaseListActivity implements MyDialogFragment.IMyDialogFragment {
+public class PersonsActivity extends BaseListActivityOld implements MyDialogFragment.IMyDialogFragment {
 
 	private static Person person;
 	private Persons persons;

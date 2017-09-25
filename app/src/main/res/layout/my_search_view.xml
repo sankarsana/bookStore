@@ -22,7 +22,7 @@
 
 	<view
 		android:id="@+id/search_src_text"
-		class="com.bookStore.App.MySearchView$EditText_immStateRemember"
+		class="com.bookStore.App.MySearchView$EditTextImmStateRemember"
 		android:layout_width="0dp"
 		android:layout_height="30dip"
 		android:layout_weight="1"

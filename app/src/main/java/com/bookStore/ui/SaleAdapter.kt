@@ -1,4 +1,4 @@
-package com.bookStore.ui.store
+package com.bookStore.ui
 
 import android.content.Context
 import android.view.LayoutInflater

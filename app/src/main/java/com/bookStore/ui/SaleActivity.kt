@@ -1,17 +1,15 @@
-package com.bookStore.ui.store
+package com.bookStore.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.widget.TextView
-import com.bookStore.App.BaseListActivity
 import com.bookStore.R
 import com.bookStore.model.Book
 import com.bookStore.presenter.store.SalePresenter
 import com.bookStore.presenter.store.SaleView
-import com.bookStore.store.SelectBookActivity
 
-class SaleActivity : BaseListActivity<SaleAdapter>(), SaleView {
+class SaleActivity : BaseListActivityOld<SaleAdapter>(), SaleView {
 
 	private val presenter = SalePresenter
 	lateinit var sum: TextView

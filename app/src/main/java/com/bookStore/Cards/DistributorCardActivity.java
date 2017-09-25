@@ -7,9 +7,9 @@ import android.support.v4.view.ViewPager;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
-import com.bookStore.App.BaseActivity;
 import com.bookStore.App.Utilities;
 import com.bookStore.R;
+import com.bookStore.ui.BaseActivity;
 
 import java.util.Calendar;
 

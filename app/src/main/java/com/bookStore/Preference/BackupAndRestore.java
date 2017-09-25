@@ -9,16 +9,16 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.DataBase;
 import com.bookStore.R;
+import com.bookStore.ui.BaseListActivityOld;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 
-public class BackupAndRestore extends BaseListActivity {
+public class BackupAndRestore extends BaseListActivityOld {
 
 	private String[] backupList = new String[0];
 

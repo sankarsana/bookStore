@@ -11,12 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
-import com.bookStore.App.BaseActivity;
 import com.bookStore.App.DataBase;
 import com.bookStore.App.Utilities;
 import com.bookStore.Persons.Persons;
 import com.bookStore.R;
 import com.bookStore.store.Writers;
+import com.bookStore.ui.BaseActivity;
 
 import java.util.Calendar;
 

@@ -10,9 +10,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.bookStore.App.BaseActivity;
 import com.bookStore.App.MyDialogFragment;
 import com.bookStore.R;
+import com.bookStore.ui.BaseActivity;
 
 import java.util.HashMap;
 

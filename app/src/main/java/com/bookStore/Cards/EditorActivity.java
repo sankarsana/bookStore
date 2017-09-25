@@ -8,7 +8,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.App.DataBase;
 import com.bookStore.Persons.Person;
@@ -17,8 +16,9 @@ import com.bookStore.R;
 import com.bookStore.store.Book;
 import com.bookStore.store.Store;
 import com.bookStore.store.StoreActivity;
+import com.bookStore.ui.BaseListActivityOld;
 
-public class EditorActivity extends BaseListActivity
+public class EditorActivity extends BaseListActivityOld
 		implements EditorInputDialog.IEditorInputDialog {
 
 	private EditorInputDialog inputDialog;

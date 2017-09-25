@@ -7,12 +7,12 @@ import android.util.SparseBooleanArray;
 import android.view.*;
 import android.widget.*;
 
-import com.bookStore.App.BaseListActivity;
 import com.bookStore.App.DataBase;
 import com.bookStore.Persons.PersonsActivity;
 import com.bookStore.R;
+import com.bookStore.ui.BaseListActivityOld;
 
-public class GetMissingBookActivity extends BaseListActivity implements View.OnClickListener {
+public class GetMissingBookActivity extends BaseListActivityOld implements View.OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
