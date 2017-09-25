@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import com.bookStore.repository.Repository
-import com.bookStore.repository.RepositoryImpl
+import com.bookStore.gateway.Gateway
+import com.bookStore.gateway.GatewayImpl
 
 class App : Application() {
 
@@ -13,7 +13,7 @@ class App : Application() {
 
 		lateinit var context: Context
 			private set
-		lateinit var repository: Repository
+		lateinit var gateway: Gateway
 			private set
 
 		fun setImeVisibility(context: Context, visible: Boolean, view: View) {
@@ -28,7 +28,7 @@ class App : Application() {
 	override fun onCreate() {
 		super.onCreate()
 		context = this
-		repository = RepositoryImpl(this)
+		gateway = GatewayImpl(this)
 //		DataBase.initialize(this)
 	}
 }

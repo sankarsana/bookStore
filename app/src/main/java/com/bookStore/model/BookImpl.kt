@@ -6,5 +6,5 @@ class BookImpl : Book {
 
 	override var cost = 0;
 
-	override val quantity = 0
+	override var quantity = 0
 }

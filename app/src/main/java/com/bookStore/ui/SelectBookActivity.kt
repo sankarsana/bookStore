@@ -9,11 +9,15 @@ import android.widget.AdapterView
 import android.widget.ListView
 import com.bookStore.App.App
 import com.bookStore.R
+import com.bookStore.model.Book
+import com.bookStore.presenter.SelectBookPresenter
+import com.bookStore.presenter.SelectBookView
 import com.bookStore.store.UpdateBookAct
 
-class SelectBookActivity : BaseActivity(), AdapterView.OnItemClickListener {
+class SelectBookActivity : BaseActivity(), SelectBookView, AdapterView.OnItemClickListener {
 
 	private lateinit var adapter: SelectBookAdapter
+	private val presenter = SelectBookPresenter
 
 	public override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -22,7 +26,14 @@ class SelectBookActivity : BaseActivity(), AdapterView.OnItemClickListener {
 		val listView = findViewById(R.id.listView) as ListView
 		listView.adapter = adapter
 		listView.onItemClickListener = this
+		presenter.bind(this)
 	}
+
+	override fun updateList(books: List<Book>) {
+		adapter.update(books)
+	}
+
+	override fun onSearchTextChange(text: String) = presenter.onSearchTextChange(text)
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
 		menuInflater.inflate(R.menu.select_book, menu)
@@ -40,22 +51,14 @@ class SelectBookActivity : BaseActivity(), AdapterView.OnItemClickListener {
 	}
 
 	override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-		intent.putExtra("bookId", id)
-		intent.putExtra("bookName", adapter.getName(position))
-		App.repository.selectedBook = adapter.getItem(position)
-		setResult(RESULT_OK, intent)
+		App.gateway.selectedBook = adapter.getItem(position)
+		setResult(RESULT_OK)
 		finish()
-	}
-
-	override fun onSearchTextChange(text: String) {
-
 	}
 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
 		super.onActivityResult(requestCode, resultCode, data)
-		if (resultCode == RESULT_OK) {
-			setResult(RESULT_OK, data)
-			finish()
-		}
+		setResult(RESULT_OK, data)
+		finish()
 	}
 }

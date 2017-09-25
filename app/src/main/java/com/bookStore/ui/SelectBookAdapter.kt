@@ -1,46 +1,36 @@
 package com.bookStore.ui
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
 import android.widget.TextView
-import com.bookStore.App.CursorSearchAdapter
 import com.bookStore.R
 import com.bookStore.model.Book
-import com.bookStore.model.BookImpl
-import com.bookStore.store.StoreActivity
 
-class SelectBookAdapter : CursorSearchAdapter() {
+class SelectBookAdapter() : BaseAdapter() {
 
-	override fun getQuery(): String =
-			"SELECT _id, bookName, shortName, count, cost" + " FROM books ORDER BY bookName"
+	private var books = listOf<Book>()
 
-	override fun getQuery(search: String): String {
-		return "SELECT _id, bookName, shortName, count, cost" +
-				" FROM books" +
-				" WHERE sort LIKE '% $search%'" +
-				" ORDER BY  bookName"
+	fun update(books: List<Book>) {
+		this.books = books
+		notifyDataSetChanged()
 	}
 
-	fun getName(position: Int): String {
-		cursor.moveToPosition(position)
-		return cursor.getString(1)
-	}
+	override fun getItemId(position: Int) = position.toLong()
 
-	override fun getItem(position: Int): Book {
-		cursor.moveToPosition(position)
-		val book = BookImpl()
-		book.bookName = cursor.getString(1)
-		book.cost = cursor.getInt(4)
-		return book
-	}
+	override fun getCount() = books.size
+
+	override fun getItem(position: Int) = books[position]
 
 	override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 		var view = convertView
-		if (convertView == null)
-			view = StoreActivity.getLInflater().inflate(R.layout.select_book_item, parent, false)
-		cursor.moveToPosition(position)
-		(view?.findViewById(R.id.selectBook_name) as TextView).text = cursor.getString(1)
-		(view.findViewById(R.id.selectBook_count) as TextView).text = cursor.getString(3)
+		if (convertView == null) {
+			view = LayoutInflater.from(parent.context).inflate(R.layout.item_select_book, parent, false)
+		}
+		val book = books[position]
+		(view?.findViewById(R.id.selectBook_name) as TextView).text = book.bookName
+		(view.findViewById(R.id.selectBook_count) as TextView).text = book.quantity.toString()
 		return view
 	}
 }

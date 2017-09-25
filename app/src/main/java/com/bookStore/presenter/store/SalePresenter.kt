@@ -6,7 +6,7 @@ import com.bookStore.model.SaleEntryImpl
 
 object SalePresenter {
 
-	private val repository = App.repository
+	private val repository = App.gateway
 	private lateinit var view: SaleView
 	private lateinit var saleEntry: SaleEntry
 
