@@ -58,9 +58,4 @@ class SelectBookActivity : BaseActivity(), AdapterView.OnItemClickListener {
 			finish()
 		}
 	}
-
-	companion object {
-
-		val NEW_BOOK = "newBook"
-	}
 }

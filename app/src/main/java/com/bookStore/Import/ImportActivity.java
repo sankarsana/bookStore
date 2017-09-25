@@ -18,6 +18,8 @@ import com.bookStore.ui.BaseListActivityOld;
 import com.bookStore.ui.SelectBookActivity;
 import com.development.NumberKeyboard;
 
+import static com.bookStore.ui.ConstantsKt.NEW_BOOK;
+
 public class ImportActivity extends BaseListActivityOld implements OnClickListener {
 
 	private Button btnBook;
@@ -70,7 +72,7 @@ public class ImportActivity extends BaseListActivityOld implements OnClickListen
 
 			case R.id.addBookBtnBook:
 				Intent intent = new Intent(this, SelectBookActivity.class);
-				intent.putExtra(SelectBookActivity.Companion.getNEW_BOOK(), true);
+				intent.putExtra(NEW_BOOK, true);
 				startActivityForResult(intent, 1);
 				break;
 
