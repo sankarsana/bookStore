@@ -27,7 +27,7 @@ class SelectBookActivity : BaseActivity(), SelectBookView, InputCountDialog.Inpu
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
-		menuInflater.inflate(R.menu.select_book, menu)
+		menuInflater.inflate(R.menu.activity_select_book, menu)
 		return super.onCreateOptionsMenu(menu)
 	}
 

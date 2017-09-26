@@ -12,12 +12,13 @@ object SelectBookPresenter {
 
 	fun bind(view: SelectBookView) {
 		this.view = view
-		view.updateList(gateway.fetchBookList(""))
+		val books = gateway.fetchBookList("")
+		view.updateList(books)
 	}
 
 	fun onSearchTextChange(text: String) {
-		searchText = text
-		val books = gateway.fetchBookList(searchText.toLowerCase())
+		searchText = text.toLowerCase()
+		val books = gateway.fetchBookList(searchText)
 		view.updateList(books)
 	}
 

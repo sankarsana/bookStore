@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.dialog_input_editor.*
 
 class InputCountDialog : MyDialogFragment(), View.OnClickListener {
 
-	private var allAvailableCount: Int = 0
 	private lateinit var book: Book
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View =
@@ -25,40 +24,27 @@ class InputCountDialog : MyDialogFragment(), View.OnClickListener {
 		btnAll.setOnClickListener(this)
 		book = SelectBookPresenter.selectedBook
 		bookName.text = book.bookName
-	}
-
-	override fun onStart() {
-		super.onStart()
-
-		val currentBookCount = activity.intent.getIntExtra("currentCount", 0)
-		if (currentBookCount != 0) {
-			inputCount.setText(currentBookCount.toString())
-			inputCount.selectAll()
-		} else
-			inputCount.setText("")
-
-		allAvailableCount = activity.intent.getIntExtra("availableCount", 0)
-		if (allAvailableCount != 0)
-			btnAll.text = resources.getString(R.string.allCount, allAvailableCount)
-		else
+		if (book.count != 0) {
+			btnAll.text = resources.getString(R.string.allCount, book.count)
+		} else {
 			btnAll.text = resources.getString(R.string.all)
+		}
 	}
 
 	override fun onClick(v: View) {
 		when (v.id) {
-
-			R.id.btnOk -> {
-				var bookCount = 0
-				if (inputCount.text.isNotEmpty())
-					bookCount = inputCount.text.toString().toInt() - activity.intent.getIntExtra("currentCount", 0)
-				(activity as InputCountDialogListener).onDialogPositiveResult(bookCount)
-				dismiss()
-			}
-
+			R.id.btnOk -> onBtnOkClick()
 			R.id.btnCancel -> dismiss()
-
-			R.id.btnAll -> if (allAvailableCount != 0) inputCount.setText(allAvailableCount.toString())
+			R.id.btnAll -> if (book.count != 0) inputCount.setText(book.count.toString())
 		}
+	}
+
+	private fun onBtnOkClick() {
+		var bookCount = 0
+		if (inputCount.text.isNotEmpty())
+			bookCount = inputCount.text.toString().toInt()
+		(activity as InputCountDialogListener).onDialogPositiveResult(bookCount)
+		dismiss()
 	}
 
 	interface InputCountDialogListener {
