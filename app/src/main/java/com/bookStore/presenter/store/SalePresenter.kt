@@ -9,10 +9,16 @@ object SalePresenter {
 	private val repository = App.Gateway
 	private lateinit var view: SaleView
 	private lateinit var saleEntry: SaleEntry
+	private var haveEntry = false
 
-	fun bind(saleView: SaleView) {
+	fun onCreateView(saleView: SaleView) {
 		view = saleView
-		saleEntry = SaleEntryImpl()
+		if (haveEntry) {
+			updateView()
+		} else {
+			saleEntry = SaleEntryImpl()
+			haveEntry = true
+		}
 	}
 
 	fun onButtonAddClick() {
@@ -21,7 +27,15 @@ object SalePresenter {
 
 	fun onSelectBookActivityResult() {
 		saleEntry.addBook(repository.selectedBook)
+		updateView()
+	}
+
+	private fun updateView() {
 		view.updateBooks(saleEntry.books)
 		view.updateSum(saleEntry.sum)
+	}
+
+	fun onBackPressed() {
+		haveEntry = false
 	}
 }

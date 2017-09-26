@@ -21,12 +21,11 @@ class SaleAdapter(private val context: Context) : BaseAdapter() {
 
 	override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
 		var view = convertView
-		if (convertView == null)
-			view = LayoutInflater.from(context).inflate(R.layout.item_card_store, parent, false)
+		if (view == null)
+			view = LayoutInflater.from(context).inflate(R.layout.item_sale, parent, false)
 		val book = books[position]
-		(view?.findViewById(R.id.shortName) as TextView).text = book.bookName
-		(view.findViewById(R.id.cardDistr) as TextView).text =
-				if (book.count == 0) "" else book.count.toString()
+		(view?.findViewById(R.id.bookName) as TextView).text = book.bookName
+		(view.findViewById(R.id.count) as TextView).text = book.count.toString()
 		return view
 	}
 

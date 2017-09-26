@@ -2,44 +2,43 @@ package com.bookStore.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.widget.TextView
 import com.bookStore.R
 import com.bookStore.model.Book
 import com.bookStore.presenter.store.SalePresenter
 import com.bookStore.presenter.store.SaleView
+import kotlinx.android.synthetic.main.activity_store_sale.*
+import kotlinx.android.synthetic.main.content_sale.*
+import kotlinx.android.synthetic.main.content_sale_header.*
 
-class SaleActivity : BaseListActivityOld<SaleAdapter>(), SaleView {
+class SaleActivity : BaseActivity(), SaleView {
 
 	private val presenter = SalePresenter
-	lateinit var sum: TextView
+	private val adapter = SaleAdapter(this)
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_store_sale)
-		val fab = findViewById(R.id.add) as FloatingActionButton
-		sum = findViewById(R.id.sum) as TextView
-		fab.setOnClickListener { presenter.onButtonAddClick() }
-
-		listAdapter = SaleAdapter(this)
-		presenter.bind(this)
+		listView.adapter = adapter
+		fabAdd.setOnClickListener { presenter.onButtonAddClick() }
+		presenter.onCreateView(this)
 	}
 
-	override fun updateBooks(books: List<Book>) {
-		listAdapter.update(books)
-	}
+	override fun updateBooks(books: List<Book>) = adapter.update(books)
 
 	override fun updateSum(sum: Int) {
 		this.sum.text = getString(R.string.sum, sum)
 	}
 
-	override fun startSelectBookActivity() {
-		val intent = Intent(this, SelectBookActivity().javaClass)
-		startActivityForResult(intent, 0)
-	}
+	override fun startSelectBookActivity() =
+			startActivityForResult(Intent(this, SelectBookActivity().javaClass), 0)
 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 		super.onActivityResult(requestCode, resultCode, data)
 		presenter.onSelectBookActivityResult()
+	}
+
+	override fun onBackPressed() {
+		super.onBackPressed()
+		presenter.onBackPressed()
 	}
 }
