@@ -13,7 +13,7 @@ class App : Application() {
 
 		lateinit var context: Context
 			private set
-		lateinit var gateway: Gateway
+		lateinit var Gateway: Gateway
 			private set
 
 		fun setImeVisibility(context: Context, visible: Boolean, view: View) {
@@ -28,7 +28,7 @@ class App : Application() {
 	override fun onCreate() {
 		super.onCreate()
 		context = this
-		gateway = GatewayImpl(this)
+		Gateway = GatewayImpl(this)
 //		DataBase.initialize(this)
 	}
 }

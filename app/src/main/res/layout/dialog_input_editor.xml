@@ -24,7 +24,7 @@
 			android:orientation="horizontal">
 
 			<com.development.InputView
-				android:id="@+id/editor_input_count"
+				android:id="@+id/inputCount"
 				android:layout_width="100dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"
@@ -32,11 +32,11 @@
 				android:textSize="@dimen/textSizeLine" />
 
 			<Button
-				android:id="@+id/editor_input_btn_all"
+				android:id="@+id/btnAll"
 				android:layout_width="80dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_vertical"
-				android:text="@string/allAvailable" />
+				android:text="@string/all" />
 
 		</LinearLayout>
 
@@ -46,7 +46,7 @@
 			android:orientation="horizontal">
 
 			<Button
-				android:id="@+id/editor_input_btn_ok"
+				android:id="@+id/btnOk"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
@@ -54,7 +54,7 @@
 				android:text="@android:string/ok" />
 
 			<Button
-				android:id="@+id/editor_input_btn_cancel"
+				android:id="@+id/btnCancel"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
@@ -64,7 +64,7 @@
 		</LinearLayout>
 
 		<com.development.NumberKeyboard
-			android:id="@+id/editorInputKeyboard"
+			android:id="@+id/inputKeyboard"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content" />
 

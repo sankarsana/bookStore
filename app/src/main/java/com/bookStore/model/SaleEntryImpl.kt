@@ -17,5 +17,5 @@ class SaleEntryImpl : SaleEntry {
 	}
 
 	override val sum: Int
-		get() = books.sumBy { it.quantity * it.cost }
+		get() = books.sumBy { it.count * it.cost }
 }

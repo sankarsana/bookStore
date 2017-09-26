@@ -46,7 +46,7 @@
 			android:layout_centerVertical="true"
 			android:layout_toRightOf="@+id/cardNewRecord_number"
 			android:layout_marginLeft="10dp"
-			android:text="@string/allAvailable" />
+			android:text="@string/all" />
 
 	</RelativeLayout>
 

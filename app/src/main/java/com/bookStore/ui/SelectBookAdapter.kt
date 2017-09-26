@@ -30,7 +30,7 @@ class SelectBookAdapter() : BaseAdapter() {
 		}
 		val book = books[position]
 		(view?.findViewById(R.id.selectBook_name) as TextView).text = book.bookName
-		(view.findViewById(R.id.selectBook_count) as TextView).text = book.quantity.toString()
+		(view.findViewById(R.id.selectBook_count) as TextView).text = book.count.toString()
 		return view
 	}
 }

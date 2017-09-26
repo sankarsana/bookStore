@@ -12,7 +12,7 @@ import com.bookStore.R;
 import com.development.InputView;
 import com.development.NumberKeyboard;
 
-public class EditorInputDialog extends MyDialogFragment implements View.OnClickListener {
+public class InputCountDialog_java extends MyDialogFragment implements View.OnClickListener {
 
 	private Button btnAll;
 	private TextView bookName;
@@ -21,16 +21,16 @@ public class EditorInputDialog extends MyDialogFragment implements View.OnClickL
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.editor_input_dialog, container);
+		View view = inflater.inflate(R.layout.dialog_input_editor, container);
 
-		btnAll = (Button) view.findViewById(R.id.editor_input_btn_all);
+		btnAll = (Button) view.findViewById(R.id.btnAll);
 		bookName = (TextView) view.findViewById(R.id.bookName);
-		inputCount = (InputView) view.findViewById(R.id.editor_input_count);
+		inputCount = (InputView) view.findViewById(R.id.inputCount);
 
-		view.findViewById(R.id.editor_input_btn_ok).setOnClickListener(this);
-		view.findViewById(R.id.editor_input_btn_cancel).setOnClickListener(this);
+		view.findViewById(R.id.btnOk).setOnClickListener(this);
+		view.findViewById(R.id.btnCancel).setOnClickListener(this);
 
-		((NumberKeyboard) view.findViewById(R.id.editorInputKeyboard)).setEditText(inputCount);
+		((NumberKeyboard) view.findViewById(R.id.inputKeyboard)).setEditText(inputCount);
 		btnAll.setOnClickListener(this);
 
 		return view;
@@ -51,16 +51,16 @@ public class EditorInputDialog extends MyDialogFragment implements View.OnClickL
 
 		allInStock = getActivity().getIntent().getIntExtra("availableCount", 0);
 		if (allInStock != 0)
-			btnAll.setText(getResources().getString(R.string.allAvailable) + " " + allInStock);
+			btnAll.setText(getResources().getString(R.string.all) + " " + allInStock);
 		else
-			btnAll.setText(getResources().getString(R.string.allAvailable));
+			btnAll.setText(getResources().getString(R.string.all));
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 
-			case R.id.editor_input_btn_ok:
+			case R.id.btnOk:
 				int bookCount = 0;
 				if (inputCount.getText().length() != 0)
 					bookCount = Integer.parseInt(inputCount.getText().toString())
@@ -69,11 +69,11 @@ public class EditorInputDialog extends MyDialogFragment implements View.OnClickL
 					dismiss();
 				break;
 
-			case R.id.editor_input_btn_cancel:
+			case R.id.btnCancel:
 				dismiss();
 				break;
 
-			case R.id.editor_input_btn_all:
+			case R.id.btnAll:
 				if (allInStock != 0)
 					inputCount.setText(Integer.toString(allInStock));
 				break;
@@ -82,10 +82,6 @@ public class EditorInputDialog extends MyDialogFragment implements View.OnClickL
 
 	public interface IEditorInputDialog {
 
-		/**
-		 * @param additionalCount new count of book
-		 * @return true - dialog dismiss, false dialog not dismiss
-		 */
 		public boolean executeOk(int additionalCount);
 	}
 }

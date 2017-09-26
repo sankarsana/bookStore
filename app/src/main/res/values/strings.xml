@@ -8,6 +8,10 @@
 	<string name="title_activity_card_date">Продажа</string>
 	<string name="sum">"%1$d .р"</string>
 
+	<!-- InputCountDialog -->
+	<string name="all">Все</string>
+	<string name="allCount">Все %1$d</string>
+
 	<string name="SrilaPrabhupada">Шрила Прабхупада</string>
 	<string name="app_name">BookStore</string>
 	<string name="menu_settings">Settings</string>
@@ -62,7 +66,6 @@
 	<string name="distribAll">Распостранить всё</string>
 	<string name="returnAll">Вернуть всё</string>
 	<string name="change">Изменить</string>
-	<string name="allAvailable">Все</string>
 	<string name="addMore">Добавить ещё</string>
 	<string name="title_activity_main">MainActivity</string>
 	<string name="action_settings">Settings</string>

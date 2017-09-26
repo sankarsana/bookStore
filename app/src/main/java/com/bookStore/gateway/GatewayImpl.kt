@@ -16,12 +16,12 @@ class GatewayImpl(context: Context) : Gateway {
 	private class BookFake : Book {
 		override val bookName = ""
 		override val cost = 0
-		override val quantity = 0
+		override var count = 0
 	}
 
 	override fun fetchBookList(searchText: String): List<Book> {
 		val where = if (searchText.isEmpty()) "" else {
-			" WHERE sort LIKE '$searchText%' OR sort LIKE '% $searchText%'"
+			"WHERE sort LIKE '$searchText%' OR sort LIKE '% $searchText%'"
 		}
 		val query = "SELECT _id, bookName, shortName, count, cost FROM books $where ORDER BY sort"
 		val cursor = DataBase.get().rawQuery(query, null)
@@ -29,7 +29,7 @@ class GatewayImpl(context: Context) : Gateway {
 		while (cursor.moveToNext()) {
 			val book = BookImpl()
 			book.bookName = cursor.getString(1)
-			book.quantity = cursor.getInt(3)
+			book.count = cursor.getInt(3)
 			book.cost = cursor.getInt(4)
 			books.add(book)
 		}

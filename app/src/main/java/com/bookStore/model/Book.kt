@@ -6,5 +6,5 @@ interface Book {
 
 	val cost: Int
 
-	val quantity: Int
+	var count: Int
 }

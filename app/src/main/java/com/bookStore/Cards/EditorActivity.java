@@ -19,9 +19,9 @@ import com.bookStore.store.StoreActivity;
 import com.bookStore.ui.BaseListActivityOld;
 
 public class EditorActivity extends BaseListActivityOld
-		implements EditorInputDialog.IEditorInputDialog {
+		implements InputCountDialog_java.IEditorInputDialog {
 
-	private EditorInputDialog inputDialog;
+	private InputCountDialog_java inputDialog;
 	private long selectedBookId;
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class EditorActivity extends BaseListActivityOld
 		setToolbarTitle(CardDateFragment.getCardDate().getDateSimple_String());
 		setToolbarSubtitle(getIntent().getStringExtra("modeTitle"));
 
-		inputDialog = new EditorInputDialog();
+		inputDialog = new InputCountDialog_java();
 
 		if (PersonsActivity.getPerson().id == Person.STORE_ID) {
 			getListView().setAdapter(new PersonAdapterStore());
