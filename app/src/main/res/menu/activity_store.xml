@@ -20,13 +20,15 @@
 		android:id="@+id/menu_store_persons"
 		android:icon="@drawable/ic_action_persons"
 		android:title="@string/cards"
-		app:showAsAction="never" />
+		app:showAsAction="never"
+		android:visible="false" />
 
 	<item
 		android:id="@+id/menu_bring_books"
 		android:icon="@android:drawable/ic_menu_add"
 		android:title="@string/bring_books"
-		app:showAsAction="never">
+		app:showAsAction="never"
+		android:visible="false">
 		<!--<menu></menu>-->
 	</item>
 
@@ -34,17 +36,20 @@
 		android:id="@+id/store_menu_reports"
 		android:icon="@android:drawable/ic_menu_report_image"
 		android:title="@string/reports"
-		app:showAsAction="never" />
+		app:showAsAction="never"
+		android:visible="false" />
 
 	<item
 		android:id="@+id/store_menu_calculate"
 		android:icon="@drawable/ic_calculate"
 		android:title="@string/recount"
-		app:showAsAction="never" />
+		app:showAsAction="never"
+		android:visible="false" />
 
 	<item
 		android:id="@+id/store_menu_preference"
 		android:icon="@drawable/ic_action_settings"
-		android:title="@string/settings" />
+		android:title="@string/settings"
+		android:visible="false" />
 
 </menu>

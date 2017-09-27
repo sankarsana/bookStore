@@ -1,6 +1,5 @@
 package com.bookStore.store;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -35,10 +34,8 @@ public class StoreActivity extends BaseListActivityOld<StoreActivity.ListAdapter
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_store);
 		setListAdapter(new ListAdapter());
-		lInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+		lInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 		getListView().requestFocusFromTouch();
-		startActivity(new Intent(this, SaleActivity.class));
 	}
 
 	@Override

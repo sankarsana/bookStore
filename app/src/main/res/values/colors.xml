@@ -2,8 +2,8 @@
 <resources>
 
 	<color name="primary">#546E7A</color>
-	<!--<color name="accent">#ffeb8800</color>-->
-	<color name="accent">#ffE39435</color>
+	<color name="accent">#eb8800</color>
+	<!--<color name="accent">#ffE39435</color>-->
 
 	<!-- Black -->
 	<!--<color name="textPrimary">#de000000</color>-->

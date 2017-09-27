@@ -35,7 +35,6 @@
 	<style name="TextViewStyle" parent="android:Widget.TextView">
 		<item name="android:fontFamily">sans-serif-condensed</item>
 		<item name="android:textSize">@dimen/textSizeGeneral</item>
-		<item name="android:textColor">@color/textPrimary</item>
 	</style>
 
 
