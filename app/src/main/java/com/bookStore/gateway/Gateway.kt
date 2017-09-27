@@ -4,7 +4,9 @@ import com.bookStore.model.Book
 
 interface Gateway {
 
-	var selectedBook: Book
-
 	fun fetchBookList(searchText: String): List<Book>
+
+	fun pushSelected(book: Book)
+
+	fun popSelected(): Book?
 }

@@ -1,18 +1,12 @@
 package com.bookStore.model
 
-import java.util.*
+class SaleEntry {
 
-interface SaleEntry {
+	val books: MutableList<Book> = mutableListOf()
 
-	val customer: Customer
+	fun calculateSum() = books.sumBy { it.count * it.cost }
 
-	val books: List<Book>
-
-	val date: Calendar
-
-	val note: String
-
-	fun addBook(book: Book)
-
-	val sum: Int
+	fun addBook(book: Book) {
+		books.add(book)
+	}
 }

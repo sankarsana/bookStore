@@ -7,16 +7,20 @@ import com.bookStore.model.BookImpl
 
 class GatewayImpl(context: Context) : Gateway {
 
-	override var selectedBook: Book = BookFake()
+	private var selectedBook: Book? = null
 
 	init {
 		DataBase.initialize(context)
 	}
 
-	private class BookFake : Book {
-		override val bookName = ""
-		override val cost = 0
-		override var count = 0
+	override fun pushSelected(book: Book) {
+		selectedBook = book
+	}
+
+	override fun popSelected(): Book? {
+		val returnValue: Book? = selectedBook
+		selectedBook = null
+		return returnValue
 	}
 
 	override fun fetchBookList(searchText: String): List<Book> {

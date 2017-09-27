@@ -29,7 +29,7 @@ object SelectBookPresenter {
 
 	fun onCountResult(bookCount: Int) {
 		selectedBook.count = bookCount
-		gateway.selectedBook = selectedBook
+		gateway.pushSelected(selectedBook)
 		view.finish()
 	}
 }

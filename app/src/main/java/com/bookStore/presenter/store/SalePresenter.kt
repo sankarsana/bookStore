@@ -2,23 +2,16 @@ package com.bookStore.presenter.store
 
 import com.bookStore.App.App
 import com.bookStore.model.SaleEntry
-import com.bookStore.model.SaleEntryImpl
 
 object SalePresenter {
 
-	private val repository = App.Gateway
+	private val gateway = App.Gateway
 	private lateinit var view: SaleView
-	private lateinit var saleEntry: SaleEntry
-	private var haveEntry = false
+	private var entry = SaleEntry()
 
 	fun onCreateView(saleView: SaleView) {
 		view = saleView
-		if (haveEntry) {
-			updateView()
-		} else {
-			saleEntry = SaleEntryImpl()
-			haveEntry = true
-		}
+		if (entry.books.isNotEmpty()) updateView()
 	}
 
 	fun onButtonAddClick() {
@@ -26,16 +19,19 @@ object SalePresenter {
 	}
 
 	fun onSelectBookActivityResult() {
-		saleEntry.addBook(repository.selectedBook)
-		updateView()
+		val book = gateway.popSelected()
+		if (book != null) {
+			entry.addBook(book)
+			updateView()
+		}
 	}
 
 	private fun updateView() {
-		view.updateBooks(saleEntry.books)
-		view.updateSum(saleEntry.sum)
+		view.updateBooks(entry.books)
+		view.updateSum(entry.calculateSum())
 	}
 
 	fun onBackPressed() {
-		haveEntry = false
+		entry = SaleEntry()
 	}
 }
