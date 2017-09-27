@@ -10,7 +10,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppThemeLight">
 		<activity
-			android:name=".store.StoreActivity"
+			android:name=".ui.StoreActivity"
 			android:label="@string/store">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />

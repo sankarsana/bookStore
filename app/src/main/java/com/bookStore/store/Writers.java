@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bookStore.App.DataBase;
 import com.bookStore.R;
+import com.bookStore.ui.StoreActivity;
 
 public class Writers extends BaseAdapter {
 
@@ -71,7 +72,7 @@ public class Writers extends BaseAdapter {
 	@Override
 	public View getView(int i, View view, ViewGroup viewGroup) {
 		if (view == null)
-			view = StoreActivity.getLInflater().inflate(R.layout.writer_item, viewGroup, false);
+			view = StoreActivity.Companion.getLInflater().inflate(R.layout.writer_item, viewGroup, false);
 		((TextView) view.findViewById(R.id.writer)).setText(getName());
 		return view;
 	}

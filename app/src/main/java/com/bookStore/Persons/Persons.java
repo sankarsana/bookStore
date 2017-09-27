@@ -12,7 +12,7 @@ import com.bookStore.App.CursorSearchAdapter;
 import com.bookStore.App.DataBase;
 import com.bookStore.Cards.CardDate;
 import com.bookStore.R;
-import com.bookStore.store.StoreActivity;
+import com.bookStore.ui.StoreActivity;
 
 public class Persons extends CursorSearchAdapter {
 
@@ -92,7 +92,7 @@ public class Persons extends CursorSearchAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = convertView;
 		if (convertView == null)
-			view = StoreActivity.getLInflater().inflate(R.layout.item_person, parent, false);
+			view = StoreActivity.Companion.getLInflater().inflate(R.layout.item_person, parent, false);
 		Person person = getPerson(position);
 		String percent = person.percent == 100 ? "" : Integer.toString(person.percent) + "%";
 		((TextView) view.findViewById(R.id.personName)).setText(person.name);

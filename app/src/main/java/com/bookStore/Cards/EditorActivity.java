@@ -15,8 +15,8 @@ import com.bookStore.Persons.PersonsActivity;
 import com.bookStore.R;
 import com.bookStore.store.Book;
 import com.bookStore.store.Store;
-import com.bookStore.store.StoreActivity;
 import com.bookStore.ui.BaseListActivityOld;
+import com.bookStore.ui.StoreActivity;
 
 public class EditorActivity extends BaseListActivityOld
 		implements InputCountDialog_java.IEditorInputDialog {
@@ -298,7 +298,7 @@ public class EditorActivity extends BaseListActivityOld
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View view = convertView;
 			if (convertView == null)
-				view = StoreActivity.getLInflater()
+				view = StoreActivity.Companion.getLInflater()
 						.inflate(R.layout.editor_list_item, parent, false);
 
 			cursor.moveToPosition(position);

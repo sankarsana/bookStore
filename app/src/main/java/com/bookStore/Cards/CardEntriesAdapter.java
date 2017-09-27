@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.bookStore.App.CursorAdapter;
 import com.bookStore.R;
-import com.bookStore.store.StoreActivity;
+import com.bookStore.ui.StoreActivity;
 
 public class CardEntriesAdapter extends CursorAdapter {
 
@@ -53,7 +53,7 @@ public class CardEntriesAdapter extends CursorAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = convertView;
 		if (convertView == null)
-			view = StoreActivity.getLInflater().inflate(
+			view = StoreActivity.Companion.getLInflater().inflate(
 					R.layout.card_item_person, parent, false);
 		cursor.moveToPosition(position);
 		CardEntry entry = new CardEntry(cursor);
