@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.bookStore.R
 import com.bookStore.model.Book
 
-class SelectBookAdapter() : BaseAdapter() {
+class SelectBookAdapter : BaseAdapter() {
 
 	private var books = listOf<Book>()
 
@@ -28,9 +28,7 @@ class SelectBookAdapter() : BaseAdapter() {
 		if (convertView == null) {
 			view = LayoutInflater.from(parent.context).inflate(R.layout.item_select_book, parent, false)
 		}
-		val book = books[position]
-		(view?.findViewById(R.id.selectBook_name) as TextView).text = book.bookName
-		(view.findViewById(R.id.selectBook_count) as TextView).text = book.count.toString()
+		(view?.findViewById(R.id.selectBook_name) as TextView).text = books[position].bookName
 		return view
 	}
 }

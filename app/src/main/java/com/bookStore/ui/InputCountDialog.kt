@@ -21,21 +21,15 @@ class InputCountDialog : MyDialogFragment(), View.OnClickListener {
 		btnOk.setOnClickListener(this)
 		btnCancel.setOnClickListener(this)
 		inputKeyboard.setEditText(inputCount)
-		btnAll.setOnClickListener(this)
 		book = SelectBookPresenter.selectedBook
 		bookName.text = book.bookName
-		if (book.count != 0) {
-			btnAll.text = resources.getString(R.string.allCount, book.count)
-		} else {
-			btnAll.text = resources.getString(R.string.all)
-		}
+		inputCount.text.insert(0, "1")
 	}
 
 	override fun onClick(v: View) {
 		when (v.id) {
 			R.id.btnOk -> onBtnOkClick()
 			R.id.btnCancel -> dismiss()
-			R.id.btnAll -> if (book.count != 0) inputCount.setText(book.count.toString())
 		}
 	}
 

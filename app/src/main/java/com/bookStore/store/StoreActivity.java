@@ -121,17 +121,12 @@ public class StoreActivity extends BaseListActivityOld<StoreActivity.ListAdapter
 				convertView = StoreActivity.getLInflater().inflate(R.layout.item_store, parent, false);
 				holder = new ViewHolder();
 				holder.name = (TextView) convertView.findViewById(R.id.bookName);
-				holder.shortName = (TextView) convertView.findViewById(R.id.shortName);
-				holder.count = (TextView) convertView.findViewById(R.id.count);
 				holder.cost = (TextView) convertView.findViewById(R.id.cost);
 				convertView.setTag(holder);
 			} else
 				holder = (ViewHolder) convertView.getTag();
 
 			holder.name.setText(cursor.getString(1));
-			String secondLine = cursor.getString(2);
-			if (!secondLine.isEmpty()) secondLine = secondLine + "   ";
-			holder.shortName.setText(secondLine + cursor.getString(4) + " шт.");
 			holder.cost.setText(cursor.getString(3) + "р.");
 			return convertView;
 		}
