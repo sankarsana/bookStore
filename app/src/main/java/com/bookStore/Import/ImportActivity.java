@@ -18,7 +18,7 @@ import com.bookStore.ui.BaseListActivityOld;
 import com.bookStore.ui.SelectBookActivity;
 import com.development.NumberKeyboard;
 
-import static com.bookStore.ui.ConstantsKt.NEW_BOOK;
+import static com.bookStore.ui.UtilsKt.NEW_BOOK;
 
 public class ImportActivity extends BaseListActivityOld implements OnClickListener {
 

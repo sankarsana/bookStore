@@ -11,7 +11,11 @@ object SalePresenter {
 
 	fun onCreateView(saleView: SaleView) {
 		view = saleView
-		if (entry.books.isNotEmpty()) updateView()
+		if (entry.books.isNotEmpty()) {
+			view.updateBooks(entry.books)
+			view.updateSum(entry.calculateSum())
+		}
+		view.updateDate(entry.date)
 	}
 
 	fun onButtonAddClick() {
@@ -22,13 +26,10 @@ object SalePresenter {
 		val book = SelectBookPresenter.selectedBook
 		if (book != null) {
 			entry.addBook(book)
-			updateView()
+			view.updateDate(entry.date)
+			view.updateSum(entry.calculateSum())
+			view.updateBooks(entry.books)
 		}
-	}
-
-	private fun updateView() {
-		view.updateBooks(entry.books)
-		view.updateSum(entry.calculateSum())
 	}
 
 	fun onViewStop() {

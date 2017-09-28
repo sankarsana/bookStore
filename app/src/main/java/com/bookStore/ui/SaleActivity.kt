@@ -9,6 +9,7 @@ import com.bookStore.presenter.SaleView
 import kotlinx.android.synthetic.main.activity_store_sale.*
 import kotlinx.android.synthetic.main.content_sale.*
 import kotlinx.android.synthetic.main.content_sale_header.*
+import java.util.*
 
 class SaleActivity : BaseActivity(), SaleView {
 
@@ -27,6 +28,10 @@ class SaleActivity : BaseActivity(), SaleView {
 
 	override fun updateSum(sum: Int) {
 		this.sum.text = getString(R.string.sum, sum)
+	}
+
+	override fun updateDate(date: Calendar) {
+		supportActionBar?.title = date.getDateSimple() + " - продажа"
 	}
 
 	override fun startSelectBookActivity() =
