@@ -1,4 +1,4 @@
-package com.bookStore.presenter.store
+package com.bookStore.presenter
 
 import com.bookStore.model.Book
 

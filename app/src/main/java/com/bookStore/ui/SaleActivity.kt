@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import com.bookStore.R
 import com.bookStore.model.Book
-import com.bookStore.presenter.store.SalePresenter
-import com.bookStore.presenter.store.SaleView
+import com.bookStore.presenter.SalePresenter
+import com.bookStore.presenter.SaleView
 import kotlinx.android.synthetic.main.activity_store_sale.*
 import kotlinx.android.synthetic.main.content_sale.*
 import kotlinx.android.synthetic.main.content_sale_header.*

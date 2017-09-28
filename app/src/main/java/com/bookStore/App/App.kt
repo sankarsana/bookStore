@@ -6,6 +6,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import com.bookStore.gateway.Gateway
 import com.bookStore.gateway.GatewayImpl
+import com.facebook.stetho.Stetho
 
 class App : Application() {
 
@@ -29,6 +30,6 @@ class App : Application() {
 		super.onCreate()
 		context = this
 		Gateway = GatewayImpl(this)
-//		DataBase.initialize(this)
+		Stetho.initializeWithDefaults(this)
 	}
 }

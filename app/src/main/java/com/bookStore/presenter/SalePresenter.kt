@@ -1,4 +1,4 @@
-package com.bookStore.presenter.store
+package com.bookStore.presenter
 
 import com.bookStore.App.App
 import com.bookStore.model.SaleEntry
@@ -32,6 +32,7 @@ object SalePresenter {
 	}
 
 	fun onBackPressed() {
+		gateway.saveSale(entry)
 		entry = SaleEntry()
 	}
 }

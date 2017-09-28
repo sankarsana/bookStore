@@ -118,7 +118,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 		db.execSQL("INSERT INTO Categories VALUES(5, 'MB', '2')");
 		db.execSQL("INSERT INTO Categories VALUES(6, 'Deluxe', '6')");
 
-		db.execSQL("CREATE TABLE IF NOT EXISTS StoreSaleEntry " +
+		db.execSQL("CREATE TABLE IF NOT EXISTS StoreSale " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
 				"dateF INTEGER, " +
 				"personId INTEGER DEFAULT '-1', " +
@@ -127,7 +127,7 @@ public class DataBase extends SQLiteOpenHelper implements BaseColumns {
 
 		db.execSQL("CREATE TABLE IF NOT EXISTS StoreSaleBook " +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT , " +
-				"storeSaleEntryId INTEGER NOT NULL, " +
+				"storeSaleId INTEGER NOT NULL, " +
 				"bookId INTEGER NOT NULL, " +
 				"count INTEGER);");
 

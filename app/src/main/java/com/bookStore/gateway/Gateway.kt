@@ -1,6 +1,7 @@
 package com.bookStore.gateway
 
 import com.bookStore.model.Book
+import com.bookStore.model.SaleEntry
 
 interface Gateway {
 
@@ -9,4 +10,6 @@ interface Gateway {
 	fun pushSelected(book: Book)
 
 	fun popSelected(): Book?
+
+	fun saveSale(entry: SaleEntry)
 }
