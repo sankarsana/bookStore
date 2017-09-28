@@ -19,7 +19,7 @@ object SalePresenter {
 	}
 
 	fun onSelectBookActivityResult() {
-		val book = gateway.popSelected()
+		val book = SelectBookPresenter.selectedBook
 		if (book != null) {
 			entry.addBook(book)
 			updateView()

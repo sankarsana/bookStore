@@ -37,5 +37,5 @@ class SelectBookActivity : BaseActivity(), SelectBookView, InputCountDialog.Inpu
 
 	override fun showInputCountDialog(book: Book) = dialog.show(supportFragmentManager, "")
 
-	override fun onDialogPositiveResult(bookCount: Int) = presenter.onCountResult(bookCount)
+	override fun onDialogResult(bookCount: Int) = presenter.onCountDialogResult(bookCount)
 }

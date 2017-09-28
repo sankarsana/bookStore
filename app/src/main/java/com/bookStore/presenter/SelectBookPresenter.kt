@@ -8,7 +8,8 @@ object SelectBookPresenter {
 	private lateinit var view: SelectBookView
 	private val gateway = App.Gateway
 	private var searchText = ""
-	lateinit var selectedBook: Book
+	var selectedBook: Book? = null
+		private set
 
 	fun bind(view: SelectBookView) {
 		this.view = view
@@ -27,9 +28,12 @@ object SelectBookPresenter {
 		view.showInputCountDialog(book)
 	}
 
-	fun onCountResult(bookCount: Int) {
-		selectedBook.count = bookCount
-		gateway.pushSelected(selectedBook)
-		view.finish()
+	fun onCountDialogResult(bookCount: Int) {
+		if (bookCount > 0) {
+			selectedBook?.count = bookCount
+			view.finish()
+		} else {
+			selectedBook = null
+		}
 	}
 }

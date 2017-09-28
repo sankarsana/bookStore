@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.dialog_input_editor.*
 class InputCountDialog : MyDialogFragment(), View.OnClickListener {
 
 	private lateinit var book: Book
+	private var bookCount = 0
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedState: Bundle?): View =
 			inflater.inflate(R.layout.dialog_input_editor, container)
@@ -21,9 +22,10 @@ class InputCountDialog : MyDialogFragment(), View.OnClickListener {
 		btnOk.setOnClickListener(this)
 		btnCancel.setOnClickListener(this)
 		inputKeyboard.setEditText(inputCount)
-		book = SelectBookPresenter.selectedBook
+		if (SelectBookPresenter.selectedBook == null) return;
+		book = SelectBookPresenter.selectedBook as Book
 		bookName.text = book.bookName
-		inputCount.text.insert(0, "1")
+		inputCount.text.insert(bookCount, "1")
 	}
 
 	override fun onClick(v: View) {
@@ -33,16 +35,19 @@ class InputCountDialog : MyDialogFragment(), View.OnClickListener {
 		}
 	}
 
+	override fun onStop() {
+		super.onStop()
+		(activity as InputCountDialogListener).onDialogResult(bookCount)
+	}
+
 	private fun onBtnOkClick() {
-		var bookCount = 0
-		if (inputCount.text.isNotEmpty())
+		if (inputCount.text.isNotEmpty()) {
 			bookCount = inputCount.text.toString().toInt()
-		(activity as InputCountDialogListener).onDialogPositiveResult(bookCount)
+		}
 		dismiss()
 	}
 
 	interface InputCountDialogListener {
-
-		fun onDialogPositiveResult(bookCount: Int)
+		fun onDialogResult(bookCount: Int)
 	}
 }

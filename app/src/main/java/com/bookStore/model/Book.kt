@@ -2,7 +2,7 @@ package com.bookStore.model
 
 interface Book {
 
-	var id: Int
+	val id: Int
 
 	val bookName: String
 

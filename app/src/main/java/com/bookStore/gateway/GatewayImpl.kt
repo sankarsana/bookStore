@@ -13,21 +13,10 @@ import java.util.*
 class GatewayImpl(context: Context) : Gateway {
 
 	private val db: SQLiteDatabase
-	private var selectedBook: Book? = null
 
 	init {
 		DataBase.initialize(context)
 		db = DataBase.get()
-	}
-
-	override fun pushSelected(book: Book) {
-		selectedBook = book
-	}
-
-	override fun popSelected(): Book? {
-		val returnValue: Book? = selectedBook
-		selectedBook = null
-		return returnValue
 	}
 
 	override fun fetchBookList(searchText: String): List<Book> {
