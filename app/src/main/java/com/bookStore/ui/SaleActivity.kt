@@ -37,8 +37,8 @@ class SaleActivity : BaseActivity(), SaleView {
 		presenter.onSelectBookActivityResult()
 	}
 
-	override fun onBackPressed() {
-		super.onBackPressed()
-		presenter.onBackPressed()
+	override fun onStop() {
+		super.onStop()
+		presenter.onViewStop()
 	}
 }

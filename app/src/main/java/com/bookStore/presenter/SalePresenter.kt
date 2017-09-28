@@ -31,8 +31,8 @@ object SalePresenter {
 		view.updateSum(entry.calculateSum())
 	}
 
-	fun onBackPressed() {
-		gateway.saveSale(entry)
+	fun onViewStop() {
+		if (entry.books.isNotEmpty()) gateway.saveSale(entry)
 		entry = SaleEntry()
 	}
 }
