@@ -42,8 +42,8 @@ class SaleActivity : BaseActivity(), SaleView {
 		presenter.onSelectBookActivityResult()
 	}
 
-	override fun onStop() {
-		super.onStop()
+	override fun onDestroy() {
+		super.onDestroy()
 		presenter.onViewStop()
 	}
 }
