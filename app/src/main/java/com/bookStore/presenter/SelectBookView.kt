@@ -9,4 +9,6 @@ interface SelectBookView {
 	fun showInputCountDialog(book: Book)
 
 	fun finish()
+
+	fun expandSearchItem()
 }

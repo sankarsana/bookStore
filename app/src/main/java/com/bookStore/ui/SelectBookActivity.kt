@@ -33,6 +33,10 @@ class SelectBookActivity : BaseActivity(), SelectBookView, InputCountDialog.Inpu
 
 	override fun updateList(books: List<Book>) = adapter.update(books)
 
+	override fun expandSearchItem() {
+		isExpandSearchItem = true
+	}
+
 	override fun onSearchTextChange(text: String) = presenter.onSearchTextChange(text)
 
 	override fun showInputCountDialog(book: Book) = dialog.show(supportFragmentManager, "")

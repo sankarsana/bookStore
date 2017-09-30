@@ -9,7 +9,7 @@
 		android:title="@string/search"
 		android:titleCondensed="@string/selectBook"
 		yourapp:actionViewClass="android.support.v7.widget.SearchView"
-		yourapp:showAsAction="always" />
+		yourapp:showAsAction="always|collapseActionView" />
 
 	<item
 		android:id="@+id/selectBook_add"

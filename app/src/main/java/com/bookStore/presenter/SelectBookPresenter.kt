@@ -15,6 +15,7 @@ object SelectBookPresenter {
 		this.view = view
 		val books = gateway.fetchBookList("")
 		view.updateList(books)
+		view.expandSearchItem()
 	}
 
 	fun onSearchTextChange(text: String) {

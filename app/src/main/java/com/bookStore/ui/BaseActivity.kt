@@ -9,6 +9,8 @@ import com.bookStore.R
 
 abstract class BaseActivity : AppCompatActivity() {
 
+	var isExpandSearchItem = false
+
 	override fun setContentView(@LayoutRes layoutResID: Int) {
 		super.setContentView(layoutResID)
 		val toolbar = findViewById(R.id.toolbar) as Toolbar?
@@ -21,8 +23,8 @@ abstract class BaseActivity : AppCompatActivity() {
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
-		val searchItem = menu.findItem(R.id.action_search)
-		val searchView = searchItem?.actionView as SearchView? ?: return false
+		val searchItem = menu.findItem(R.id.action_search) ?: return false
+		val searchView = searchItem.actionView as SearchView
 		searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 			override fun onQueryTextSubmit(query: String) = false
 			override fun onQueryTextChange(newText: String): Boolean {
@@ -31,6 +33,7 @@ abstract class BaseActivity : AppCompatActivity() {
 			}
 		})
 		searchView.queryHint = searchItem.title
+		if (isExpandSearchItem) searchItem.expandActionView()
 		return true
 	}
 
