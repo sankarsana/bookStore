@@ -1,13 +1,13 @@
 package com.bookStore.presenter
 
 import com.bookStore.App.App
-import com.bookStore.model.SaleEntry
+import com.bookStore.model.SaleEntryImpl
 
 object SalePresenter {
 
 	private val gateway = App.Gateway
 	private lateinit var view: SaleView
-	private var entry = SaleEntry()
+	private var entry = SaleEntryImpl()
 
 	fun onCreateView(saleView: SaleView) {
 		view = saleView
@@ -34,6 +34,6 @@ object SalePresenter {
 
 	fun onViewStop() {
 		if (entry.books.isNotEmpty()) gateway.saveSale(entry)
-		entry = SaleEntry()
+		entry = SaleEntryImpl()
 	}
 }

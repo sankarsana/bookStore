@@ -17,6 +17,12 @@
 		app:showAsAction="never" />
 
 	<item
+		android:id="@+id/menu_sale_history"
+		android:icon="@drawable/ic_action_history_light"
+		android:title="@string/saleHistory"
+		app:showAsAction="never" />
+
+	<item
 		android:id="@+id/menu_store_persons"
 		android:icon="@drawable/ic_action_persons"
 		android:title="@string/cards"

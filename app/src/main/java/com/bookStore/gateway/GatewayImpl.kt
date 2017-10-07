@@ -4,10 +4,10 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import com.bookStore.App.DataBase
-import com.bookStore.getDatabaseDate
 import com.bookStore.model.Book
 import com.bookStore.model.BookImpl
 import com.bookStore.model.SaleEntry
+import com.bookStore.model.SaleEntryImpl
 import java.util.*
 
 class GatewayImpl(context: Context) : Gateway {
@@ -27,8 +27,7 @@ class GatewayImpl(context: Context) : Gateway {
 		val cursor = DataBase.get().rawQuery(query, null)
 		val books = ArrayList<Book>()
 		while (cursor.moveToNext()) {
-			val book = BookImpl()
-			book.id = cursor.getInt(0)
+			val book = BookImpl(cursor.getInt(0))
 			book.bookName = cursor.getString(1)
 			book.count = cursor.getInt(3)
 			book.cost = cursor.getInt(4)
@@ -57,5 +56,29 @@ class GatewayImpl(context: Context) : Gateway {
 		} finally {
 			db.endTransaction()
 		}
+	}
+
+	override fun fetchSales(): List<SaleEntry> {
+		val sales = mutableListOf<SaleEntryImpl>()
+		val entriesCursor = db.rawQuery(
+				"select _id, dateF, personId, sum, note from StoreSale order by dateF desc", null)
+		while (entriesCursor.moveToNext()) {
+			val entry = SaleEntryImpl(entriesCursor.getInt(0))
+			entry.date = toCalendar(entriesCursor.getString(1))
+			entry.sum = entriesCursor.getInt(3)
+			val booksCursor = db.rawQuery("" +
+					"select bookId, books.bookName, StoreSaleBook.count from StoreSaleBook" +
+					" inner join books on books._id = StoreSaleBook.bookId", null)
+			while (booksCursor.moveToNext()) {
+				val book = BookImpl(booksCursor.getInt(0))
+				book.bookName = booksCursor.getString(1)
+				book.count = booksCursor.getInt(2)
+				entry.books.add(book)
+			}
+			booksCursor.close()
+			sales.add(entry)
+		}
+		entriesCursor.close()
+		return sales
 	}
 }

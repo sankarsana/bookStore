@@ -8,6 +8,9 @@
 	<string name="title_activity_card_date">Продажа</string>
 	<string name="sum">"%1$d .р"</string>
 
+	<!-- SaleHistoryActivity -->
+	<string name="saleHistory">История продаж</string>
+
 	<!-- InputCountDialog -->
 	<string name="all">Все</string>
 	<string name="allCount">Все %1$d</string>

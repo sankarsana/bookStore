@@ -25,6 +25,7 @@ class StoreActivity : BaseActivity() {
 		listView.adapter = adapter
 		listView.setOnItemClickListener { _, _, _, id -> bookDetail.show(id) }
 		lInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+		isExpandSearchItem = true
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -40,6 +41,7 @@ class StoreActivity : BaseActivity() {
 		val id = item.itemId
 		when (id) {
 			R.id.menu_sale -> startActivity(Intent(this, SaleActivity::class.java))
+			R.id.menu_sale_history -> startActivity(Intent(this, SaleHistoryActivity::class.java))
 			R.id.menu_store_persons -> startActivity(Intent(this, PersonsActivity::class.java))
 			R.id.store_menu_calculate -> startActivity(Intent(this, CalcActivity::class.java))
 			R.id.store_menu_reports -> startActivity(Intent(this, JointActivity::class.java))

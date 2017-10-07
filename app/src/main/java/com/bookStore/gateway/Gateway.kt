@@ -8,4 +8,6 @@ interface Gateway {
 	fun fetchBookList(searchText: String): List<Book>
 
 	fun saveSale(entry: SaleEntry)
+
+	fun fetchSales(): List<SaleEntry>
 }

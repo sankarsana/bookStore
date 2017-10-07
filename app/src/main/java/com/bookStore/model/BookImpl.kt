@@ -1,10 +1,9 @@
 package com.bookStore.model
 
-import com.bookStore.ui.NO_ID
+import com.bookStore.gateway.NO_ID
 
-class BookImpl : Book {
-
-	override var id = NO_ID
+class BookImpl(
+		override val id: Int = NO_ID) : Book {
 
 	override var bookName = ""
 
