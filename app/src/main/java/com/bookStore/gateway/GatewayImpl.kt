@@ -40,14 +40,17 @@ class GatewayImpl(context: Context) : Gateway {
 	override fun saveSale(entry: SaleEntry) {
 		val values = ContentValues(3)
 		values.put("dateF", entry.date.getDatabaseDate())
-		values.put("sum", entry.calculateSum())
+		values.put("sum", entry.sum)
 		values.put("note", entry.note)
 		db.beginTransaction()
 		try {
-			val storeSaleId = db.insert("StoreSale", null, values)
+			if (entry.id == NO_ID) {
+				entry.id = db.insert("StoreSale", null, values).toInt()
+			} else db.update("StoreSale", values, "_id = ${entry.id}", null)
+			db.delete("StoreSaleBook", "storeSaleId = ${entry.id}", null)
 			for (book in entry.books) {
 				values.clear()
-				values.put("storeSaleId", storeSaleId)
+				values.put("storeSaleId", entry.id)
 				values.put("bookId", book.id)
 				values.put("count", book.count)
 				db.insert("StoreSaleBook", null, values)
@@ -61,14 +64,15 @@ class GatewayImpl(context: Context) : Gateway {
 	override fun fetchSales(): List<SaleEntry> {
 		val sales = mutableListOf<SaleEntryImpl>()
 		val entriesCursor = db.rawQuery(
-				"select _id, dateF, personId, sum, note from StoreSale order by dateF desc", null)
+				"select _id, dateF, personId, sum, note from StoreSale order by dateF desc, _id", null)
 		while (entriesCursor.moveToNext()) {
 			val entry = SaleEntryImpl(entriesCursor.getInt(0))
 			entry.date = toCalendar(entriesCursor.getString(1))
 			entry.sum = entriesCursor.getInt(3)
-			val booksCursor = db.rawQuery("" +
-					"select bookId, books.bookName, StoreSaleBook.count from StoreSaleBook" +
-					" inner join books on books._id = StoreSaleBook.bookId", null)
+			val booksCursor = db.rawQuery("select bookId, books.bookName, StoreSaleBook.count" +
+					" from StoreSaleBook" +
+					" inner join books on books._id = StoreSaleBook.bookId" +
+					" where storeSaleId = ${entry.id}", null)
 			while (booksCursor.moveToNext()) {
 				val book = BookImpl(booksCursor.getInt(0))
 				book.bookName = booksCursor.getString(1)

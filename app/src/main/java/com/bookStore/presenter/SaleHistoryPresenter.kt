@@ -7,6 +7,7 @@ object SaleHistoryPresenter {
 
 	private lateinit var view: SaleHistoryView
 	private lateinit var sales: List<SaleEntry>
+	var selectedEntry: SaleEntry? = null
 
 	fun bind(view: SaleHistoryView) {
 		this.view = view
@@ -15,7 +16,8 @@ object SaleHistoryPresenter {
 	}
 
 	fun onItemClick(position: Int) {
-		TODO("not implemented")
+		SalePresenter.entry = sales[position]
+		view.startSaleActivity()
 	}
 
 }

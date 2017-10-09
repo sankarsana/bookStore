@@ -1,5 +1,6 @@
 package com.bookStore.ui
 
+import android.content.Intent
 import android.os.Bundle
 import com.bookStore.R
 import com.bookStore.model.SaleEntry
@@ -21,4 +22,8 @@ class SaleHistoryActivity : BaseActivity(), SaleHistoryView {
 	}
 
 	override fun update(sales: List<SaleEntry>) = adapter.update(sales)
+
+	override fun startSaleActivity() {
+		startActivity(Intent(this, SaleActivity::class.java))
+	}
 }

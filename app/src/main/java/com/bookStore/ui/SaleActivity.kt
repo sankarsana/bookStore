@@ -21,7 +21,7 @@ class SaleActivity : BaseActivity(), SaleView {
 		setContentView(R.layout.activity_store_sale)
 		listView.adapter = adapter
 		fabAdd.setOnClickListener { presenter.onButtonAddClick() }
-		presenter.onCreateView(this)
+		presenter.bind(this)
 	}
 
 	override fun updateBooks(books: List<Book>) = adapter.update(books)

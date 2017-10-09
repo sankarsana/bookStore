@@ -73,7 +73,9 @@
 			android:name=".ui.SaleActivity"
 			android:label="@string/title_activity_card_date"
 			android:theme="@style/AppThemeLight" />
-		<activity android:name=".ui.SaleHistoryActivity"></activity>
+		<activity
+			android:name=".ui.SaleHistoryActivity"
+			android:label="@string/saleHistory" />
 	</application>
 
 </manifest>
