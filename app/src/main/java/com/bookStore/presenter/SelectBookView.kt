@@ -6,7 +6,7 @@ interface SelectBookView {
 
 	fun updateList(books: List<Book>)
 
-	fun showInputCountDialog(book: Book)
+	fun showCountDialog(book: Book)
 
 	fun finish()
 

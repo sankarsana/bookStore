@@ -13,6 +13,7 @@ object SelectBookPresenter {
 
 	fun bind(view: SelectBookView) {
 		this.view = view
+		selectedBook = null
 		val books = gateway.fetchBookList("")
 		view.updateList(books)
 		view.expandSearchItem()
@@ -26,7 +27,7 @@ object SelectBookPresenter {
 
 	fun onBookItemClick(book: Book) {
 		selectedBook = book
-		view.showInputCountDialog(book)
+		view.showCountDialog(book)
 	}
 
 	fun onCountDialogResult(bookCount: Int) {

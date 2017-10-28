@@ -39,7 +39,9 @@ class SelectBookActivity : BaseActivity(), SelectBookView, InputCountDialog.Inpu
 
 	override fun onSearchTextChange(text: String) = presenter.onSearchTextChange(text)
 
-	override fun showInputCountDialog(book: Book) = dialog.show(supportFragmentManager, "")
+	override fun showCountDialog(book: Book) = dialog.show(supportFragmentManager, "")
 
 	override fun onDialogResult(bookCount: Int) = presenter.onCountDialogResult(bookCount)
+
+	override fun onSaveInstanceState(outState: Bundle?) {}
 }
